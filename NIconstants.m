@@ -616,12 +616,12 @@ DAQmx_Val_Closed = 10438; % Closed
 DAQmx_Val_Cfg_Default =-1; % Default
 
 %*** Value for the Timeout parameter of DAQmxWaitUntilTaskDone
-DAQmx_Val_WaitInfinitely = -1.0
+DAQmx_Val_WaitInfinitely = -1.0;
 
 %*** Value for the Number of Samples per Channel parameter of DAQmxReadAnalogF64, DAQmxReadBinaryI16, DAQmxReadBinaryU16,
 %DAQmxReadBinaryI32, DAQmxReadBinaryU32, DAQmxReadDigitalU8, DAQmxReadDigitalU32,
 %DAQmxReadDigitalLines, DAQmxReadCounterF64, DAQmxReadCounterU32 and DAQmxReadRaw ***
-DAQmx_Val_Auto = -1
+DAQmx_Val_Auto = -1;
 
 %/******************************************************/
 %/*** = Attribute Values = ***/
