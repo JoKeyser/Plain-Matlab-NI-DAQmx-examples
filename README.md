@@ -15,7 +15,7 @@ In addition, the code's (public) history will be logged with this Git repo, and 
 So far, this project contains the files and descriptions downloaded from <https://www.jensroesner.com/work/matlab/index.html>.
 (The zip files `NIconstants.zip` and `NI_2_Matlab.zip` were extracted in the root folder.)
 
-See [Description.md](Description.md) for a description based on the original website.
+See [Description_Jens_Roesner.md](Description_Jens_Roesner.md) for a description based on his original website.
 
 ### Authors
 
