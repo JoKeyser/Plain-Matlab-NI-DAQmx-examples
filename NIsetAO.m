@@ -2,6 +2,10 @@ function AOtaskhandle=NIsetAO(tasknum,outputchan,voltage)
 % function messmatrix=NIsetAO(tasknum,outputchan,voltage)
 % tasknum=0 for a new task or task-handle for existing chan
 % only single-channel DC out
+% 2005, written by jens.roesner -at- gmx.de
+% version 1.0 as of 20.02.2005
+% provides access of NI's NI-DAQmx driver from Matlab
+% Analog Output with (especially) M-Series cards
 
 if ~libisloaded('myni')
     disp('Matlab: Load nicaiu.dll')
