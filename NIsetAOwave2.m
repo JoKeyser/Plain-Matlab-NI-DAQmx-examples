@@ -1,3 +1,7 @@
+% SPDX-FileCopyrightText: 2005 Jens Roesner
+%
+% SPDX-License-Identifier: GPL-3.0-or-later
+
 function AOtaskhandle=NIsetAOwave2(tasknum,spannungsvektor1,spannungsvektor2,samprate)
 % function AOtaskhandle=NIsetAOwave2(tasknum,spannungsvektor1,spannungsvektor2,samprate)
 % tasknum=0 for new task, or task-handle for existing

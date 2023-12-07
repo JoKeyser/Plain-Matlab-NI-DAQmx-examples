@@ -1,3 +1,7 @@
+% SPDX-FileCopyrightText: 2005 Jens Roesner
+%
+% SPDX-License-Identifier: GPL-3.0-or-later
+
 function AOtaskhandle=NIsetAO(tasknum,outputchan,voltage)
 % function messmatrix=NIsetAO(tasknum,outputchan,voltage)
 % tasknum=0 for a new task or task-handle for existing chan

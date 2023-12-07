@@ -1,8 +1,13 @@
 %******************************************************************************
 %*** NI-DAQmx Attributes ******************************************************
 %******************************************************************************
-% copyright National Instruments
-% adapted for use in matlab, by Jens Roesner, jan/25/2005
+% Copyright National Instruments.
+% Adapted for use in Matlab by Jens Roesner, Jan/25/2005.
+%
+% SPDX-FileCopyrightText: 2005 Jens Roesner
+%
+% SPDX-License-Identifier: GPL-3.0-or-later
+
 
 %********** Calibration Info Attributes **********
 DAQmx_SelfCal_Supported = hex2dec('1860'); % Indicates whether the device supports self calibration.
