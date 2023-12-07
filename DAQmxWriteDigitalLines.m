@@ -1,3 +1,7 @@
+% SPDX-FileCopyrightText: 2010 Nathan Tomlin
+%
+% SPDX-License-Identifier: BSD-2-Clause
+
 function sampsPerChanWritten = DAQmxWriteDigitalLines(lib,taskh,numSampsPerChan,timeout,dataLayout,DOvalue)
 % function sampsPerChanWritten = DAQmxWriteDigitalLines(lib,taskh,numSampsPerChan,timeout,dataLayout,DOvalue)
 % 

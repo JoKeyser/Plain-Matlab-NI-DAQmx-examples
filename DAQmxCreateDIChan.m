@@ -1,3 +1,7 @@
+% SPDX-FileCopyrightText: 2010 Nathan Tomlin
+%
+% SPDX-License-Identifier: BSD-2-Clause
+
 function taskh = DAQmxCreateDIChan(lib,lines,lineGrouping)
 % function taskh = DAQmxCreateDIChan(lib,lines,lineGrouping)
 % 

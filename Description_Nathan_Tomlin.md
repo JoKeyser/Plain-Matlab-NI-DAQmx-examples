@@ -1,6 +1,12 @@
+<!--
+SPDX-FileCopyrightText: 2010 Nathan Tomlin
+
+SPDX-License-Identifier: BSD-2-Clause
+--> 
+
 # DAQmx examples
 
-_NOTE: This text is copied from <https://mathworks.com/matlabcentral/fileexchange/27609-daqmx-examples>._
+_NOTE: This text is copied from <https://mathworks.com/matlabcentral/fileexchange/27609-daqmx-examples>, updated 14 May 2010._
 
 Version 1.0.0.0 by Nathan Tomlin 
 

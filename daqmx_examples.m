@@ -1,3 +1,7 @@
+% SPDX-FileCopyrightText: 2010 Nathan Tomlin
+%
+% SPDX-License-Identifier: BSD-2-Clause
+
 % Below are examples of using matlab to talk to a National Instruments (NI)
 % DAQ card _without_ the 'data acquisition toolbox'
 % 

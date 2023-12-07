@@ -1,3 +1,7 @@
+% SPDX-FileCopyrightText: 2010 Nathan Tomlin
+%
+% SPDX-License-Identifier: BSD-2-Clause
+
 function data = DAQmxReadDigitalLines(lib,taskh,numSampsPerChan,timeout,fillMode,numchan,numsample)
 % function data = DAQmxReadDigitalLines(lib,taskh,numSampsPerChan,timeout,fillMode,numchan,numsample)
 % 
