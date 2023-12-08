@@ -111,7 +111,7 @@ For some "historical context": Jens Roesner's code pre-dates the widespread supp
 ## Authors
 
 - Jens Roesner (`jens.roesner -at- gmx.de`, [link to personal website](https://www.jensroesner.com/work/matlab/))
-- Nathan Tomlin (`nathan.a.tomlin -at- gmail.com`, [link to Mathworks community profile](https://mathworks.com/matlabcentral/profile/authors/1252890`))
+- Nathan Tomlin (`nathan.a.tomlin -at- gmail.com`, [link to Mathworks community profile](https://mathworks.com/matlabcentral/profile/authors/1252890))
 - Johannes Keyser (so far, only editorial work; [link to Mathworks community profile](https://mathworks.com/matlabcentral/profile/authors/2267277))
 
 ## Licensing
@@ -120,7 +120,7 @@ Jens Roesner retro-actively licensed his code under GPL-3.0-or-later, via person
 
 Nathan Tomlin based his code on Jens Roesner's code and licensed it under the BSD-2-Clause license.
 
-Some documentation files are licensed under CC0-1.0.
+The documentation files are licensed under CC0-1.0.
 
 To clarify the licensing of each file, this repository is [REUSE compliant](https://reuse.software/).
 For the legal texts, see folder [LICENSES](LICENSES).

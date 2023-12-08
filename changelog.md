@@ -8,6 +8,7 @@ SPDX-License-Identifier: CC0-1.0
 
 ## 2023
 
+- Cosmetics: In Jens Roesner's code, use whitespaces around binary operators and after commas. Also remove some unnecessary syntax like parentheses.
 - The documentation texts by Jens Roesner's and Nathan Tomlin were edited into the more conventional project description you are reading here.
 - SPDX license headers were added to all files, and redundant lines of authorship and versions were deleted.
 - Johannes Keyser copied all code files by Jens Roesner and Nathan Tomlin into this project repository.

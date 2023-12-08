@@ -3,7 +3,7 @@
 %******************************************************************************
 % Copyright National Instruments.
 %
-% SPDX-FileCopyrightText: 2005 Jens Roesner
+% SPDX-FileCopyrightText: 2005 Jens Roesner, 2023 Johannes Keyser
 %
 % SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -363,7 +363,7 @@ DAQmx_SwitchChan_Bandwidth = hex2dec('0640'); % Indicates in Hertz the maximum f
 DAQmx_SwitchChan_Impedance = hex2dec('0641'); % Indicates in ohms the switch impedance. This value is important in the RF domain and should match the impedance of the sources and loads.
 
 %********** Switch Device Attributes **********
-DAQmx_SwitchDev_SettlingTime = hex2dec('1244'); % Specifies in seconds the amount of time to wait for the switch to settle (or debounce). NI-DAQmx adds this time to the settling time of the motherboard. Modify this property only if the switch does not settle within the settling time of the motherboard. Refer to device documentation for supported settling times.
+DAQmx_SwitchDev_SettlingTime = hex2dec('1244'); % Specifies in seconds the amount of time to wait for the switch to settle or debounce). NI-DAQmx adds this time to the settling time of the motherboard. Modify this property only if the switch does not settle within the settling time of the motherboard. Refer to device documentation for supported settling times.
 DAQmx_SwitchDev_AutoConnAnlgBus = hex2dec('17DA'); % Specifies if NI-DAQmx routes multiplexed channels to the analog bus backplane. Only the SCXI-1127 and SCXI-1128 support this property.
 DAQmx_SwitchDev_Settled = hex2dec('1243'); % Indicates when Settling Time expires.
 DAQmx_SwitchDev_RelayList = hex2dec('17DC'); % Indicates a comma-delimited list of relay names.
@@ -550,60 +550,60 @@ DAQmx_PhysicalChan_TEDS_TemplateIDs = hex2dec('228F'); % Indicates the IDs of th
 
 %*** Values for the Mode parameter of DAQmxTaskControl ***  
 DAQmx_Val_Task_Start = 0; % Start
-DAQmx_Val_Task_Stop =1; % Stop
-DAQmx_Val_Task_Verify =2; % Verify
-DAQmx_Val_Task_Commit =3; % Commit
+DAQmx_Val_Task_Stop = 1; % Stop
+DAQmx_Val_Task_Verify = 2; % Verify
+DAQmx_Val_Task_Commit = 3; % Commit
 DAQmx_Val_Task_Reserve = 4; % Reserve
 DAQmx_Val_Task_Unreserve = 5; % Unreserve
 DAQmx_Val_Task_Abort = 6; % Abort
 
 %*** Values for the Action parameter of DAQmxControlWatchdogTask ***
 DAQmx_Val_ResetTimer = 0; % Reset Timer
-DAQmx_Val_ClearExpiration =1; % Clear Expiration
+DAQmx_Val_ClearExpiration = 1; % Clear Expiration
 
 %*** Values for the Line Grouping parameter of DAQmxCreateDIChan and DAQmxCreateDOChan ***
-DAQmx_Val_ChanPerLine =0; % One Channel For Each Line
-DAQmx_Val_ChanForAllLines =1; % One Channel For All Lines
+DAQmx_Val_ChanPerLine = 0; % One Channel For Each Line
+DAQmx_Val_ChanForAllLines = 1; % One Channel For All Lines
 
 %*** Values for the Fill Mode parameter of DAQmxReadAnalogF64, DAQmxReadBinaryI16, DAQmxReadBinaryU16, DAQmxReadBinaryI32, DAQmxReadBinaryU32,
 %DAQmxReadDigitalU8, DAQmxReadDigitalU32, DAQmxReadDigitalLines ***
 %*** Values for the Data Layout parameter of DAQmxWriteAnalogF64, DAQmxWriteBinaryI16, DAQmxWriteDigitalU8, DAQmxWriteDigitalU32, DAQmxWriteDigitalLines ***
 DAQmx_Val_GroupByChannel = 0; % Group by Channel
-DAQmx_Val_GroupByScanNumber =1; % Group by Scan Number
+DAQmx_Val_GroupByScanNumber = 1; % Group by Scan Number
 
 %*** Values for the Signal Modifiers parameter of DAQmxConnectTerms ***/
-DAQmx_Val_DoNotInvertPolarity =0; % Do not invert polarity
+DAQmx_Val_DoNotInvertPolarity = 0; % Do not invert polarity
 DAQmx_Val_InvertPolarity = 1; % Invert polarity
 
 %*** Values for the Action paramter of DAQmxCloseExtCal ***
-DAQmx_Val_Action_Commit =0; % Commit
-DAQmx_Val_Action_Cancel =1; % Cancel
+DAQmx_Val_Action_Commit = 0; % Commit
+DAQmx_Val_Action_Cancel = 1; % Cancel
 
 %*** Values for the Trigger ID parameter of DAQmxSendSoftwareTrigger ***
 DAQmx_Val_AdvanceTrigger = 12488; % Advance Trigger
 
 %*** Value set for the ActiveEdge parameter of DAQmxCfgSampClkTiming ***
 DAQmx_Val_Rising = 10280; % Rising
-DAQmx_Val_Falling =10171; % Falling
+DAQmx_Val_Falling = 10171; % Falling
 
 %*** Value set SwitchPathType ***
 %*** Value set for the output Path Status parameter of DAQmxSwitchFindPath ***
 DAQmx_Val_PathStatus_Available = 10431; % Path Available
 DAQmx_Val_PathStatus_AlreadyExists = 10432; % Path Already Exists
 DAQmx_Val_PathStatus_Unsupported = 10433; % Path Unsupported
-DAQmx_Val_PathStatus_ChannelInUse =10434; % Channel In Use
+DAQmx_Val_PathStatus_ChannelInUse = 10434; % Channel In Use
 DAQmx_Val_PathStatus_SourceChannelConflict = 10435; % Channel Source Conflict
 DAQmx_Val_PathStatus_ChannelReservedForRouting = 10436; % Channel Reserved for Routing
 
 %*** Value set for the Units parameter of DAQmxCreateAIThrmcplChan, DAQmxCreateAIRTDChan, DAQmxCreateAIThrmstrChanIex, DAQmxCreateAIThrmstrChanVex and DAQmxCreateAITempBuiltInSensorChan ***
 DAQmx_Val_DegC = 10143; % Deg C
 DAQmx_Val_DegF = 10144; % Deg F
-DAQmx_Val_Kelvins =10325; % Kelvins
+DAQmx_Val_Kelvins = 10325; % Kelvins
 DAQmx_Val_DegR = 10145; % Deg R
 
 %*** Value set for the state parameter of DAQmxSetDigitalPowerUpStates ***
 DAQmx_Val_High = 10192; % High
-DAQmx_Val_Low =10214; % Low
+DAQmx_Val_Low = 10214; % Low
 DAQmx_Val_Tristate = 10310; % Tristate
 
 %*** Value set RelayPos ***
@@ -612,10 +612,10 @@ DAQmx_Val_Open = 10437; % Open
 DAQmx_Val_Closed = 10438; % Closed
 
 %*** Value for the Terminal Config parameter of DAQmxCreateAIVoltageChan, DAQmxCreateAICurrentChan and DAQmxCreateAIVoltageChanWithExcit ***
-DAQmx_Val_Cfg_Default =-1; % Default
+DAQmx_Val_Cfg_Default = -1; % Default
 
 %*** Value for the Timeout parameter of DAQmxWaitUntilTaskDone
-DAQmx_Val_WaitInfinitely = -1.0;
+DAQmx_Val_WaitInfinitely = -1;
 
 %*** Value for the Number of Samples per Channel parameter of DAQmxReadAnalogF64, DAQmxReadBinaryI16, DAQmxReadBinaryU16,
 %DAQmxReadBinaryI32, DAQmxReadBinaryU32, DAQmxReadDigitalU8, DAQmxReadDigitalU32,
@@ -628,52 +628,52 @@ DAQmx_Val_Auto = -1;
 
 %*** Values for DAQmx_AI_ACExcit_WireMode ***
 %*** Value set ACExcitWireMode ***
-DAQmx_Val_4Wire =4; % 4-Wire
-DAQmx_Val_5Wire =5; % 5-Wire
+DAQmx_Val_4Wire = 4; % 4-Wire
+DAQmx_Val_5Wire = 5; % 5-Wire
 
 %*** Values for DAQmx_AI_MeasType ***
 %*** Value set AIMeasurementType ***
-DAQmx_Val_Voltage =10322; % Voltage
-DAQmx_Val_Current =10134; % Current
+DAQmx_Val_Voltage = 10322; % Voltage
+DAQmx_Val_Current = 10134; % Current
 DAQmx_Val_Voltage_CustomWithExcitation = 10323; % More:Voltage:Custom with Excitation
 DAQmx_Val_Freq_Voltage = 10181; % Frequency
 DAQmx_Val_Resistance = 10278; % Resistance
-DAQmx_Val_Temp_TC =10303; % Temperature:Thermocouple
+DAQmx_Val_Temp_TC = 10303; % Temperature:Thermocouple
 DAQmx_Val_Temp_Thrmstr = 10302; % Temperature:Thermistor
 DAQmx_Val_Temp_RTD = 10301; % Temperature:RTD
 DAQmx_Val_Temp_BuiltInSensor = 10311; % Temperature:Built-in Sensor
-DAQmx_Val_Strain_Gage =10300; % Strain Gage
-DAQmx_Val_Position_LVDT =10352; % Position:LVDT
-DAQmx_Val_Position_RVDT =10353; % Position:RVDT
-DAQmx_Val_Accelerometer =10356; % Accelerometer
+DAQmx_Val_Strain_Gage = 10300; % Strain Gage
+DAQmx_Val_Position_LVDT = 10352; % Position:LVDT
+DAQmx_Val_Position_RVDT = 10353; % Position:RVDT
+DAQmx_Val_Accelerometer = 10356; % Accelerometer
 DAQmx_Val_SoundPressure_Microphone = 10354; % Sound Pressure:Microphone
-DAQmx_Val_TEDS_Sensor =12531; % TEDS Sensor
+DAQmx_Val_TEDS_Sensor = 12531; % TEDS Sensor
 
 %*** Values for DAQmx_AO_IdleOutputBehavior ***
 %*** Value set AOIdleOutputBehavior ***
-DAQmx_Val_ZeroVolts =12526; % Zero Volts
-DAQmx_Val_HighImpedance =12527; % High Impedance
-DAQmx_Val_MaintainExistingValue =12528; % Maintain Existing Value
+DAQmx_Val_ZeroVolts = 12526; % Zero Volts
+DAQmx_Val_HighImpedance = 12527; % High Impedance
+DAQmx_Val_MaintainExistingValue = 12528; % Maintain Existing Value
 
 %*** Values for DAQmx_AO_OutputType ***
 %*** Value set AOOutputChannelType ***
-DAQmx_Val_Voltage =10322; % Voltage
-DAQmx_Val_Current =10134; % Current
+DAQmx_Val_Voltage = 10322; % Voltage
+DAQmx_Val_Current = 10134; % Current
 
 %*** Values for DAQmx_AI_Accel_SensitivityUnits ***
 %*** Value set AccelSensitivityUnits1 ***
 DAQmx_Val_mVoltsPerG = 12509; % mVolts/g
-DAQmx_Val_VoltsPerG =12510; % Volts/g
+DAQmx_Val_VoltsPerG = 12510; % Volts/g
 
 %*** Values for DAQmx_AI_Accel_Units ***
 %*** Value set AccelUnits2 ***
-DAQmx_Val_AccelUnit_g =10186; % g
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_AccelUnit_g = 10186; % g
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_SampQuant_SampMode ***
 %*** Value set AcquisitionType ***
-DAQmx_Val_FiniteSamps =10178; % Finite Samples
-DAQmx_Val_ContSamps =10123; % Continuous Samples
+DAQmx_Val_FiniteSamps = 10178; % Finite Samples
+DAQmx_Val_ContSamps = 10123; % Continuous Samples
 DAQmx_Val_HWTimedSinglePoint = 12522; % Hardware Timed Single Point
 
 %*** Values for DAQmx_AnlgLvl_PauseTrig_When ***
@@ -683,16 +683,16 @@ DAQmx_Val_BelowLvl = 10107; % Below Level
 
 %*** Values for DAQmx_AI_RVDT_Units ***
 %*** Value set AngleUnits1 ***
-DAQmx_Val_Degrees =10146; % Degrees
-DAQmx_Val_Radians =10273; % Radians
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_Degrees = 10146; % Degrees
+DAQmx_Val_Radians = 10273; % Radians
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_CI_AngEncoder_Units ***
 %*** Value set AngleUnits2 ***
-DAQmx_Val_Degrees =10146; % Degrees
-DAQmx_Val_Radians =10273; % Radians
-DAQmx_Val_Ticks =10304; % Ticks
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_Degrees = 10146; % Degrees
+DAQmx_Val_Radians = 10273; % Radians
+DAQmx_Val_Ticks = 10304; % Ticks
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_AI_AutoZeroMode ***
 %*** Value set AutoZeroType1 ***
@@ -702,13 +702,13 @@ DAQmx_Val_Once = 10244; % Once
 %*** Values for DAQmx_SwitchScan_BreakMode ***
 %*** Value set BreakMode ***
 DAQmx_Val_NoAction = 10227; % No Action
-DAQmx_Val_BreakBeforeMake =10110; % Break Before Make
+DAQmx_Val_BreakBeforeMake = 10110; % Break Before Make
 
 %*** Values for DAQmx_AI_Bridge_Cfg ***
 %*** Value set BridgeConfiguration1 ***
 DAQmx_Val_FullBridge = 10182; % Full Bridge
 DAQmx_Val_HalfBridge = 10187; % Half Bridge
-DAQmx_Val_QuarterBridge =10270; % Quarter Bridge
+DAQmx_Val_QuarterBridge = 10270; % Quarter Bridge
 DAQmx_Val_NoBridge = 10228; % No Bridge
 
 %*** Values for DAQmx_CI_MeasType ***
@@ -718,13 +718,13 @@ DAQmx_Val_Freq = 10179; % Frequency
 DAQmx_Val_Period = 10256; % Period
 DAQmx_Val_PulseWidth = 10359; % Pulse Width
 DAQmx_Val_SemiPeriod = 10289; % Semi Period
-DAQmx_Val_Position_AngEncoder =10360; % Position:Angular Encoder
-DAQmx_Val_Position_LinEncoder =10361; % Position:Linear Encoder
+DAQmx_Val_Position_AngEncoder = 10360; % Position:Angular Encoder
+DAQmx_Val_Position_LinEncoder = 10361; % Position:Linear Encoder
 DAQmx_Val_TwoEdgeSep = 10267; % Two Edge Separation
 
 %*** Values for DAQmx_AI_Thrmcpl_CJCSrc ***
 %*** Value set CJCSource1 ***
-DAQmx_Val_BuiltIn =10200; % Built-In
+DAQmx_Val_BuiltIn = 10200; % Built-In
 DAQmx_Val_ConstVal = 10116; % Constant Value
 DAQmx_Val_Chan = 10113; % Channel
 
@@ -732,7 +732,7 @@ DAQmx_Val_Chan = 10113; % Channel
 %*** Value set COOutputType ***
 DAQmx_Val_Pulse_Time = 10269; % Pulse:Time
 DAQmx_Val_Pulse_Freq = 10119; % Pulse:Frequency
-DAQmx_Val_Pulse_Ticks =10268; % Pulse:Ticks
+DAQmx_Val_Pulse_Ticks = 10268; % Pulse:Ticks
 
 %*** Values for DAQmx_ChanType ***
 %*** Value set ChannelType ***
@@ -745,14 +745,14 @@ DAQmx_Val_CO = 10132; % Counter Output
 
 %*** Values for DAQmx_CI_CountEdges_Dir ***
 %*** Value set CountDirection1 ***
-DAQmx_Val_CountUp =10128; % Count Up
-DAQmx_Val_CountDown =10124; % Count Down
-DAQmx_Val_ExtControlled =10326; % Externally Controlled
+DAQmx_Val_CountUp = 10128; % Count Up
+DAQmx_Val_CountDown = 10124; % Count Down
+DAQmx_Val_ExtControlled = 10326; % Externally Controlled
 
 %*** Values for DAQmx_CI_Freq_MeasMeth ***
 %*** Values for DAQmx_CI_Period_MeasMeth ***
 %*** Value set CounterFrequencyMethod ***
-DAQmx_Val_LowFreq1Ctr =10105; % Low Frequency with 1 Counter
+DAQmx_Val_LowFreq1Ctr = 10105; % Low Frequency with 1 Counter
 DAQmx_Val_HighFreq2Ctr = 10157; % High Frequency with 2 Counters
 DAQmx_Val_LargeRng2Ctr = 10205; % Large Range with 2 Counters
 
@@ -760,7 +760,7 @@ DAQmx_Val_LargeRng2Ctr = 10205; % Large Range with 2 Counters
 %*** Value set Coupling1 ***
 DAQmx_Val_AC = 10045; % AC
 DAQmx_Val_DC = 10050; % DC
-DAQmx_Val_GND =10066; % GND
+DAQmx_Val_GND = 10066; % GND
 
 %*** Values for DAQmx_AnlgEdge_StartTrig_Coupling ***
 %*** Values for DAQmx_AnlgWin_StartTrig_Coupling ***
@@ -781,12 +781,12 @@ DAQmx_Val_External = 10167; % External
 %*** Values for DAQmx_AO_Current_Units ***
 %*** Value set CurrentUnits1 ***
 DAQmx_Val_Amps = 10342; % Amps
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 DAQmx_Val_FromTEDS = 12516; % From TEDS
 
 %*** Value set CurrentUnits2 ***
 DAQmx_Val_Amps = 10342; % Amps
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_AI_DataXferMech ***
 %*** Values for DAQmx_AO_DataXferMech ***
@@ -794,31 +794,31 @@ DAQmx_Val_FromCustomScale =10065; % From Custom Scale
 %*** Values for DAQmx_DO_DataXferMech ***
 %*** Values for DAQmx_CI_DataXferMech ***
 %*** Value set DataTransferMechanism ***
-DAQmx_Val_DMA =10054; % DMA
+DAQmx_Val_DMA = 10054; % DMA
 DAQmx_Val_Interrupts = 10204; % Interrupts
 DAQmx_Val_ProgrammedIO = 10264; % Programmed I/O
 
 %*** Values for DAQmx_Watchdog_DO_ExpirState ***
 %*** Value set DigitalLineState ***
 DAQmx_Val_High = 10192; % High
-DAQmx_Val_Low =10214; % Low
+DAQmx_Val_Low = 10214; % Low
 DAQmx_Val_Tristate = 10310; % Tristate
 DAQmx_Val_NoChange = 10160; % No Change
 
 %*** Values for DAQmx_StartTrig_DelayUnits ***
 %*** Value set DigitalWidthUnits1 ***
 DAQmx_Val_SampClkPeriods = 10286; % Sample Clock Periods
-DAQmx_Val_Seconds =10364; % Seconds
-DAQmx_Val_Ticks =10304; % Ticks
+DAQmx_Val_Seconds = 10364; % Seconds
+DAQmx_Val_Ticks = 10304; % Ticks
 
 %*** Values for DAQmx_DelayFromSampClk_DelayUnits ***
 %*** Value set DigitalWidthUnits2 ***
-DAQmx_Val_Seconds =10364; % Seconds
-DAQmx_Val_Ticks =10304; % Ticks
+DAQmx_Val_Seconds = 10364; % Seconds
+DAQmx_Val_Ticks = 10304; % Ticks
 
 %*** Values for DAQmx_Exported_AdvTrig_Pulse_WidthUnits ***
 %*** Value set DigitalWidthUnits3 ***
-DAQmx_Val_Seconds =10364; % Seconds
+DAQmx_Val_Seconds = 10364; % Seconds
 
 %*** Values for DAQmx_CI_Freq_StartingEdge ***
 %*** Values for DAQmx_CI_Period_StartingEdge ***
@@ -838,7 +838,7 @@ DAQmx_Val_Seconds =10364; % Seconds
 %*** Values for DAQmx_DigEdge_WatchdogExpirTrig_Edge ***
 %*** Value set Edge1 ***
 DAQmx_Val_Rising = 10280; % Rising
-DAQmx_Val_Falling =10171; % Falling
+DAQmx_Val_Falling = 10171; % Falling
 
 %*** Values for DAQmx_CI_Encoder_DecodingType ***
 %*** Value set EncoderType2 ***
@@ -850,8 +850,8 @@ DAQmx_Val_TwoPulseCounting = 10313; % Two Pulse Counting
 %*** Values for DAQmx_CI_Encoder_ZIndexPhase ***
 %*** Value set EncoderZIndexPhase1 ***
 DAQmx_Val_AHighBHigh = 10040; % A High B High
-DAQmx_Val_AHighBLow =10041; % A High B Low
-DAQmx_Val_ALowBHigh =10042; % A Low B High
+DAQmx_Val_AHighBLow = 10041; % A High B Low
+DAQmx_Val_ALowBHigh = 10042; % A Low B High
 DAQmx_Val_ALowBLow = 10043; % A Low B Low
 
 %*** Values for DAQmx_AI_Excit_DCorAC ***
@@ -867,23 +867,23 @@ DAQmx_Val_None = 10230; % None
 
 %*** Values for DAQmx_AI_Excit_VoltageOrCurrent ***
 %*** Value set ExcitationVoltageOrCurrent ***
-DAQmx_Val_Voltage =10322; % Voltage
-DAQmx_Val_Current =10134; % Current
+DAQmx_Val_Voltage = 10322; % Voltage
+DAQmx_Val_Current = 10134; % Current
 
 %*** Values for DAQmx_Exported_CtrOutEvent_OutputBehavior ***
 %*** Value set ExportActions2 ***
-DAQmx_Val_Pulse =10265; % Pulse
+DAQmx_Val_Pulse = 10265; % Pulse
 DAQmx_Val_Toggle = 10307; % Toggle
 
 %*** Values for DAQmx_Exported_SampClk_OutputBehavior ***
 %*** Value set ExportActions3 ***
-DAQmx_Val_Pulse =10265; % Pulse
-DAQmx_Val_Lvl =10210; % Level
+DAQmx_Val_Pulse = 10265; % Pulse
+DAQmx_Val_Lvl = 10210; % Level
 
 %*** Values for DAQmx_AI_Freq_Units ***
 %*** Value set FrequencyUnits ***
 DAQmx_Val_Hz = 10373; % Hz
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_CO_Pulse_Freq_Units ***
 %*** Value set FrequencyUnits2 ***
@@ -892,8 +892,8 @@ DAQmx_Val_Hz = 10373; % Hz
 %*** Values for DAQmx_CI_Freq_Units ***
 %*** Value set FrequencyUnits3 ***
 DAQmx_Val_Hz = 10373; % Hz
-DAQmx_Val_Ticks =10304; % Ticks
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_Ticks = 10304; % Ticks
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 
 %*** Values for DAQmx_AI_DataXferReqCond ***
@@ -904,7 +904,7 @@ DAQmx_Val_OnBrdMemNotEmpty = 10241; % On Board Memory Not Empty
 
 %*** Values for DAQmx_AI_TermCfg ***
 %*** Value set InputTermCfg ***
-DAQmx_Val_RSE =10083; % RSE
+DAQmx_Val_RSE = 10083; % RSE
 DAQmx_Val_NRSE = 10078; % NRSE
 DAQmx_Val_Diff = 10106; % Differential
 DAQmx_Val_PseudoDiff = 12529; % Pseudodifferential
@@ -912,20 +912,20 @@ DAQmx_Val_PseudoDiff = 12529; % Pseudodifferential
 %*** Values for DAQmx_AI_LVDT_SensitivityUnits ***
 %*** Value set LVDTSensitivityUnits1 ***
 DAQmx_Val_mVoltsPerVoltPerMillimeter = 12506; % mVolts/Volt/mMeter
-DAQmx_Val_mVoltsPerVoltPerMilliInch =12505; % mVolts/Volt/0.001 Inch
+DAQmx_Val_mVoltsPerVoltPerMilliInch = 12505; % mVolts/Volt/0.001 Inch
 
 %*** Values for DAQmx_AI_LVDT_Units ***
 %*** Value set LengthUnits2 ***
 DAQmx_Val_Meters = 10219; % Meters
 DAQmx_Val_Inches = 10379; % Inches
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_CI_LinEncoder_Units ***
 %*** Value set LengthUnits3 ***
 DAQmx_Val_Meters = 10219; % Meters
 DAQmx_Val_Inches = 10379; % Inches
-DAQmx_Val_Ticks =10304; % Ticks
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_Ticks = 10304; % Ticks
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_CI_OutputState ***
 %*** Values for DAQmx_CO_Pulse_IdleState ***
@@ -934,31 +934,31 @@ DAQmx_Val_FromCustomScale =10065; % From Custom Scale
 %*** Values for DAQmx_DigLvl_PauseTrig_When ***
 %*** Value set Level1 ***
 DAQmx_Val_High = 10192; % High
-DAQmx_Val_Low =10214; % Low
+DAQmx_Val_Low = 10214; % Low
 
 %*** Values for DAQmx_AIConv_Timebase_Src ***
 %*** Value set MIOAIConvertTbSrc ***
 DAQmx_Val_SameAsSampTimebase = 10284; % Same as Sample Timebase
 DAQmx_Val_SameAsMasterTimebase = 10282; % Same as Master Timebase
-DAQmx_Val_20MHzTimebase =12537; % 20MHz Timebase
+DAQmx_Val_20MHzTimebase = 12537; % 20MHz Timebase
 
 %*** Values for DAQmx_AO_DataXferReqCond ***
 %*** Values for DAQmx_DO_DataXferReqCond ***
 %*** Value set OutputDataTransferCondition ***
-DAQmx_Val_OnBrdMemEmpty =10235; % On Board Memory Empty
+DAQmx_Val_OnBrdMemEmpty = 10235; % On Board Memory Empty
 DAQmx_Val_OnBrdMemHalfFullOrLess = 10239; % On Board Memory Half Full or Less
-DAQmx_Val_OnBrdMemNotFull =10242; % On Board Memory Less than Full
+DAQmx_Val_OnBrdMemNotFull = 10242; % On Board Memory Less than Full
 
 %*** Values for DAQmx_AO_TermCfg ***
 %*** Value set OutputTermCfg ***
-DAQmx_Val_RSE =10083; % RSE
+DAQmx_Val_RSE = 10083; % RSE
 DAQmx_Val_Diff = 10106; % Differential
 DAQmx_Val_PseudoDiff = 12529; % Pseudodifferential
 
 %*** Values for DAQmx_Read_OverWrite ***
 %*** Value set OverwriteMode1 ***
 DAQmx_Val_OverwriteUnreadSamps = 10252; % Overwrite Unread Samples
-DAQmx_Val_DoNotOverwriteUnreadSamps =10159; % Do Not Overwrite Unread Samples
+DAQmx_Val_DoNotOverwriteUnreadSamps = 10159; % Do Not Overwrite Unread Samples
 
 %*** Values for DAQmx_Exported_AIConvClk_Pulse_Polarity ***
 %*** Values for DAQmx_Exported_AdvTrig_Pulse_Polarity ***
@@ -967,7 +967,7 @@ DAQmx_Val_DoNotOverwriteUnreadSamps =10159; % Do Not Overwrite Unread Samples
 %*** Values for DAQmx_Exported_CtrOutEvent_Pulse_Polarity ***
 %*** Value set Polarity2 ***
 DAQmx_Val_ActiveHigh = 10095; % Active High
-DAQmx_Val_ActiveLow =10096; % Active Low
+DAQmx_Val_ActiveLow = 10096; % Active Low
 
 
 %*** Values for DAQmx_AI_RTD_Type ***
@@ -987,9 +987,9 @@ DAQmx_Val_mVoltsPerVoltPerRadian = 12508; % mVolts/Volt/Radian
 
 %*** Values for DAQmx_Read_RelativeTo ***
 %*** Value set ReadRelativeTo ***
-DAQmx_Val_FirstSample =10424; % First Sample
-DAQmx_Val_CurrReadPos =10425; % Current Read Position
-DAQmx_Val_RefTrig =10426; % Reference Trigger
+DAQmx_Val_FirstSample = 10424; % First Sample
+DAQmx_Val_CurrReadPos = 10425; % Current Read Position
+DAQmx_Val_RefTrig = 10426; % Reference Trigger
 DAQmx_Val_FirstPretrigSamp = 10427; % First Pretrigger Sample
 DAQmx_Val_MostRecentSamp = 10428; % Most Recent Sample
 
@@ -997,23 +997,23 @@ DAQmx_Val_MostRecentSamp = 10428; % Most Recent Sample
 %*** Values for DAQmx_Write_RegenMode ***
 %*** Value set RegenerationMode1 ***
 DAQmx_Val_AllowRegen = 10097; % Allow Regeneration
-DAQmx_Val_DoNotAllowRegen =10158; % Do Not Allow Regeneration
+DAQmx_Val_DoNotAllowRegen = 10158; % Do Not Allow Regeneration
 
 %*** Values for DAQmx_AI_ResistanceCfg ***
 %*** Value set ResistanceConfiguration ***
-DAQmx_Val_2Wire =2; % 2-Wire
-DAQmx_Val_3Wire =3; % 3-Wire
-DAQmx_Val_4Wire =4; % 4-Wire
+DAQmx_Val_2Wire = 2; % 2-Wire
+DAQmx_Val_3Wire = 3; % 3-Wire
+DAQmx_Val_4Wire = 4; % 4-Wire
 
 %*** Values for DAQmx_AI_Resistance_Units ***
 %*** Value set ResistanceUnits1 ***
 DAQmx_Val_Ohms = 10384; % Ohms
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 DAQmx_Val_FromTEDS = 12516; % From TEDS
 
 %*** Value set ResistanceUnits2 ***
 DAQmx_Val_Ohms = 10384; % Ohms
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_AI_ResolutionUnits ***
 %*** Values for DAQmx_AO_ResolutionUnits ***
@@ -1022,49 +1022,49 @@ DAQmx_Val_Bits = 10109; % Bits
 
 %*** Values for DAQmx_SampTimingType ***
 %*** Value set SampleTimingType ***
-DAQmx_Val_SampClk =10388; % Sample Clock
-DAQmx_Val_Handshake =10389; % Handshake
+DAQmx_Val_SampClk = 10388; % Sample Clock
+DAQmx_Val_Handshake = 10389; % Handshake
 DAQmx_Val_Implicit = 10451; % Implicit
 DAQmx_Val_OnDemand = 10390; % On Demand
-DAQmx_Val_ChangeDetection =12504; % Change Detection
+DAQmx_Val_ChangeDetection = 12504; % Change Detection
 
 %*** Values for DAQmx_Scale_Type ***
 %*** Value set ScaleType ***
 DAQmx_Val_Linear = 10447; % Linear
-DAQmx_Val_MapRanges =10448; % Map Ranges
+DAQmx_Val_MapRanges = 10448; % Map Ranges
 DAQmx_Val_Polynomial = 10449; % Polynomial
-DAQmx_Val_Table =10450; % Table
+DAQmx_Val_Table = 10450; % Table
 
 %*** Values for DAQmx_AI_Bridge_ShuntCal_Select ***
 %*** Value set ShuntCalSelect ***
-DAQmx_Val_A =12513; % A
-DAQmx_Val_B =12514; % B
-DAQmx_Val_AandB =12515; % A and B
+DAQmx_Val_A = 12513; % A
+DAQmx_Val_B = 12514; % B
+DAQmx_Val_AandB = 12515; % A and B
 
 %*** Value set Signal ***
 DAQmx_Val_AIConvertClock = 12484; % AI Convert Clock
-DAQmx_Val_10MHzRefClock =12536; % 10MHz Reference Clock
+DAQmx_Val_10MHzRefClock = 12536; % 10MHz Reference Clock
 DAQmx_Val_20MHzTimebaseClock = 12486; % 20MHz Timebase Clock
-DAQmx_Val_SampleClock =12487; % Sample Clock
+DAQmx_Val_SampleClock = 12487; % Sample Clock
 DAQmx_Val_AdvanceTrigger = 12488; % Advance Trigger
 DAQmx_Val_ReferenceTrigger = 12490; % Reference Trigger
 DAQmx_Val_StartTrigger = 12491; % Start Trigger
-DAQmx_Val_AdvCmpltEvent =12492; % Advance Complete Event
+DAQmx_Val_AdvCmpltEvent = 12492; % Advance Complete Event
 DAQmx_Val_AIHoldCmpltEvent = 12493; % AI Hold Complete Event
 DAQmx_Val_CounterOutputEvent = 12494; % Counter Output Event
 DAQmx_Val_ChangeDetectionEvent = 12511; % Change Detection Event
-DAQmx_Val_WDTExpiredEvent =12512; % Watchdog Timer Expired Event
+DAQmx_Val_WDTExpiredEvent = 12512; % Watchdog Timer Expired Event
 
 %*** Values for DAQmx_AnlgEdge_StartTrig_Slope ***
 %*** Values for DAQmx_AnlgEdge_RefTrig_Slope ***
 %*** Value set Slope1 ***
-DAQmx_Val_RisingSlope =10280; % Rising
+DAQmx_Val_RisingSlope = 10280; % Rising
 DAQmx_Val_FallingSlope = 10171; % Falling
 
 %*** Values for DAQmx_AI_SoundPressure_Units ***
 %*** Value set SoundPressureUnits1 ***
-DAQmx_Val_Pascals =10081; % Pascals
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_Pascals = 10081; % Pascals
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_AI_Lowpass_SwitchCap_ClkSrc ***
 %*** Values for DAQmx_AO_DAC_Ref_Src ***
@@ -1075,18 +1075,18 @@ DAQmx_Val_External = 10167; % External
 
 %*** Values for DAQmx_AI_StrainGage_Cfg ***
 %*** Value set StrainGageBridgeType1 ***
-DAQmx_Val_FullBridgeI =10183; % Full Bridge I
+DAQmx_Val_FullBridgeI = 10183; % Full Bridge I
 DAQmx_Val_FullBridgeII = 10184; % Full Bridge II
-DAQmx_Val_FullBridgeIII =10185; % Full Bridge III
-DAQmx_Val_HalfBridgeI =10188; % Half Bridge I
+DAQmx_Val_FullBridgeIII = 10185; % Full Bridge III
+DAQmx_Val_HalfBridgeI = 10188; % Half Bridge I
 DAQmx_Val_HalfBridgeII = 10189; % Half Bridge II
 DAQmx_Val_QuarterBridgeI = 10271; % Quarter Bridge I
-DAQmx_Val_QuarterBridgeII =10272; % Quarter Bridge II
+DAQmx_Val_QuarterBridgeII = 10272; % Quarter Bridge II
 
 %*** Values for DAQmx_AI_Strain_Units ***
 %*** Value set StrainUnits1 ***
 DAQmx_Val_Strain = 10299; % Strain
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_SwitchScan_RepeatMode ***
 %*** Value set SwitchScanRepeatMode ***
@@ -1100,130 +1100,130 @@ DAQmx_Val_Load = 10440; % Load
 DAQmx_Val_ReservedForRouting = 10441; % Reserved for Routing
 
 %*** Value set TEDSUnits ***
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 DAQmx_Val_FromTEDS = 12516; % From TEDS
 
 %*** Values for DAQmx_AI_Temp_Units ***
 %*** Value set TemperatureUnits1 ***
 DAQmx_Val_DegC = 10143; % Deg C
 DAQmx_Val_DegF = 10144; % Deg F
-DAQmx_Val_Kelvins =10325; % Kelvins
+DAQmx_Val_Kelvins = 10325; % Kelvins
 DAQmx_Val_DegR = 10145; % Deg R
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_AI_Thrmcpl_Type ***
 %*** Value set ThermocoupleType1 ***
-DAQmx_Val_J_Type_TC =10072; % J
-DAQmx_Val_K_Type_TC =10073; % K
-DAQmx_Val_N_Type_TC =10077; % N
-DAQmx_Val_R_Type_TC =10082; % R
-DAQmx_Val_S_Type_TC =10085; % S
-DAQmx_Val_T_Type_TC =10086; % T
-DAQmx_Val_B_Type_TC =10047; % B
-DAQmx_Val_E_Type_TC =10055; % E
+DAQmx_Val_J_Type_TC = 10072; % J
+DAQmx_Val_K_Type_TC = 10073; % K
+DAQmx_Val_N_Type_TC = 10077; % N
+DAQmx_Val_R_Type_TC = 10082; % R
+DAQmx_Val_S_Type_TC = 10085; % S
+DAQmx_Val_T_Type_TC = 10086; % T
+DAQmx_Val_B_Type_TC = 10047; % B
+DAQmx_Val_E_Type_TC = 10055; % E
 
 %*** Values for DAQmx_CO_Pulse_Time_Units ***
 %*** Value set TimeUnits2 ***
-DAQmx_Val_Seconds =10364; % Seconds
+DAQmx_Val_Seconds = 10364; % Seconds
 
 %*** Values for DAQmx_CI_Period_Units ***
 %*** Values for DAQmx_CI_PulseWidth_Units ***
 %*** Values for DAQmx_CI_TwoEdgeSep_Units ***
 %*** Values for DAQmx_CI_SemiPeriod_Units ***
 %*** Value set TimeUnits3 ***
-DAQmx_Val_Seconds =10364; % Seconds
-DAQmx_Val_Ticks =10304; % Ticks
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_Seconds = 10364; % Seconds
+DAQmx_Val_Ticks = 10304; % Ticks
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_RefTrig_Type ***
 %*** Value set TriggerType1 ***
 DAQmx_Val_AnlgEdge = 10099; % Analog Edge
-DAQmx_Val_DigEdge =10150; % Digital Edge
-DAQmx_Val_AnlgWin =10103; % Analog Window
+DAQmx_Val_DigEdge = 10150; % Digital Edge
+DAQmx_Val_AnlgWin = 10103; % Analog Window
 DAQmx_Val_None = 10230; % None
 
 %*** Values for DAQmx_ArmStartTrig_Type ***
 %*** Values for DAQmx_WatchdogExpirTrig_Type ***
 %*** Value set TriggerType4 ***
-DAQmx_Val_DigEdge =10150; % Digital Edge
+DAQmx_Val_DigEdge = 10150; % Digital Edge
 DAQmx_Val_None = 10230; % None
 
 %*** Values for DAQmx_AdvTrig_Type ***
 %*** Value set TriggerType5 ***
-DAQmx_Val_DigEdge =10150; % Digital Edge
+DAQmx_Val_DigEdge = 10150; % Digital Edge
 DAQmx_Val_Software = 10292; % Software
 DAQmx_Val_None = 10230; % None
 
 %*** Values for DAQmx_PauseTrig_Type ***
 %*** Value set TriggerType6 ***
-DAQmx_Val_AnlgLvl =10101; % Analog Level
-DAQmx_Val_AnlgWin =10103; % Analog Window
+DAQmx_Val_AnlgLvl = 10101; % Analog Level
+DAQmx_Val_AnlgWin = 10103; % Analog Window
 DAQmx_Val_DigLvl = 10152; % Digital Level
 DAQmx_Val_None = 10230; % None
 
 %*** Values for DAQmx_StartTrig_Type ***
 %*** Value set TriggerType8 ***
 DAQmx_Val_AnlgEdge = 10099; % Analog Edge
-DAQmx_Val_DigEdge =10150; % Digital Edge
-DAQmx_Val_AnlgWin =10103; % Analog Window
+DAQmx_Val_DigEdge = 10150; % Digital Edge
+DAQmx_Val_AnlgWin = 10103; % Analog Window
 DAQmx_Val_None = 10230; % None
 
 %*** Values for DAQmx_Scale_PreScaledUnits ***
 %*** Value set UnitsPreScaled ***
-DAQmx_Val_Volts =10348; % Volts
+DAQmx_Val_Volts = 10348; % Volts
 DAQmx_Val_Amps = 10342; % Amps
 DAQmx_Val_DegF = 10144; % Deg F
 DAQmx_Val_DegC = 10143; % Deg C
 DAQmx_Val_DegR = 10145; % Deg R
-DAQmx_Val_Kelvins =10325; % Kelvins
+DAQmx_Val_Kelvins = 10325; % Kelvins
 DAQmx_Val_Strain = 10299; % Strain
 DAQmx_Val_Ohms = 10384; % Ohms
 DAQmx_Val_Hz = 10373; % Hz
-DAQmx_Val_Seconds =10364; % Seconds
+DAQmx_Val_Seconds = 10364; % Seconds
 DAQmx_Val_Meters = 10219; % Meters
 DAQmx_Val_Inches = 10379; % Inches
-DAQmx_Val_Degrees =10146; % Degrees
-DAQmx_Val_Radians =10273; % Radians
-DAQmx_Val_g =10186; % g
-DAQmx_Val_Pascals =10081; % Pascals
+DAQmx_Val_Degrees = 10146; % Degrees
+DAQmx_Val_Radians = 10273; % Radians
+DAQmx_Val_g = 10186; % g
+DAQmx_Val_Pascals = 10081; % Pascals
 DAQmx_Val_FromTEDS = 12516; % From TEDS
 
 %*** Values for DAQmx_AI_Voltage_Units ***
 %*** Value set VoltageUnits1 ***
-DAQmx_Val_Volts =10348; % Volts
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_Volts = 10348; % Volts
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 DAQmx_Val_FromTEDS = 12516; % From TEDS
 
 %*** Values for DAQmx_AO_Voltage_Units ***
 %*** Value set VoltageUnits2 ***
-DAQmx_Val_Volts =10348; % Volts
-DAQmx_Val_FromCustomScale =10065; % From Custom Scale
+DAQmx_Val_Volts = 10348; % Volts
+DAQmx_Val_FromCustomScale = 10065; % From Custom Scale
 
 %*** Values for DAQmx_ReadWaitMode ***
 %*** Value set WaitMode ***
 DAQmx_Val_WaitForInterrupt = 12523; % Wait For Interrupt
 DAQmx_Val_Poll = 12524; % Poll
-DAQmx_Val_Yield =12525; % Yield
+DAQmx_Val_Yield = 12525; % Yield
 
 %*** Values for DAQmx_AnlgWin_StartTrig_When ***
 %*** Values for DAQmx_AnlgWin_RefTrig_When ***
 %*** Value set WindowTriggerCondition1 ***
-DAQmx_Val_EnteringWin =10163; % Entering Window
+DAQmx_Val_EnteringWin = 10163; % Entering Window
 DAQmx_Val_LeavingWin = 10208; % Leaving Window
 
 %*** Values for DAQmx_AnlgWin_PauseTrig_When ***
 %*** Value set WindowTriggerCondition2 ***
-DAQmx_Val_InsideWin =10199; % Inside Window
+DAQmx_Val_InsideWin = 10199; % Inside Window
 DAQmx_Val_OutsideWin = 10251; % Outside Window
 
 %*** Value set WriteBasicTEDSOptions ***
-DAQmx_Val_WriteToEEPROM =12538; % Write To EEPROM
-DAQmx_Val_WriteToPROM =12539; % Write To PROM Once
+DAQmx_Val_WriteToEEPROM = 12538; % Write To EEPROM
+DAQmx_Val_WriteToPROM = 12539; % Write To PROM Once
 DAQmx_Val_DoNotWrite = 12540; % Do Not Write
 
 %*** Values for DAQmx_Write_RelativeTo ***
 %*** Value set WriteRelativeTo ***
-DAQmx_Val_FirstSample =10424; % First Sample
+DAQmx_Val_FirstSample = 10424; % First Sample
 DAQmx_Val_CurrWritePos = 10430; % Current Write Position
 
 
@@ -1232,908 +1232,908 @@ DAQmx_Val_CurrWritePos = 10430; % Current Write Position
 % *** NI-DAQmx Error Codes *****************************************************
 % ******************************************************************************/
 
-DAQmxSuccess = (0);
+DAQmxSuccess = 0;
 
 %DAQmxFailed(error); = ((error);<0);
 
 % Error and Warning Codes
-DAQmxErrorWriteNotCompleteBeforeSampClk =(-209801);
-DAQmxErrorReadNotCompleteBeforeSampClk = (-209800);
-DAQmxErrorEveryNSamplesEventNotSupportedForNonBufferedTasks =(-200848);
-DAQmxErrorBufferedAndDataXferPIO = (-200847);
-DAQmxErrorCannotWriteWhenAutoStartFalseAndTaskNotRunning = (-200846);
-DAQmxErrorNonBufferedAndDataXferInterrupts = (-200845);
-DAQmxErrorWriteFailedMultipleCtrsWithFREQOUT = (-200844);
-DAQmxErrorReadNotCompleteBefore3SampClkEdges = (-200843);
-DAQmxErrorCtrHWTimedSinglePointAndDataXferNotProgIO =(-200842);
-DAQmxErrorPrescalerNot1ForInputTerminal =(-200841);
-DAQmxErrorPrescalerNot1ForTimebaseSrc =(-200840);
-DAQmxErrorSampClkTimingTypeWhenTristateIsFalse = (-200839);
-DAQmxErrorOutputBufferSizeNotMultOfXferSize =(-200838);
-DAQmxErrorSampPerChanNotMultOfXferSize = (-200837);
-DAQmxErrorWriteToTEDSFailed =(-200836);
-DAQmxErrorSCXIDevNotUsablePowerTurnedOff = (-200835);
-DAQmxErrorCannotReadWhenAutoStartFalseBufSizeZeroAndTaskNotRunning = (-200834);
-DAQmxErrorCannotReadWhenAutoStartFalseHWTimedSinglePtAndTaskNotRunning = (-200833);
-DAQmxErrorCannotReadWhenAutoStartFalseOnDemandAndTaskNotRunning =(-200832);
-DAQmxErrorSimultaneousAOWhenNotOnDemandTiming =(-200831);
-DAQmxErrorMemMapAndSimultaneousAO =(-200830);
-DAQmxErrorWriteFailedMultipleCOOutputTypes = (-200829);
-DAQmxErrorWriteToTEDSNotSupportedOnRT =(-200828);
-DAQmxErrorVirtualTEDSDataFileError = (-200827);
-DAQmxErrorTEDSSensorDataError =(-200826);
-DAQmxErrorDataSizeMoreThanSizeOfEEPROMOnTEDS = (-200825);
-DAQmxErrorPROMOnTEDSContainsBasicTEDSData =(-200824);
-DAQmxErrorPROMOnTEDSAlreadyWritten = (-200823);
-DAQmxErrorTEDSDoesNotContainPROM = (-200822);
-DAQmxErrorHWTimedSinglePointNotSupportedAI = (-200821);
-DAQmxErrorHWTimedSinglePointOddNumChansInAITask =(-200820);
-DAQmxErrorCantUseOnlyOnBoardMemWithProgrammedIO =(-200819);
-DAQmxErrorSwitchDevShutDownDueToHighTemp = (-200818);
-DAQmxErrorExcitationNotSupportedWhenTermCfgDiff =(-200817);
-DAQmxErrorTEDSMinElecValGEMaxElecVal = (-200816);
-DAQmxErrorTEDSMinPhysValGEMaxPhysVal = (-200815);
-DAQmxErrorCIOnboardClockNotSupportedAsInputTerm =(-200814);
-DAQmxErrorInvalidSampModeForPositionMeas = (-200813);
-DAQmxErrorTrigWhenAOHWTimedSinglePtSampMode =(-200812);
-DAQmxErrorDAQmxCantUseStringDueToUnknownChar = (-200811);
-DAQmxErrorDAQmxCantRetrieveStringDueToUnknownChar =(-200810);
-DAQmxErrorClearTEDSNotSupportedOnRT =(-200809);
-DAQmxErrorCfgTEDSNotSupportedOnRT =(-200808);
-DAQmxErrorProgFilterClkCfgdToDifferentMinPulseWidthBySameTask1PerDev = (-200807);
-DAQmxErrorProgFilterClkCfgdToDifferentMinPulseWidthByAnotherTask1PerDev = (-200806);
-DAQmxErrorNoLastExtCalDateTimeLastExtCalNotDAQmx = (-200804);
-DAQmxErrorCannotWriteNotStartedAutoStartFalseNotOnDemandHWTimedSglPt = (-200803);
-DAQmxErrorCannotWriteNotStartedAutoStartFalseNotOnDemandBufSizeZero =(-200802);
-DAQmxErrorCOInvalidTimingSrcDueToSignal =(-200801);
-DAQmxErrorCIInvalidTimingSrcForSampClkDueToSampTimingType =(-200800);
-DAQmxErrorCIInvalidTimingSrcForEventCntDueToSampMode = (-200799);
-DAQmxErrorNoChangeDetectOnNonInputDigLineForDev =(-200798);
-DAQmxErrorEmptyStringTermNameNotSupported =(-200797);
-DAQmxErrorMemMapEnabledForHWTimedNonBufferedAO = (-200796);
-DAQmxErrorDevOnboardMemOverflowDuringHWTimedNonBufferedGen = (-200795);
-DAQmxErrorCODAQmxWriteMultipleChans =(-200794);
-DAQmxErrorCantMaintainExistingValueAOSync =(-200793);
-DAQmxErrorMStudioMultiplePhysChansNotSupported = (-200792);
-DAQmxErrorCantConfigureTEDSForChan = (-200791);
-DAQmxErrorWriteDataTypeTooSmall =(-200790);
-DAQmxErrorReadDataTypeTooSmall = (-200789);
-DAQmxErrorMeasuredBridgeOffsetTooHigh =(-200788);
-DAQmxErrorStartTrigConflictWithCOHWTimedSinglePt = (-200787);
-DAQmxErrorSampClkRateExtSampClkTimebaseRateMismatch =(-200786);
-DAQmxErrorInvalidTimingSrcDueToSampTimingType =(-200785);
-DAQmxErrorVirtualTEDSFileNotFound =(-200784);
-DAQmxErrorMStudioNoForwardPolyScaleCoeffs =(-200783);
-DAQmxErrorMStudioNoReversePolyScaleCoeffs =(-200782);
-DAQmxErrorMStudioNoPolyScaleCoeffsUseCalc =(-200781);
-DAQmxErrorMStudioNoForwardPolyScaleCoeffsUseCalc = (-200780);
-DAQmxErrorMStudioNoReversePolyScaleCoeffsUseCalc = (-200779);
-DAQmxErrorCOSampModeSampTimingTypeSampClkConflict =(-200778);
-DAQmxErrorDevCannotProduceMinPulseWidth =(-200777);
-DAQmxErrorCannotProduceMinPulseWidthGivenPropertyValues =(-200776);
-DAQmxErrorTermCfgdToDifferentMinPulseWidthByAnotherTask =(-200775);
-DAQmxErrorTermCfgdToDifferentMinPulseWidthByAnotherProperty =(-200774);
-DAQmxErrorDigSyncNotAvailableOnTerm =(-200773);
-DAQmxErrorDigFilterNotAvailableOnTerm =(-200772);
-DAQmxErrorDigFilterEnabledMinPulseWidthNotCfg =(-200771);
-DAQmxErrorDigFilterAndSyncBothEnabled =(-200770);
-DAQmxErrorHWTimedSinglePointAOAndDataXferNotProgIO = (-200769);
-DAQmxErrorNonBufferedAOAndDataXferNotProgIO =(-200768);
-DAQmxErrorProgIODataXferForBufferedAO =(-200767);
-DAQmxErrorTEDSLegacyTemplateIDInvalidOrUnsupported = (-200766);
-DAQmxErrorTEDSMappingMethodInvalidOrUnsupported =(-200765);
-DAQmxErrorTEDSLinearMappingSlopeZero = (-200764);
-DAQmxErrorAIInputBufferSizeNotMultOfXferSize = (-200763);
-DAQmxErrorNoSyncPulseExtSampClkTimebase =(-200762);
-DAQmxErrorNoSyncPulseAnotherTaskRunning =(-200761);
-DAQmxErrorAOMinMaxNotInGainRange = (-200760);
-DAQmxErrorAOMinMaxNotInDACRange =(-200759);
-DAQmxErrorDevOnlySupportsSampClkTimingAO = (-200758);
-DAQmxErrorDevOnlySupportsSampClkTimingAI = (-200757);
-DAQmxErrorTEDSIncompatibleSensorAndMeasType =(-200756);
-DAQmxErrorTEDSMultipleCalTemplatesNotSupported = (-200755);
-DAQmxErrorTEDSTemplateParametersNotSupported = (-200754);
-DAQmxErrorParsingTEDSData =(-200753);
-DAQmxErrorMultipleActivePhysChansNotSupported =(-200752);
-DAQmxErrorNoChansSpecdForChangeDetect =(-200751);
-DAQmxErrorInvalidCalVoltageForGivenGain =(-200750);
-DAQmxErrorInvalidCalGain = (-200749);
-DAQmxErrorMultipleWritesBetweenSampClks =(-200748);
-DAQmxErrorInvalidAcqTypeForFREQOUT = (-200747);
-DAQmxErrorSuitableTimebaseNotFoundTimeCombo2 = (-200746);
-DAQmxErrorSuitableTimebaseNotFoundFrequencyCombo2 =(-200745);
-DAQmxErrorRefClkRateRefClkSrcMismatch =(-200744);
-DAQmxErrorNoTEDSTerminalBlock =(-200743);
-DAQmxErrorCorruptedTEDSMemory =(-200742);
-DAQmxErrorTEDSNotSupported = (-200741);
-DAQmxErrorTimingSrcTaskStartedBeforeTimedLoop =(-200740);
-DAQmxErrorPropertyNotSupportedForTimingSrc = (-200739);
-DAQmxErrorTimingSrcDoesNotExist =(-200738);
-DAQmxErrorInputBufferSizeNotEqualSampsPerChanForFiniteSampMode = (-200737);
-DAQmxErrorFREQOUTCannotProduceDesiredFrequency2 =(-200736);
-DAQmxErrorExtRefClkRateNotSpecified =(-200735);
-DAQmxErrorDeviceDoesNotSupportDMADataXferForNonBufferedAcq = (-200734);
-DAQmxErrorDigFilterMinPulseWidthSetWhenTristateIsFalse = (-200733);
-DAQmxErrorDigFilterEnableSetWhenTristateIsFalse =(-200732);
-DAQmxErrorNoHWTimingWithOnDemand = (-200731);
-DAQmxErrorCannotDetectChangesWhenTristateIsFalse = (-200730);
-DAQmxErrorCannotHandshakeWhenTristateIsFalse = (-200729);
-DAQmxErrorLinesUsedForStaticInputNotForHandshakingControl =(-200728);
-DAQmxErrorLinesUsedForHandshakingControlNotForStaticInput =(-200727);
-DAQmxErrorLinesUsedForStaticInputNotForHandshakingInput =(-200726);
-DAQmxErrorLinesUsedForHandshakingInputNotForStaticInput =(-200725);
-DAQmxErrorDifferentDITristateValsForChansInTask =(-200724);
-DAQmxErrorTimebaseCalFreqVarianceTooLarge =(-200723);
-DAQmxErrorTimebaseCalFailedToConverge =(-200722);
-DAQmxErrorInadequateResolutionForTimebaseCal = (-200721);
-DAQmxErrorInvalidAOGainCalConst =(-200720);
-DAQmxErrorInvalidAOOffsetCalConst =(-200719);
-DAQmxErrorInvalidAIGainCalConst =(-200718);
-DAQmxErrorInvalidAIOffsetCalConst =(-200717);
-DAQmxErrorDigOutputOverrun = (-200716);
-DAQmxErrorDigInputOverrun =(-200715);
-DAQmxErrorAcqStoppedDriverCantXferDataFastEnough = (-200714);
-DAQmxErrorChansCantAppearInSameTask =(-200713);
-DAQmxErrorInputCfgFailedBecauseWatchdogExpired = (-200712);
-DAQmxErrorAnalogTrigChanNotExternal =(-200711);
-DAQmxErrorTooManyChansForInternalAIInputSrc =(-200710);
-DAQmxErrorTEDSSensorNotDetected =(-200709);
-DAQmxErrorPrptyGetSpecdActiveItemFailedDueToDifftValues =(-200708);
-DAQmxErrorRoutingDestTermPXIClk10InNotInSlot2 =(-200706);
-DAQmxErrorRoutingDestTermPXIStarXNotInSlot2 =(-200705);
-DAQmxErrorRoutingSrcTermPXIStarXNotInSlot2 = (-200704);
-DAQmxErrorRoutingSrcTermPXIStarInSlot16AndAbove =(-200703);
-DAQmxErrorRoutingDestTermPXIStarInSlot16AndAbove = (-200702);
-DAQmxErrorRoutingDestTermPXIStarInSlot2 =(-200701);
-DAQmxErrorRoutingSrcTermPXIStarInSlot2 = (-200700);
-DAQmxErrorRoutingDestTermPXIChassisNotIdentified = (-200699);
-DAQmxErrorRoutingSrcTermPXIChassisNotIdentified =(-200698);
-DAQmxErrorFailedToAcquireCalData = (-200697);
-DAQmxErrorBridgeOffsetNullingCalNotSupported = (-200696);
-DAQmxErrorAIMaxNotSpecified =(-200695);
-DAQmxErrorAIMinNotSpecified =(-200694);
-DAQmxErrorOddTotalBufferSizeToWrite =(-200693);
-DAQmxErrorOddTotalNumSampsToWrite =(-200692);
-DAQmxErrorBufferWithWaitMode = (-200691);
-DAQmxErrorBufferWithHWTimedSinglePointSampMode = (-200690);
-DAQmxErrorCOWritePulseLowTicksNotSupported = (-200689);
-DAQmxErrorCOWritePulseHighTicksNotSupported =(-200688);
-DAQmxErrorCOWritePulseLowTimeOutOfRange =(-200687);
-DAQmxErrorCOWritePulseHighTimeOutOfRange = (-200686);
-DAQmxErrorCOWriteFreqOutOfRange =(-200685);
-DAQmxErrorCOWriteDutyCycleOutOfRange = (-200684);
-DAQmxErrorInvalidInstallation =(-200683);
-DAQmxErrorRefTrigMasterSessionUnavailable =(-200682);
-DAQmxErrorRouteFailedBecauseWatchdogExpired =(-200681);
-DAQmxErrorDeviceShutDownDueToHighTemp =(-200680);
-DAQmxErrorNoMemMapWhenHWTimedSinglePoint = (-200679);
-DAQmxErrorWriteFailedBecauseWatchdogExpired =(-200678);
-DAQmxErrorDifftInternalAIInputSrcs = (-200677);
-DAQmxErrorDifftAIInputSrcInOneChanGroup =(-200676);
-DAQmxErrorInternalAIInputSrcInMultChanGroups = (-200675);
-DAQmxErrorSwitchOpFailedDueToPrevError = (-200674);
-DAQmxErrorWroteMultiSampsUsingSingleSampWrite =(-200673);
-DAQmxErrorMismatchedInputArraySizes =(-200672);
-DAQmxErrorCantExceedRelayDriveLimit =(-200671);
-DAQmxErrorDACRngLowNotEqualToMinusRefVal = (-200670);
-DAQmxErrorCantAllowConnectDACToGnd = (-200669);
-DAQmxErrorWatchdogTimeoutOutOfRangeAndNotSpecialVal =(-200668);
-DAQmxErrorNoWatchdogOutputOnPortReservedForInput = (-200667);
-DAQmxErrorNoInputOnPortCfgdForWatchdogOutput = (-200666);
-DAQmxErrorWatchdogExpirationStateNotEqualForLinesInPort =(-200665);
-DAQmxErrorCannotPerformOpWhenTaskNotReserved = (-200664);
-DAQmxErrorPowerupStateNotSupported = (-200663);
-DAQmxErrorWatchdogTimerNotSupported =(-200662);
-DAQmxErrorOpNotSupportedWhenRefClkSrcNone =(-200661);
-DAQmxErrorSampClkRateUnavailable = (-200660);
-DAQmxErrorPrptyGetSpecdSingleActiveChanFailedDueToDifftVals =(-200659);
-DAQmxErrorPrptyGetImpliedActiveChanFailedDueToDifftVals =(-200658);
-DAQmxErrorPrptyGetSpecdActiveChanFailedDueToDifftVals =(-200657);
-DAQmxErrorNoRegenWhenUsingBrdMem = (-200656);
-DAQmxErrorNonbufferedReadMoreThanSampsPerChan =(-200655);
-DAQmxErrorWatchdogExpirationTristateNotSpecdForEntirePort =(-200654);
-DAQmxErrorPowerupTristateNotSpecdForEntirePort = (-200653);
-DAQmxErrorPowerupStateNotSpecdForEntirePort =(-200652);
-DAQmxErrorCantSetWatchdogExpirationOnDigInChan = (-200651);
-DAQmxErrorCantSetPowerupStateOnDigInChan = (-200650);
-DAQmxErrorPhysChanNotInTask =(-200649);
-DAQmxErrorPhysChanDevNotInTask = (-200648);
-DAQmxErrorDigInputNotSupported = (-200647);
-DAQmxErrorDigFilterIntervalNotEqualForLines =(-200646);
-DAQmxErrorDigFilterIntervalAlreadyCfgd = (-200645);
-DAQmxErrorCantResetExpiredWatchdog = (-200644);
-DAQmxErrorActiveChanTooManyLinesSpecdWhenGettingPrpty =(-200643);
-DAQmxErrorActiveChanNotSpecdWhenGetting1LinePrpty =(-200642);
-DAQmxErrorDigPrptyCannotBeSetPerLine = (-200641);
-DAQmxErrorSendAdvCmpltAfterWaitForTrigInScanlist = (-200640);
-DAQmxErrorDisconnectionRequiredInScanlist =(-200639);
-DAQmxErrorTwoWaitForTrigsAfterConnectionInScanlist = (-200638);
-DAQmxErrorActionSeparatorRequiredAfterBreakingConnectionInScanlist = (-200637);
-DAQmxErrorConnectionInScanlistMustWaitForTrig =(-200636);
-DAQmxErrorActionNotSupportedTaskNotWatchdog =(-200635);
-DAQmxErrorWfmNameSameAsScriptName =(-200634);
-DAQmxErrorScriptNameSameAsWfmName =(-200633);
-DAQmxErrorDSFStopClock = (-200632);
-DAQmxErrorDSFReadyForStartClock =(-200631);
-DAQmxErrorWriteOffsetNotMultOfIncr = (-200630);
-DAQmxErrorDifferentPrptyValsNotSupportedOnDev =(-200629);
-DAQmxErrorRefAndPauseTrigConfigured =(-200628);
-DAQmxErrorFailedToEnableHighSpeedInputClock =(-200627);
-DAQmxErrorEmptyPhysChanInPowerUpStatesArray =(-200626);
-DAQmxErrorActivePhysChanTooManyLinesSpecdWhenGettingPrpty =(-200625);
-DAQmxErrorActivePhysChanNotSpecdWhenGetting1LinePrpty =(-200624);
-DAQmxErrorPXIDevTempCausedShutDown = (-200623);
-DAQmxErrorInvalidNumSampsToWrite = (-200622);
-DAQmxErrorOutputFIFOUnderflow2 = (-200621);
-DAQmxErrorRepeatedAIPhysicalChan = (-200620);
-DAQmxErrorMultScanOpsInOneChassis =(-200619);
-DAQmxErrorInvalidAIChanOrder = (-200618);
-DAQmxErrorReversePowerProtectionActivated =(-200617);
-DAQmxErrorInvalidAsynOpHandle =(-200616);
-DAQmxErrorFailedToEnableHighSpeedOutput =(-200615);
-DAQmxErrorCannotReadPastEndOfRecord =(-200614);
-DAQmxErrorAcqStoppedToPreventInputBufferOverwriteOneDataXferMech = (-200613);
-DAQmxErrorZeroBasedChanIndexInvalid =(-200612);
-DAQmxErrorNoChansOfGivenTypeInTask = (-200611);
-DAQmxErrorSampClkSrcInvalidForOutputValidForInput =(-200610);
-DAQmxErrorOutputBufSizeTooSmallToStartGen =(-200609);
-DAQmxErrorInputBufSizeTooSmallToStartAcq = (-200608);
-DAQmxErrorExportTwoSignalsOnSameTerminal = (-200607);
-DAQmxErrorChanIndexInvalid = (-200606);
-DAQmxErrorRangeSyntaxNumberTooBig =(-200605);
-DAQmxErrorNULLPtr =(-200604);
-DAQmxErrorScaledMinEqualMax =(-200603);
-DAQmxErrorPreScaledMinEqualMax = (-200602);
-DAQmxErrorPropertyNotSupportedForScaleType = (-200601);
-DAQmxErrorChannelNameGenerationNumberTooBig =(-200600);
-DAQmxErrorRepeatedNumberInScaledValues = (-200599);
-DAQmxErrorRepeatedNumberInPreScaledValues =(-200598);
-DAQmxErrorLinesAlreadyReservedForOutput =(-200597);
-DAQmxErrorSwitchOperationChansSpanMultipleDevsInList = (-200596);
-DAQmxErrorInvalidIDInListAtBeginningOfSwitchOperation =(-200595);
-DAQmxErrorMStudioInvalidPolyDirection =(-200594);
-DAQmxErrorMStudioPropertyGetWhileTaskNotVerified = (-200593);
-DAQmxErrorRangeWithTooManyObjects =(-200592);
-DAQmxErrorCppDotNetAPINegativeBufferSize = (-200591);
-DAQmxErrorCppCantRemoveInvalidEventHandler = (-200590);
-DAQmxErrorCppCantRemoveEventHandlerTwice = (-200589);
-DAQmxErrorCppCantRemoveOtherObjectsEventHandler =(-200588);
-DAQmxErrorDigLinesReservedOrUnavailable =(-200587);
-DAQmxErrorDSFFailedToResetStream = (-200586);
-DAQmxErrorDSFReadyForOutputNotAsserted = (-200585);
-DAQmxErrorSampToWritePerChanNotMultipleOfIncr =(-200584);
-DAQmxErrorAOPropertiesCauseVoltageBelowMin = (-200583);
-DAQmxErrorAOPropertiesCauseVoltageOverMax =(-200582);
-DAQmxErrorPropertyNotSupportedWhenRefClkSrcNone =(-200581);
-DAQmxErrorAIMaxTooSmall =(-200580);
-DAQmxErrorAIMaxTooLarge =(-200579);
-DAQmxErrorAIMinTooSmall =(-200578);
-DAQmxErrorAIMinTooLarge =(-200577);
-DAQmxErrorBuiltInCJCSrcNotSupported =(-200576);
-DAQmxErrorTooManyPostTrigSampsPerChan =(-200575);
-DAQmxErrorTrigLineNotFoundSingleDevRoute = (-200574);
-DAQmxErrorDifferentInternalAIInputSources =(-200573);
-DAQmxErrorDifferentAIInputSrcInOneChanGroup =(-200572);
-DAQmxErrorInternalAIInputSrcInMultipleChanGroups = (-200571);
-DAQmxErrorCAPIChanIndexInvalid = (-200570);
-DAQmxErrorCollectionDoesNotMatchChanType = (-200569);
-DAQmxErrorOutputCantStartChangedRegenerationMode = (-200568);
-DAQmxErrorOutputCantStartChangedBufferSize = (-200567);
-DAQmxErrorChanSizeTooBigForU32PortWrite =(-200566);
-DAQmxErrorChanSizeTooBigForU8PortWrite = (-200565);
-DAQmxErrorChanSizeTooBigForU32PortRead = (-200564);
-DAQmxErrorChanSizeTooBigForU8PortRead =(-200563);
-DAQmxErrorInvalidDigDataWrite =(-200562);
-DAQmxErrorInvalidAODataWrite = (-200561);
-DAQmxErrorWaitUntilDoneDoesNotIndicateDone = (-200560);
-DAQmxErrorMultiChanTypesInTask = (-200559);
-DAQmxErrorMultiDevsInTask =(-200558);
-DAQmxErrorCannotSetPropertyWhenTaskRunning = (-200557);
-DAQmxErrorCannotGetPropertyWhenTaskNotCommittedOrRunning = (-200556);
-DAQmxErrorLeadingUnderscoreInString =(-200555);
-DAQmxErrorTrailingSpaceInString =(-200554);
-DAQmxErrorLeadingSpaceInString = (-200553);
-DAQmxErrorInvalidCharInString =(-200552);
-DAQmxErrorDLLBecameUnlocked =(-200551);
-DAQmxErrorDLLLock =(-200550);
-DAQmxErrorSelfCalConstsInvalid = (-200549);
-DAQmxErrorInvalidTrigCouplingExceptForExtTrigChan =(-200548);
-DAQmxErrorWriteFailsBufferSizeAutoConfigured = (-200547);
-DAQmxErrorExtCalAdjustExtRefVoltageFailed =(-200546);
-DAQmxErrorSelfCalFailedExtNoiseOrRefVoltageOutOfCal =(-200545);
-DAQmxErrorExtCalTemperatureNotDAQmx =(-200544);
-DAQmxErrorExtCalDateTimeNotDAQmx = (-200543);
-DAQmxErrorSelfCalTemperatureNotDAQmx = (-200542);
-DAQmxErrorSelfCalDateTimeNotDAQmx =(-200541);
-DAQmxErrorDACRefValNotSet =(-200540);
-DAQmxErrorAnalogMultiSampWriteNotSupported = (-200539);
-DAQmxErrorInvalidActionInControlTask = (-200538);
-DAQmxErrorPolyCoeffsInconsistent = (-200537);
-DAQmxErrorSensorValTooLow =(-200536);
-DAQmxErrorSensorValTooHigh = (-200535);
-DAQmxErrorWaveformNameTooLong =(-200534);
-DAQmxErrorIdentifierTooLongInScript =(-200533);
-DAQmxErrorUnexpectedIDFollowingSwitchChanName =(-200532);
-DAQmxErrorRelayNameNotSpecifiedInList =(-200531);
-DAQmxErrorUnexpectedIDFollowingRelayNameInList = (-200530);
-DAQmxErrorUnexpectedIDFollowingSwitchOpInList =(-200529);
-DAQmxErrorInvalidLineGrouping =(-200528);
-DAQmxErrorCtrMinMax =(-200527);
-DAQmxErrorWriteChanTypeMismatch =(-200526);
-DAQmxErrorReadChanTypeMismatch = (-200525);
-DAQmxErrorWriteNumChansMismatch =(-200524);
-DAQmxErrorOneChanReadForMultiChanTask =(-200523);
-DAQmxErrorCannotSelfCalDuringExtCal =(-200522);
-DAQmxErrorMeasCalAdjustOscillatorPhaseDAC =(-200521);
-DAQmxErrorInvalidCalConstCalADCAdjustment =(-200520);
-DAQmxErrorInvalidCalConstOscillatorFreqDACValue =(-200519);
-DAQmxErrorInvalidCalConstOscillatorPhaseDACValue = (-200518);
-DAQmxErrorInvalidCalConstOffsetDACValue =(-200517);
-DAQmxErrorInvalidCalConstGainDACValue =(-200516);
-DAQmxErrorInvalidNumCalADCReadsToAverage = (-200515);
-DAQmxErrorInvalidCfgCalAdjustDirectPathOutputImpedance = (-200514);
-DAQmxErrorInvalidCfgCalAdjustMainPathOutputImpedance = (-200513);
-DAQmxErrorInvalidCfgCalAdjustMainPathPostAmpGainAndOffset =(-200512);
-DAQmxErrorInvalidCfgCalAdjustMainPathPreAmpGain =(-200511);
-DAQmxErrorInvalidCfgCalAdjustMainPreAmpOffset =(-200510);
-DAQmxErrorMeasCalAdjustCalADC =(-200509);
-DAQmxErrorMeasCalAdjustOscillatorFrequency = (-200508);
-DAQmxErrorMeasCalAdjustDirectPathOutputImpedance = (-200507);
-DAQmxErrorMeasCalAdjustMainPathOutputImpedance = (-200506);
-DAQmxErrorMeasCalAdjustDirectPathGain =(-200505);
-DAQmxErrorMeasCalAdjustMainPathPostAmpGainAndOffset =(-200504);
-DAQmxErrorMeasCalAdjustMainPathPreAmpGain =(-200503);
-DAQmxErrorMeasCalAdjustMainPathPreAmpOffset =(-200502);
-DAQmxErrorInvalidDateTimeInEEPROM =(-200501);
-DAQmxErrorUnableToLocateErrorResources = (-200500);
-DAQmxErrorDotNetAPINotUnsigned32BitNumber =(-200499);
-DAQmxErrorInvalidRangeOfObjectsSyntaxInString =(-200498);
-DAQmxErrorAttemptToEnableLineNotPreviouslyDisabled = (-200497);
-DAQmxErrorInvalidCharInPattern = (-200496);
-DAQmxErrorIntermediateBufferFull = (-200495);
-DAQmxErrorLoadTaskFailsBecauseNoTimingOnDev =(-200494);
-DAQmxErrorCAPIReservedParamNotNULLNorEmpty = (-200493);
-DAQmxErrorCAPIReservedParamNotNULL = (-200492);
-DAQmxErrorCAPIReservedParamNotZero = (-200491);
-DAQmxErrorSampleValueOutOfRange =(-200490);
-DAQmxErrorChanAlreadyInTask =(-200489);
-DAQmxErrorVirtualChanDoesNotExist =(-200488);
-DAQmxErrorChanNotInTask =(-200486);
-DAQmxErrorTaskNotInDataNeighborhood =(-200485);
-DAQmxErrorCantSaveTaskWithoutReplace = (-200484);
-DAQmxErrorCantSaveChanWithoutReplace = (-200483);
-DAQmxErrorDevNotInTask = (-200482);
-DAQmxErrorDevAlreadyInTask = (-200481);
-DAQmxErrorCanNotPerformOpWhileTaskRunning =(-200479);
-DAQmxErrorCanNotPerformOpWhenNoChansInTask = (-200478);
-DAQmxErrorCanNotPerformOpWhenNoDevInTask = (-200477);
-DAQmxErrorCannotPerformOpWhenTaskNotRunning =(-200475);
-DAQmxErrorOperationTimedOut =(-200474);
-DAQmxErrorCannotReadWhenAutoStartFalseAndTaskNotRunningOrCommitted = (-200473);
-DAQmxErrorCannotWriteWhenAutoStartFalseAndTaskNotRunningOrCommitted =(-200472);
-DAQmxErrorTaskVersionNew = (-200470);
-DAQmxErrorChanVersionNew = (-200469);
-DAQmxErrorEmptyString =(-200467);
-DAQmxErrorChannelSizeTooBigForPortReadType = (-200466);
-DAQmxErrorChannelSizeTooBigForPortWriteType =(-200465);
-DAQmxErrorExpectedNumberOfChannelsVerificationFailed = (-200464);
-DAQmxErrorNumLinesMismatchInReadOrWrite =(-200463);
-DAQmxErrorOutputBufferEmpty =(-200462);
-DAQmxErrorInvalidChanName =(-200461);
-DAQmxErrorReadNoInputChansInTask = (-200460);
-DAQmxErrorWriteNoOutputChansInTask = (-200459);
-DAQmxErrorPropertyNotSupportedNotInputTask = (-200457);
-DAQmxErrorPropertyNotSupportedNotOutputTask =(-200456);
-DAQmxErrorGetPropertyNotInputBufferedTask =(-200455);
-DAQmxErrorGetPropertyNotOutputBufferedTask = (-200454);
-DAQmxErrorInvalidTimeoutVal =(-200453);
-DAQmxErrorAttributeNotSupportedInTaskContext = (-200452);
-DAQmxErrorAttributeNotQueryableUnlessTaskIsCommitted = (-200451);
-DAQmxErrorAttributeNotSettableWhenTaskIsRunning =(-200450);
-DAQmxErrorDACRngLowNotMinusRefValNorZero = (-200449);
-DAQmxErrorDACRngHighNotEqualRefVal = (-200448);
-DAQmxErrorUnitsNotFromCustomScale =(-200447);
-DAQmxErrorInvalidVoltageReadingDuringExtCal =(-200446);
-DAQmxErrorCalFunctionNotSupported =(-200445);
-DAQmxErrorInvalidPhysicalChanForCal =(-200444);
-DAQmxErrorExtCalNotComplete =(-200443);
-DAQmxErrorCantSyncToExtStimulusFreqDuringCal = (-200442);
-DAQmxErrorUnableToDetectExtStimulusFreqDuringCal = (-200441);
-DAQmxErrorInvalidCloseAction = (-200440);
-DAQmxErrorExtCalFunctionOutsideExtCalSession = (-200439);
-DAQmxErrorInvalidCalArea = (-200438);
-DAQmxErrorExtCalConstsInvalid =(-200437);
-DAQmxErrorStartTrigDelayWithExtSampClk = (-200436);
-DAQmxErrorDelayFromSampClkWithExtConv =(-200435);
-DAQmxErrorFewerThan2PreScaledVals =(-200434);
-DAQmxErrorFewerThan2ScaledValues = (-200433);
-DAQmxErrorPhysChanOutputType = (-200432);
-DAQmxErrorPhysChanMeasType = (-200431);
-DAQmxErrorInvalidPhysChanType =(-200430);
-DAQmxErrorLabVIEWEmptyTaskOrChans =(-200429);
-DAQmxErrorLabVIEWInvalidTaskOrChans =(-200428);
-DAQmxErrorInvalidRefClkRate =(-200427);
-DAQmxErrorInvalidExtTrigImpedance =(-200426);
-DAQmxErrorHystTrigLevelAIMax = (-200425);
-DAQmxErrorLineNumIncompatibleWithVideoSignalFormat = (-200424);
-DAQmxErrorTrigWindowAIMinAIMaxCombo =(-200423);
-DAQmxErrorTrigAIMinAIMax = (-200422);
-DAQmxErrorHystTrigLevelAIMin = (-200421);
-DAQmxErrorInvalidSampRateConsiderRIS = (-200420);
-DAQmxErrorInvalidReadPosDuringRIS =(-200419);
-DAQmxErrorImmedTrigDuringRISMode = (-200418);
-DAQmxErrorTDCNotEnabledDuringRISMode = (-200417);
-DAQmxErrorMultiRecWithRIS =(-200416);
-DAQmxErrorInvalidRefClkSrc = (-200415);
-DAQmxErrorInvalidSampClkSrc =(-200414);
-DAQmxErrorInsufficientOnBoardMemForNumRecsAndSamps = (-200413);
-DAQmxErrorInvalidAIAttenuation = (-200412);
-DAQmxErrorACCouplingNotAllowedWith50OhmImpedance = (-200411);
-DAQmxErrorInvalidRecordNum = (-200410);
-DAQmxErrorZeroSlopeLinearScale = (-200409);
-DAQmxErrorZeroReversePolyScaleCoeffs = (-200408);
-DAQmxErrorZeroForwardPolyScaleCoeffs = (-200407);
-DAQmxErrorNoReversePolyScaleCoeffs = (-200406);
-DAQmxErrorNoForwardPolyScaleCoeffs = (-200405);
-DAQmxErrorNoPolyScaleCoeffs =(-200404);
-DAQmxErrorReversePolyOrderLessThanNumPtsToCompute =(-200403);
-DAQmxErrorReversePolyOrderNotPositive =(-200402);
-DAQmxErrorNumPtsToComputeNotPositive = (-200401);
-DAQmxErrorWaveformLengthNotMultipleOfIncr =(-200400);
-DAQmxErrorCAPINoExtendedErrorInfoAvailable = (-200399);
-DAQmxErrorCVIFunctionNotFoundInDAQmxDLL =(-200398);
-DAQmxErrorCVIFailedToLoadDAQmxDLL =(-200397);
-DAQmxErrorNoCommonTrigLineForImmedRoute =(-200396);
-DAQmxErrorNoCommonTrigLineForTaskRoute = (-200395);
-DAQmxErrorF64PrptyValNotUnsignedInt =(-200394);
-DAQmxErrorRegisterNotWritable =(-200393);
-DAQmxErrorInvalidOutputVoltageAtSampClkRate =(-200392);
-DAQmxErrorStrobePhaseShiftDCMBecameUnlocked =(-200391);
-DAQmxErrorDrivePhaseShiftDCMBecameUnlocked = (-200390);
-DAQmxErrorClkOutPhaseShiftDCMBecameUnlocked =(-200389);
-DAQmxErrorOutputBoardClkDCMBecameUnlocked =(-200388);
-DAQmxErrorInputBoardClkDCMBecameUnlocked = (-200387);
-DAQmxErrorInternalClkDCMBecameUnlocked = (-200386);
-DAQmxErrorDCMLock =(-200385);
-DAQmxErrorDataLineReservedForDynamicOutput = (-200384);
-DAQmxErrorInvalidRefClkSrcGivenSampClkSrc =(-200383);
-DAQmxErrorNoPatternMatcherAvailable =(-200382);
-DAQmxErrorInvalidDelaySampRateBelowPhaseShiftDCMThresh = (-200381);
-DAQmxErrorStrainGageCalibration =(-200380);
-DAQmxErrorInvalidExtClockFreqAndDivCombo = (-200379);
-DAQmxErrorCustomScaleDoesNotExist =(-200378);
-DAQmxErrorOnlyFrontEndChanOpsDuringScan =(-200377);
-DAQmxErrorInvalidOptionForDigitalPortChannel = (-200376);
-DAQmxErrorUnsupportedSignalTypeExportSignal =(-200375);
-DAQmxErrorInvalidSignalTypeExportSignal =(-200374);
-DAQmxErrorUnsupportedTrigTypeSendsSWTrig = (-200373);
-DAQmxErrorInvalidTrigTypeSendsSWTrig = (-200372);
-DAQmxErrorRepeatedPhysicalChan = (-200371);
-DAQmxErrorResourcesInUseForRouteInTask = (-200370);
-DAQmxErrorResourcesInUseForRoute = (-200369);
-DAQmxErrorRouteNotSupportedByHW =(-200368);
-DAQmxErrorResourcesInUseForExportSignalPolarity =(-200367);
-DAQmxErrorResourcesInUseForInversionInTask = (-200366);
-DAQmxErrorResourcesInUseForInversion = (-200365);
-DAQmxErrorExportSignalPolarityNotSupportedByHW = (-200364);
-DAQmxErrorInversionNotSupportedByHW =(-200363);
-DAQmxErrorOverloadedChansExistNotRead =(-200362);
-DAQmxErrorInputFIFOOverflow2 = (-200361);
-DAQmxErrorCJCChanNotSpecd =(-200360);
-DAQmxErrorCtrExportSignalNotPossible = (-200359);
-DAQmxErrorRefTrigWhenContinuous =(-200358);
-DAQmxErrorIncompatibleSensorOutputAndDeviceInputRanges = (-200357);
-DAQmxErrorCustomScaleNameUsed =(-200356);
-DAQmxErrorPropertyValNotSupportedByHW =(-200355);
-DAQmxErrorPropertyValNotValidTermName =(-200354);
-DAQmxErrorResourcesInUseForProperty =(-200353);
-DAQmxErrorCJCChanAlreadyUsed = (-200352);
-DAQmxErrorForwardPolynomialCoefNotSpecd =(-200351);
-DAQmxErrorTableScaleNumPreScaledAndScaledValsNotEqual =(-200350);
-DAQmxErrorTableScalePreScaledValsNotSpecd =(-200349);
-DAQmxErrorTableScaleScaledValsNotSpecd = (-200348);
-DAQmxErrorIntermediateBufferSizeNotMultipleOfIncr =(-200347);
-DAQmxErrorEventPulseWidthOutOfRange =(-200346);
-DAQmxErrorEventDelayOutOfRange = (-200345);
-DAQmxErrorSampPerChanNotMultipleOfIncr = (-200344);
-DAQmxErrorCannotCalculateNumSampsTaskNotStarted =(-200343);
-DAQmxErrorScriptNotInMem = (-200342);
-DAQmxErrorOnboardMemTooSmall = (-200341);
-DAQmxErrorReadAllAvailableDataWithoutBuffer =(-200340);
-DAQmxErrorPulseActiveAtStart = (-200339);
-DAQmxErrorCalTempNotSupported =(-200338);
-DAQmxErrorDelayFromSampClkTooLong =(-200337);
-DAQmxErrorDelayFromSampClkTooShort = (-200336);
-DAQmxErrorAIConvRateTooHigh =(-200335);
-DAQmxErrorDelayFromStartTrigTooLong =(-200334);
-DAQmxErrorDelayFromStartTrigTooShort = (-200333);
-DAQmxErrorSampRateTooHigh =(-200332);
-DAQmxErrorSampRateTooLow = (-200331);
-DAQmxErrorPFI0UsedForAnalogAndDigitalSrc = (-200330);
-DAQmxErrorPrimingCfgFIFO = (-200329);
-DAQmxErrorCannotOpenTopologyCfgFile =(-200328);
-DAQmxErrorInvalidDTInsideWfmDataType = (-200327);
-DAQmxErrorRouteSrcAndDestSame =(-200326);
-DAQmxErrorReversePolynomialCoefNotSpecd =(-200325);
-DAQmxErrorDevAbsentOrUnavailable = (-200324);
-DAQmxErrorNoAdvTrigForMultiDevScan = (-200323);
-DAQmxErrorInterruptsInsufficientDataXferMech = (-200322);
-DAQmxErrorInvalidAttentuationBasedOnMinMax = (-200321);
-DAQmxErrorCabledModuleCannotRouteSSH = (-200320);
-DAQmxErrorCabledModuleCannotRouteConvClk = (-200319);
-DAQmxErrorInvalidExcitValForScaling =(-200318);
-DAQmxErrorNoDevMemForScript =(-200317);
-DAQmxErrorScriptDataUnderflow =(-200316);
-DAQmxErrorNoDevMemForWaveform =(-200315);
-DAQmxErrorStreamDCMBecameUnlocked =(-200314);
-DAQmxErrorStreamDCMLock =(-200313);
-DAQmxErrorWaveformNotInMem = (-200312);
-DAQmxErrorWaveformWriteOutOfBounds = (-200311);
-DAQmxErrorWaveformPreviouslyAllocated =(-200310);
-DAQmxErrorSampClkTbMasterTbDivNotAppropriateForSampTbSrc = (-200309);
-DAQmxErrorSampTbRateSampTbSrcMismatch =(-200308);
-DAQmxErrorMasterTbRateMasterTbSrcMismatch =(-200307);
-DAQmxErrorSampsPerChanTooBig = (-200306);
-DAQmxErrorFinitePulseTrainNotPossible =(-200305);
-DAQmxErrorExtMasterTimebaseRateNotSpecified =(-200304);
-DAQmxErrorExtSampClkSrcNotSpecified =(-200303);
-DAQmxErrorInputSignalSlowerThanMeasTime =(-200302);
-DAQmxErrorCannotUpdatePulseGenProperty = (-200301);
-DAQmxErrorInvalidTimingType =(-200300);
-DAQmxErrorPropertyUnavailWhenUsingOnboardMemory =(-200297);
-DAQmxErrorCannotWriteAfterStartWithOnboardMemory = (-200295);
-DAQmxErrorNotEnoughSampsWrittenForInitialXferRqstCondition = (-200294);
-DAQmxErrorNoMoreSpace =(-200293);
-DAQmxErrorSamplesCanNotYetBeWritten =(-200292);
-DAQmxErrorGenStoppedToPreventIntermediateBufferRegenOfOldSamples = (-200291);
-DAQmxErrorGenStoppedToPreventRegenOfOldSamples = (-200290);
-DAQmxErrorSamplesNoLongerWriteable = (-200289);
-DAQmxErrorSamplesWillNeverBeGenerated =(-200288);
-DAQmxErrorNegativeWriteSampleNumber =(-200287);
-DAQmxErrorNoAcqStarted = (-200286);
-DAQmxErrorSamplesNotYetAvailable = (-200284);
-DAQmxErrorAcqStoppedToPreventIntermediateBufferOverflow =(-200283);
-DAQmxErrorNoRefTrigConfigured =(-200282);
-DAQmxErrorCannotReadRelativeToRefTrigUntilDone = (-200281);
-DAQmxErrorSamplesNoLongerAvailable = (-200279);
-DAQmxErrorSamplesWillNeverBeAvailable =(-200278);
-DAQmxErrorNegativeReadSampleNumber = (-200277);
-DAQmxErrorExternalSampClkAndRefClkThruSameTerm = (-200276);
-DAQmxErrorExtSampClkRateTooLowForClkIn = (-200275);
-DAQmxErrorExtSampClkRateTooHighForBackplane =(-200274);
-DAQmxErrorSampClkRateAndDivCombo = (-200273);
-DAQmxErrorSampClkRateTooLowForDivDown =(-200272);
-DAQmxErrorProductOfAOMinAndGainTooSmall =(-200271);
-DAQmxErrorInterpolationRateNotPossible = (-200270);
-DAQmxErrorOffsetTooLarge = (-200269);
-DAQmxErrorOffsetTooSmall = (-200268);
-DAQmxErrorProductOfAOMaxAndGainTooLarge =(-200267);
-DAQmxErrorMinAndMaxNotSymmetric =(-200266);
-DAQmxErrorInvalidAnalogTrigSrc = (-200265);
-DAQmxErrorTooManyChansForAnalogRefTrig = (-200264);
-DAQmxErrorTooManyChansForAnalogPauseTrig = (-200263);
-DAQmxErrorTrigWhenOnDemandSampTiming = (-200262);
-DAQmxErrorInconsistentAnalogTrigSettings = (-200261);
-DAQmxErrorMemMapDataXferModeSampTimingCombo =(-200260);
-DAQmxErrorInvalidJumperedAttr =(-200259);
-DAQmxErrorInvalidGainBasedOnMinMax = (-200258);
-DAQmxErrorInconsistentExcit =(-200257);
-DAQmxErrorTopologyNotSupportedByCfgTermBlock = (-200256);
-DAQmxErrorBuiltInTempSensorNotSupported =(-200255);
-DAQmxErrorInvalidTerm =(-200254);
-DAQmxErrorCannotTristateTerm = (-200253);
-DAQmxErrorCannotTristateBusyTerm = (-200252);
-DAQmxErrorNoDMAChansAvailable =(-200251);
-DAQmxErrorInvalidWaveformLengthWithinLoopInScript =(-200250);
-DAQmxErrorInvalidSubsetLengthWithinLoopInScript =(-200249);
-DAQmxErrorMarkerPosInvalidForLoopInScript =(-200248);
-DAQmxErrorIntegerExpectedInScript =(-200247);
-DAQmxErrorPLLBecameUnlocked =(-200246);
-DAQmxErrorPLLLock =(-200245);
-DAQmxErrorDDCClkOutDCMBecameUnlocked = (-200244);
-DAQmxErrorDDCClkOutDCMLock = (-200243);
-DAQmxErrorClkDoublerDCMBecameUnlocked =(-200242);
-DAQmxErrorClkDoublerDCMLock =(-200241);
-DAQmxErrorSampClkDCMBecameUnlocked = (-200240);
-DAQmxErrorSampClkDCMLock = (-200239);
-DAQmxErrorSampClkTimebaseDCMBecameUnlocked = (-200238);
-DAQmxErrorSampClkTimebaseDCMLock = (-200237);
-DAQmxErrorAttrCannotBeReset =(-200236);
-DAQmxErrorExplanationNotFound =(-200235);
-DAQmxErrorWriteBufferTooSmall =(-200234);
-DAQmxErrorSpecifiedAttrNotValid =(-200233);
-DAQmxErrorAttrCannotBeRead = (-200232);
-DAQmxErrorAttrCannotBeSet =(-200231);
-DAQmxErrorNULLPtrForC_Api =(-200230);
-DAQmxErrorReadBufferTooSmall = (-200229);
-DAQmxErrorBufferTooSmallForString =(-200228);
-DAQmxErrorNoAvailTrigLinesOnDevice = (-200227);
-DAQmxErrorTrigBusLineNotAvail =(-200226);
-DAQmxErrorCouldNotReserveRequestedTrigLine = (-200225);
-DAQmxErrorTrigLineNotFound = (-200224);
-DAQmxErrorSCXI1126ThreshHystCombination =(-200223);
-DAQmxErrorAcqStoppedToPreventInputBufferOverwrite =(-200222);
-DAQmxErrorTimeoutExceeded =(-200221);
-DAQmxErrorInvalidDeviceID =(-200220);
-DAQmxErrorInvalidAOChanOrder = (-200219);
-DAQmxErrorSampleTimingTypeAndDataXferMode =(-200218);
-DAQmxErrorBufferWithOnDemandSampTiming = (-200217);
-DAQmxErrorBufferAndDataXferMode =(-200216);
-DAQmxErrorMemMapAndBuffer =(-200215);
-DAQmxErrorNoAnalogTrigHW = (-200214);
-DAQmxErrorTooManyPretrigPlusMinPostTrigSamps = (-200213);
-DAQmxErrorInconsistentUnitsSpecified = (-200212);
-DAQmxErrorMultipleRelaysForSingleRelayOp = (-200211);
-DAQmxErrorMultipleDevIDsPerChassisSpecifiedInList =(-200210);
-DAQmxErrorDuplicateDevIDInList = (-200209);
-DAQmxErrorInvalidRangeStatementCharInList =(-200208);
-DAQmxErrorInvalidDeviceIDInList =(-200207);
-DAQmxErrorTriggerPolarityConflict =(-200206);
-DAQmxErrorCannotScanWithCurrentTopology =(-200205);
-DAQmxErrorUnexpectedIdentifierInFullySpecifiedPathInList = (-200204);
-DAQmxErrorSwitchCannotDriveMultipleTrigLines = (-200203);
-DAQmxErrorInvalidRelayName = (-200202);
-DAQmxErrorSwitchScanlistTooBig = (-200201);
-DAQmxErrorSwitchChanInUse =(-200200);
-DAQmxErrorSwitchNotResetBeforeScan = (-200199);
-DAQmxErrorInvalidTopology =(-200198);
-DAQmxErrorAttrNotSupported = (-200197);
-DAQmxErrorUnexpectedEndOfActionsInList = (-200196);
-DAQmxErrorPowerBudgetExceeded =(-200195);
-DAQmxErrorHWUnexpectedlyPoweredOffAndOn =(-200194);
-DAQmxErrorSwitchOperationNotSupported =(-200193);
-DAQmxErrorOnlyContinuousScanSupported =(-200192);
-DAQmxErrorSwitchDifferentTopologyWhenScanning =(-200191);
-DAQmxErrorDisconnectPathNotSameAsExistingPath =(-200190);
-DAQmxErrorConnectionNotPermittedOnChanReservedForRouting = (-200189);
-DAQmxErrorCannotConnectSrcChans =(-200188);
-DAQmxErrorCannotConnectChannelToItself = (-200187);
-DAQmxErrorChannelNotReservedForRouting = (-200186);
-DAQmxErrorCannotConnectChansDirectly = (-200185);
-DAQmxErrorChansAlreadyConnected =(-200184);
-DAQmxErrorChanDuplicatedInPath = (-200183);
-DAQmxErrorNoPathToDisconnect = (-200182);
-DAQmxErrorInvalidSwitchChan =(-200181);
-DAQmxErrorNoPathAvailableBetween2SwitchChans = (-200180);
-DAQmxErrorExplicitConnectionExists = (-200179);
-DAQmxErrorSwitchDifferentSettlingTimeWhenScanning =(-200178);
-DAQmxErrorOperationOnlyPermittedWhileScanning =(-200177);
-DAQmxErrorOperationNotPermittedWhileScanning = (-200176);
-DAQmxErrorHardwareNotResponding =(-200175);
-DAQmxErrorInvalidSampAndMasterTimebaseRateCombo =(-200173);
-DAQmxErrorNonZeroBufferSizeInProgIOXfer =(-200172);
-DAQmxErrorVirtualChanNameUsed =(-200171);
-DAQmxErrorPhysicalChanDoesNotExist = (-200170);
-DAQmxErrorMemMapOnlyForProgIOXfer =(-200169);
-DAQmxErrorTooManyChans = (-200168);
-DAQmxErrorCannotHaveCJTempWithOtherChans = (-200167);
-DAQmxErrorOutputBufferUnderwrite = (-200166);
-DAQmxErrorSensorInvalidCompletionResistance =(-200163);
-DAQmxErrorVoltageExcitIncompatibleWith2WireCfg = (-200162);
-DAQmxErrorIntExcitSrcNotAvailable =(-200161);
-DAQmxErrorCannotCreateChannelAfterTaskVerified = (-200160);
-DAQmxErrorLinesReservedForSCXIControl =(-200159);
-DAQmxErrorCouldNotReserveLinesForSCXIControl = (-200158);
-DAQmxErrorCalibrationFailed =(-200157);
-DAQmxErrorReferenceFrequencyInvalid =(-200156);
-DAQmxErrorReferenceResistanceInvalid = (-200155);
-DAQmxErrorReferenceCurrentInvalid =(-200154);
-DAQmxErrorReferenceVoltageInvalid =(-200153);
-DAQmxErrorEEPROMDataInvalid =(-200152);
-DAQmxErrorCabledModuleNotCapableOfRoutingAI =(-200151);
-DAQmxErrorChannelNotAvailableInParallelMode =(-200150);
-DAQmxErrorExternalTimebaseRateNotKnownForDelay = (-200149);
-DAQmxErrorFREQOUTCannotProduceDesiredFrequency = (-200148);
-DAQmxErrorMultipleCounterInputTask = (-200147);
-DAQmxErrorCounterStartPauseTriggerConflict = (-200146);
-DAQmxErrorCounterInputPauseTriggerAndSampleClockInvalid =(-200145);
-DAQmxErrorCounterOutputPauseTriggerInvalid = (-200144);
-DAQmxErrorCounterTimebaseRateNotSpecified =(-200143);
-DAQmxErrorCounterTimebaseRateNotFound =(-200142);
-DAQmxErrorCounterOverflow =(-200141);
-DAQmxErrorCounterNoTimebaseEdgesBetweenGates = (-200140);
-DAQmxErrorCounterMaxMinRangeFreq = (-200139);
-DAQmxErrorCounterMaxMinRangeTime = (-200138);
-DAQmxErrorSuitableTimebaseNotFoundTimeCombo =(-200137);
-DAQmxErrorSuitableTimebaseNotFoundFrequencyCombo = (-200136);
-DAQmxErrorInternalTimebaseSourceDivisorCombo = (-200135);
-DAQmxErrorInternalTimebaseSourceRateCombo =(-200134);
-DAQmxErrorInternalTimebaseRateDivisorSourceCombo = (-200133);
-DAQmxErrorExternalTimebaseRateNotknownForRate =(-200132);
-DAQmxErrorAnalogTrigChanNotFirstInScanList = (-200131);
-DAQmxErrorNoDivisorForExternalSignal = (-200130);
-DAQmxErrorAttributeInconsistentAcrossRepeatedPhysicalChannels =(-200128);
-DAQmxErrorCannotHandshakeWithPort0 = (-200127);
-DAQmxErrorControlLineConflictOnPortC = (-200126);
-DAQmxErrorLines4To7ConfiguredForOutput = (-200125);
-DAQmxErrorLines4To7ConfiguredForInput =(-200124);
-DAQmxErrorLines0To3ConfiguredForOutput = (-200123);
-DAQmxErrorLines0To3ConfiguredForInput =(-200122);
-DAQmxErrorPortConfiguredForOutput =(-200121);
-DAQmxErrorPortConfiguredForInput = (-200120);
-DAQmxErrorPortConfiguredForStaticDigitalOps =(-200119);
-DAQmxErrorPortReservedForHandshaking = (-200118);
-DAQmxErrorPortDoesNotSupportHandshakingDataIO =(-200117);
-DAQmxErrorCannotTristate8255OutputLines =(-200116);
-DAQmxErrorTemperatureOutOfRangeForCalibration =(-200113);
-DAQmxErrorCalibrationHandleInvalid = (-200112);
-DAQmxErrorPasswordRequired = (-200111);
-DAQmxErrorIncorrectPassword =(-200110);
-DAQmxErrorPasswordTooLong =(-200109);
-DAQmxErrorCalibrationSessionAlreadyOpen =(-200108);
-DAQmxErrorSCXIModuleIncorrect =(-200107);
-DAQmxErrorAttributeInconsistentAcrossChannelsOnDevice =(-200106);
-DAQmxErrorSCXI1122ResistanceChanNotSupportedForCfg = (-200105);
-DAQmxErrorBracketPairingMismatchInList = (-200104);
-DAQmxErrorInconsistentNumSamplesToWrite =(-200103);
-DAQmxErrorIncorrectDigitalPattern =(-200102);
-DAQmxErrorIncorrectNumChannelsToWrite =(-200101);
-DAQmxErrorIncorrectReadFunction =(-200100);
-DAQmxErrorPhysicalChannelNotSpecified =(-200099);
-DAQmxErrorMoreThanOneTerminal =(-200098);
-DAQmxErrorMoreThanOneActiveChannelSpecified =(-200097);
-DAQmxErrorInvalidNumberSamplesToRead = (-200096);
-DAQmxErrorAnalogWaveformExpected = (-200095);
-DAQmxErrorDigitalWaveformExpected =(-200094);
-DAQmxErrorActiveChannelNotSpecified =(-200093);
-DAQmxErrorFunctionNotSupportedForDeviceTasks = (-200092);
-DAQmxErrorFunctionNotInLibrary = (-200091);
-DAQmxErrorLibraryNotPresent =(-200090);
-DAQmxErrorDuplicateTask =(-200089);
-DAQmxErrorInvalidTask =(-200088);
-DAQmxErrorInvalidChannel = (-200087);
-DAQmxErrorInvalidSyntaxForPhysicalChannelRange = (-200086);
-DAQmxErrorMinNotLessThanMax =(-200082);
-DAQmxErrorSampleRateNumChansConvertPeriodCombo = (-200081);
-DAQmxErrorAODuringCounter1DMAConflict =(-200079);
-DAQmxErrorAIDuringCounter0DMAConflict =(-200078);
-DAQmxErrorInvalidAttributeValue =(-200077);
-DAQmxErrorSuppliedCurrentDataOutsideSpecifiedRange = (-200076);
-DAQmxErrorSuppliedVoltageDataOutsideSpecifiedRange = (-200075);
-DAQmxErrorCannotStoreCalConst =(-200074);
-DAQmxErrorSCXIModuleNotFound = (-200073);
-DAQmxErrorDuplicatePhysicalChansNotSupported = (-200072);
-DAQmxErrorTooManyPhysicalChansInList = (-200071);
-DAQmxErrorInvalidAdvanceEventTriggerType = (-200070);
-DAQmxErrorDeviceIsNotAValidSwitch =(-200069);
-DAQmxErrorDeviceDoesNotSupportScanning = (-200068);
-DAQmxErrorScanListCannotBeTimed =(-200067);
-DAQmxErrorConnectOperatorInvalidAtPointInList =(-200066);
-DAQmxErrorUnexpectedSwitchActionInList = (-200065);
-DAQmxErrorUnexpectedSeparatorInList =(-200064);
-DAQmxErrorExpectedTerminatorInList = (-200063);
-DAQmxErrorExpectedConnectOperatorInList =(-200062);
-DAQmxErrorExpectedSeparatorInList =(-200061);
-DAQmxErrorFullySpecifiedPathInListContainsRange =(-200060);
-DAQmxErrorConnectionSeparatorAtEndOfList = (-200059);
-DAQmxErrorIdentifierInListTooLong =(-200058);
-DAQmxErrorDuplicateDeviceIDInListWhenSettling =(-200057);
-DAQmxErrorChannelNameNotSpecifiedInList =(-200056);
-DAQmxErrorDeviceIDNotSpecifiedInList = (-200055);
-DAQmxErrorSemicolonDoesNotFollowRangeInList =(-200054);
-DAQmxErrorSwitchActionInListSpansMultipleDevices = (-200053);
-DAQmxErrorRangeWithoutAConnectActionInList = (-200052);
-DAQmxErrorInvalidIdentifierFollowingSeparatorInList =(-200051);
-DAQmxErrorInvalidChannelNameInList = (-200050);
-DAQmxErrorInvalidNumberInRepeatStatementInList = (-200049);
-DAQmxErrorInvalidTriggerLineInList = (-200048);
-DAQmxErrorInvalidIdentifierInListFollowingDeviceID = (-200047);
-DAQmxErrorInvalidIdentifierInListAtEndOfSwitchAction = (-200046);
-DAQmxErrorDeviceRemoved =(-200045);
-DAQmxErrorRoutingPathNotAvailable =(-200044);
-DAQmxErrorRoutingHardwareBusy =(-200043);
-DAQmxErrorRequestedSignalInversionForRoutingNotPossible =(-200042);
-DAQmxErrorInvalidRoutingDestinationTerminalName =(-200041);
-DAQmxErrorInvalidRoutingSourceTerminalName = (-200040);
-DAQmxErrorRoutingNotSupportedForDevice = (-200039);
-DAQmxErrorWaitIsLastInstructionOfLoopInScript =(-200038);
-DAQmxErrorClearIsLastInstructionOfLoopInScript = (-200037);
-DAQmxErrorInvalidLoopIterationsInScript =(-200036);
-DAQmxErrorRepeatLoopNestingTooDeepInScript = (-200035);
-DAQmxErrorMarkerPositionOutsideSubsetInScript =(-200034);
-DAQmxErrorSubsetStartOffsetNotAlignedInScript =(-200033);
-DAQmxErrorInvalidSubsetLengthInScript =(-200032);
-DAQmxErrorMarkerPositionNotAlignedInScript = (-200031);
-DAQmxErrorSubsetOutsideWaveformInScript =(-200030);
-DAQmxErrorMarkerOutsideWaveformInScript =(-200029);
-DAQmxErrorWaveformInScriptNotInMem = (-200028);
-DAQmxErrorKeywordExpectedInScript =(-200027);
-DAQmxErrorBufferNameExpectedInScript = (-200026);
-DAQmxErrorProcedureNameExpectedInScript =(-200025);
-DAQmxErrorScriptHasInvalidIdentifier = (-200024);
-DAQmxErrorScriptHasInvalidCharacter =(-200023);
-DAQmxErrorResourceAlreadyReserved =(-200022);
-DAQmxErrorSelfTestFailed = (-200020);
-DAQmxErrorADCOverrun = (-200019);
-DAQmxErrorDACUnderflow = (-200018);
-DAQmxErrorInputFIFOUnderflow = (-200017);
-DAQmxErrorOutputFIFOUnderflow =(-200016);
-DAQmxErrorSCXISerialCommunication =(-200015);
-DAQmxErrorDigitalTerminalSpecifiedMoreThanOnce = (-200014);
-DAQmxErrorDigitalOutputNotSupported =(-200012);
-DAQmxErrorInconsistentChannelDirections =(-200011);
-DAQmxErrorInputFIFOOverflow =(-200010);
-DAQmxErrorTimeStampOverwritten = (-200009);
-DAQmxErrorStopTriggerHasNotOccurred =(-200008);
-DAQmxErrorRecordNotAvailable = (-200007);
-DAQmxErrorRecordOverwritten =(-200006);
-DAQmxErrorDataNotAvailable = (-200005);
-DAQmxErrorDataOverwrittenInDeviceMemory =(-200004);
-DAQmxErrorDuplicatedChannel =(-200003);
-DAQmxWarningTimestampCounterRolledOver =(200003);
-DAQmxWarningInputTerminationOverloaded =(200004);
-DAQmxWarningADCOverloaded = (200005);
-DAQmxWarningPLLUnlocked = (200007);
-DAQmxWarningCounter0DMADuringAIConflict = (200008);
-DAQmxWarningCounter1DMADuringAOConflict = (200009);
-DAQmxWarningStoppedBeforeDone = (200010);
-DAQmxWarningRateViolatesSettlingTime =(200011);
-DAQmxWarningRateViolatesMaxADCRate =(200012);
-DAQmxWarningUserDefInfoStringTooLong =(200013);
-DAQmxWarningTooManyInterruptsPerSecond =(200014);
-DAQmxWarningPotentialGlitchDuringWrite =(200015);
-DAQmxWarningDevNotSelfCalibratedWithDAQmx = (200016);
-DAQmxWarningAISampRateTooLow =(200017);
-DAQmxWarningAIConvRateTooLow =(200018);
-DAQmxWarningReadOffsetCoercion =(200019);
-DAQmxWarningPretrigCoercion = (200020);
-DAQmxWarningSampValCoercedToMax = (200021);
-DAQmxWarningSampValCoercedToMin = (200022);
-DAQmxWarningPropertyVersionNew =(200024);
-DAQmxWarningUserDefinedInfoTooLong =(200025);
-DAQmxWarningCAPIStringTruncatedToFitBuffer =(200026);
-DAQmxWarningSampClkRateTooLow = (200027);
-DAQmxWarningPossiblyInvalidCTRSampsInFiniteDMAAcq = (200028);
-DAQmxWarningRISAcqCompletedSomeBinsNotFilled =(200029);
-DAQmxWarningPXIDevTempExceedsMaxOpTemp =(200030);
-DAQmxWarningOutputGainTooLowForRFFreq = (200031);
-DAQmxWarningOutputGainTooHighForRFFreq =(200032);
-DAQmxWarningMultipleWritesBetweenSampClks = (200033);
-DAQmxWarningDeviceMayShutDownDueToHighTemp =(200034);
-DAQmxWarningRateViolatesMinADCRate =(200035);
-DAQmxWarningSampClkRateAboveDevSpecs =(200036);
-DAQmxWarningCOPrevDAQmxWriteSettingsOverwrittenForHWTimedSinglePoint = (200037);
-DAQmxWarningLowpassFilterSettlingTimeExceedsUserTimeBetween2ADCConversions = (200038);
-DAQmxWarningLowpassFilterSettlingTimeExceedsDriverTimeBetween2ADCConversions = (200039);
-DAQmxWarningSampClkRateViolatesSettlingTimeForGen = (200040);
-DAQmxWarningReadNotCompleteBeforeSampClk =(209800);
-DAQmxWarningWriteNotCompleteBeforeSampClk = (209801);
-DAQmxErrorInvalidSignalModifier_Routing = (-89150);
-DAQmxErrorRoutingDestTermPXIClk10InNotInSlot2_Routing = (-89149);
-DAQmxErrorRoutingDestTermPXIStarXNotInSlot2_Routing = (-89148);
-DAQmxErrorRoutingSrcTermPXIStarXNotInSlot2_Routing =(-89147);
-DAQmxErrorRoutingSrcTermPXIStarInSlot16AndAbove_Routing = (-89146);
-DAQmxErrorRoutingDestTermPXIStarInSlot16AndAbove_Routing =(-89145);
-DAQmxErrorRoutingDestTermPXIStarInSlot2_Routing = (-89144);
-DAQmxErrorRoutingSrcTermPXIStarInSlot2_Routing =(-89143);
-DAQmxErrorRoutingDestTermPXIChassisNotIdentified_Routing =(-89142);
-DAQmxErrorRoutingSrcTermPXIChassisNotIdentified_Routing = (-89141);
-DAQmxErrorTrigLineNotFoundSingleDevRoute_Routing =(-89140);
-DAQmxErrorNoCommonTrigLineForRoute_Routing =(-89139);
-DAQmxErrorResourcesInUseForRouteInTask_Routing =(-89138);
-DAQmxErrorResourcesInUseForRoute_Routing =(-89137);
-DAQmxErrorRouteNotSupportedByHW_Routing = (-89136);
-DAQmxErrorResourcesInUseForInversionInTask_Routing =(-89135);
-DAQmxErrorResourcesInUseForInversion_Routing =(-89134);
-DAQmxErrorInversionNotSupportedByHW_Routing = (-89133);
-DAQmxErrorResourcesInUseForProperty_Routing = (-89132);
-DAQmxErrorRouteSrcAndDestSame_Routing = (-89131);
-DAQmxErrorDevAbsentOrUnavailable_Routing =(-89130);
-DAQmxErrorInvalidTerm_Routing = (-89129);
-DAQmxErrorCannotTristateTerm_Routing =(-89128);
-DAQmxErrorCannotTristateBusyTerm_Routing =(-89127);
-DAQmxErrorCouldNotReserveRequestedTrigLine_Routing =(-89126);
-DAQmxErrorTrigLineNotFound_Routing =(-89125);
-DAQmxErrorRoutingPathNotAvailable_Routing = (-89124);
-DAQmxErrorRoutingHardwareBusy_Routing = (-89123);
-DAQmxErrorRequestedSignalInversionForRoutingNotPossible_Routing = (-89122);
-DAQmxErrorInvalidRoutingDestinationTerminalName_Routing = (-89121);
-DAQmxErrorInvalidRoutingSourceTerminalName_Routing =(-89120);
-DAQmxStatusCouldNotConnectToServer_Routing =(-88900);
-DAQmxStatusDeviceNameNotFound_Routing = (-88717);
-DAQmxStatusLocalRemoteDriverVersionMismatch_Routing = (-88716);
-DAQmxStatusDuplicateDeviceName_Routing =(-88715);
-DAQmxStatusRuntimeAborting_Routing = (-88710);
-DAQmxStatusRuntimeAborted_Routing = (-88709);
-DAQmxStatusResourceNotInPool_Routing = (-88708);
-DAQmxStatusDriverDeviceGUIDNotFound_Routing = (-88705);
+DAQmxErrorWriteNotCompleteBeforeSampClk = -209801;
+DAQmxErrorReadNotCompleteBeforeSampClk = -209800;
+DAQmxErrorEveryNSamplesEventNotSupportedForNonBufferedTasks = -200848;
+DAQmxErrorBufferedAndDataXferPIO = -200847;
+DAQmxErrorCannotWriteWhenAutoStartFalseAndTaskNotRunning = -200846;
+DAQmxErrorNonBufferedAndDataXferInterrupts = -200845;
+DAQmxErrorWriteFailedMultipleCtrsWithFREQOUT = -200844;
+DAQmxErrorReadNotCompleteBefore3SampClkEdges = -200843;
+DAQmxErrorCtrHWTimedSinglePointAndDataXferNotProgIO = -200842;
+DAQmxErrorPrescalerNot1ForInputTerminal = -200841;
+DAQmxErrorPrescalerNot1ForTimebaseSrc = -200840;
+DAQmxErrorSampClkTimingTypeWhenTristateIsFalse = -200839;
+DAQmxErrorOutputBufferSizeNotMultOfXferSize = -200838;
+DAQmxErrorSampPerChanNotMultOfXferSize = -200837;
+DAQmxErrorWriteToTEDSFailed = -200836;
+DAQmxErrorSCXIDevNotUsablePowerTurnedOff = -200835;
+DAQmxErrorCannotReadWhenAutoStartFalseBufSizeZeroAndTaskNotRunning = -200834;
+DAQmxErrorCannotReadWhenAutoStartFalseHWTimedSinglePtAndTaskNotRunning = -200833;
+DAQmxErrorCannotReadWhenAutoStartFalseOnDemandAndTaskNotRunning = -200832;
+DAQmxErrorSimultaneousAOWhenNotOnDemandTiming = -200831;
+DAQmxErrorMemMapAndSimultaneousAO = -200830;
+DAQmxErrorWriteFailedMultipleCOOutputTypes = -200829;
+DAQmxErrorWriteToTEDSNotSupportedOnRT = -200828;
+DAQmxErrorVirtualTEDSDataFileError = -200827;
+DAQmxErrorTEDSSensorDataError = -200826;
+DAQmxErrorDataSizeMoreThanSizeOfEEPROMOnTEDS = -200825;
+DAQmxErrorPROMOnTEDSContainsBasicTEDSData = -200824;
+DAQmxErrorPROMOnTEDSAlreadyWritten = -200823;
+DAQmxErrorTEDSDoesNotContainPROM = -200822;
+DAQmxErrorHWTimedSinglePointNotSupportedAI = -200821;
+DAQmxErrorHWTimedSinglePointOddNumChansInAITask = -200820;
+DAQmxErrorCantUseOnlyOnBoardMemWithProgrammedIO = -200819;
+DAQmxErrorSwitchDevShutDownDueToHighTemp = -200818;
+DAQmxErrorExcitationNotSupportedWhenTermCfgDiff = -200817;
+DAQmxErrorTEDSMinElecValGEMaxElecVal = -200816;
+DAQmxErrorTEDSMinPhysValGEMaxPhysVal = -200815;
+DAQmxErrorCIOnboardClockNotSupportedAsInputTerm = -200814;
+DAQmxErrorInvalidSampModeForPositionMeas = -200813;
+DAQmxErrorTrigWhenAOHWTimedSinglePtSampMode = -200812;
+DAQmxErrorDAQmxCantUseStringDueToUnknownChar = -200811;
+DAQmxErrorDAQmxCantRetrieveStringDueToUnknownChar = -200810;
+DAQmxErrorClearTEDSNotSupportedOnRT = -200809;
+DAQmxErrorCfgTEDSNotSupportedOnRT = -200808;
+DAQmxErrorProgFilterClkCfgdToDifferentMinPulseWidthBySameTask1PerDev = -200807;
+DAQmxErrorProgFilterClkCfgdToDifferentMinPulseWidthByAnotherTask1PerDev = -200806;
+DAQmxErrorNoLastExtCalDateTimeLastExtCalNotDAQmx = -200804;
+DAQmxErrorCannotWriteNotStartedAutoStartFalseNotOnDemandHWTimedSglPt = -200803;
+DAQmxErrorCannotWriteNotStartedAutoStartFalseNotOnDemandBufSizeZero = -200802;
+DAQmxErrorCOInvalidTimingSrcDueToSignal = -200801;
+DAQmxErrorCIInvalidTimingSrcForSampClkDueToSampTimingType = -200800;
+DAQmxErrorCIInvalidTimingSrcForEventCntDueToSampMode = -200799;
+DAQmxErrorNoChangeDetectOnNonInputDigLineForDev = -200798;
+DAQmxErrorEmptyStringTermNameNotSupported = -200797;
+DAQmxErrorMemMapEnabledForHWTimedNonBufferedAO = -200796;
+DAQmxErrorDevOnboardMemOverflowDuringHWTimedNonBufferedGen = -200795;
+DAQmxErrorCODAQmxWriteMultipleChans = -200794;
+DAQmxErrorCantMaintainExistingValueAOSync = -200793;
+DAQmxErrorMStudioMultiplePhysChansNotSupported = -200792;
+DAQmxErrorCantConfigureTEDSForChan = -200791;
+DAQmxErrorWriteDataTypeTooSmall = -200790;
+DAQmxErrorReadDataTypeTooSmall = -200789;
+DAQmxErrorMeasuredBridgeOffsetTooHigh = -200788;
+DAQmxErrorStartTrigConflictWithCOHWTimedSinglePt = -200787;
+DAQmxErrorSampClkRateExtSampClkTimebaseRateMismatch = -200786;
+DAQmxErrorInvalidTimingSrcDueToSampTimingType = -200785;
+DAQmxErrorVirtualTEDSFileNotFound = -200784;
+DAQmxErrorMStudioNoForwardPolyScaleCoeffs = -200783;
+DAQmxErrorMStudioNoReversePolyScaleCoeffs = -200782;
+DAQmxErrorMStudioNoPolyScaleCoeffsUseCalc = -200781;
+DAQmxErrorMStudioNoForwardPolyScaleCoeffsUseCalc = -200780;
+DAQmxErrorMStudioNoReversePolyScaleCoeffsUseCalc = -200779;
+DAQmxErrorCOSampModeSampTimingTypeSampClkConflict = -200778;
+DAQmxErrorDevCannotProduceMinPulseWidth = -200777;
+DAQmxErrorCannotProduceMinPulseWidthGivenPropertyValues = -200776;
+DAQmxErrorTermCfgdToDifferentMinPulseWidthByAnotherTask = -200775;
+DAQmxErrorTermCfgdToDifferentMinPulseWidthByAnotherProperty = -200774;
+DAQmxErrorDigSyncNotAvailableOnTerm = -200773;
+DAQmxErrorDigFilterNotAvailableOnTerm = -200772;
+DAQmxErrorDigFilterEnabledMinPulseWidthNotCfg = -200771;
+DAQmxErrorDigFilterAndSyncBothEnabled = -200770;
+DAQmxErrorHWTimedSinglePointAOAndDataXferNotProgIO = -200769;
+DAQmxErrorNonBufferedAOAndDataXferNotProgIO = -200768;
+DAQmxErrorProgIODataXferForBufferedAO = -200767;
+DAQmxErrorTEDSLegacyTemplateIDInvalidOrUnsupported = -200766;
+DAQmxErrorTEDSMappingMethodInvalidOrUnsupported = -200765;
+DAQmxErrorTEDSLinearMappingSlopeZero = -200764;
+DAQmxErrorAIInputBufferSizeNotMultOfXferSize = -200763;
+DAQmxErrorNoSyncPulseExtSampClkTimebase = -200762;
+DAQmxErrorNoSyncPulseAnotherTaskRunning = -200761;
+DAQmxErrorAOMinMaxNotInGainRange = -200760;
+DAQmxErrorAOMinMaxNotInDACRange = -200759;
+DAQmxErrorDevOnlySupportsSampClkTimingAO = -200758;
+DAQmxErrorDevOnlySupportsSampClkTimingAI = -200757;
+DAQmxErrorTEDSIncompatibleSensorAndMeasType = -200756;
+DAQmxErrorTEDSMultipleCalTemplatesNotSupported = -200755;
+DAQmxErrorTEDSTemplateParametersNotSupported = -200754;
+DAQmxErrorParsingTEDSData = -200753;
+DAQmxErrorMultipleActivePhysChansNotSupported = -200752;
+DAQmxErrorNoChansSpecdForChangeDetect = -200751;
+DAQmxErrorInvalidCalVoltageForGivenGain = -200750;
+DAQmxErrorInvalidCalGain = -200749;
+DAQmxErrorMultipleWritesBetweenSampClks = -200748;
+DAQmxErrorInvalidAcqTypeForFREQOUT = -200747;
+DAQmxErrorSuitableTimebaseNotFoundTimeCombo2 = -200746;
+DAQmxErrorSuitableTimebaseNotFoundFrequencyCombo2 = -200745;
+DAQmxErrorRefClkRateRefClkSrcMismatch = -200744;
+DAQmxErrorNoTEDSTerminalBlock = -200743;
+DAQmxErrorCorruptedTEDSMemory = -200742;
+DAQmxErrorTEDSNotSupported = -200741;
+DAQmxErrorTimingSrcTaskStartedBeforeTimedLoop = -200740;
+DAQmxErrorPropertyNotSupportedForTimingSrc = -200739;
+DAQmxErrorTimingSrcDoesNotExist = -200738;
+DAQmxErrorInputBufferSizeNotEqualSampsPerChanForFiniteSampMode = -200737;
+DAQmxErrorFREQOUTCannotProduceDesiredFrequency2 = -200736;
+DAQmxErrorExtRefClkRateNotSpecified = -200735;
+DAQmxErrorDeviceDoesNotSupportDMADataXferForNonBufferedAcq = -200734;
+DAQmxErrorDigFilterMinPulseWidthSetWhenTristateIsFalse = -200733;
+DAQmxErrorDigFilterEnableSetWhenTristateIsFalse = -200732;
+DAQmxErrorNoHWTimingWithOnDemand = -200731;
+DAQmxErrorCannotDetectChangesWhenTristateIsFalse = -200730;
+DAQmxErrorCannotHandshakeWhenTristateIsFalse = -200729;
+DAQmxErrorLinesUsedForStaticInputNotForHandshakingControl = -200728;
+DAQmxErrorLinesUsedForHandshakingControlNotForStaticInput = -200727;
+DAQmxErrorLinesUsedForStaticInputNotForHandshakingInput = -200726;
+DAQmxErrorLinesUsedForHandshakingInputNotForStaticInput = -200725;
+DAQmxErrorDifferentDITristateValsForChansInTask = -200724;
+DAQmxErrorTimebaseCalFreqVarianceTooLarge = -200723;
+DAQmxErrorTimebaseCalFailedToConverge = -200722;
+DAQmxErrorInadequateResolutionForTimebaseCal = -200721;
+DAQmxErrorInvalidAOGainCalConst = -200720;
+DAQmxErrorInvalidAOOffsetCalConst = -200719;
+DAQmxErrorInvalidAIGainCalConst = -200718;
+DAQmxErrorInvalidAIOffsetCalConst = -200717;
+DAQmxErrorDigOutputOverrun = -200716;
+DAQmxErrorDigInputOverrun = -200715;
+DAQmxErrorAcqStoppedDriverCantXferDataFastEnough = -200714;
+DAQmxErrorChansCantAppearInSameTask = -200713;
+DAQmxErrorInputCfgFailedBecauseWatchdogExpired = -200712;
+DAQmxErrorAnalogTrigChanNotExternal = -200711;
+DAQmxErrorTooManyChansForInternalAIInputSrc = -200710;
+DAQmxErrorTEDSSensorNotDetected = -200709;
+DAQmxErrorPrptyGetSpecdActiveItemFailedDueToDifftValues = -200708;
+DAQmxErrorRoutingDestTermPXIClk10InNotInSlot2 = -200706;
+DAQmxErrorRoutingDestTermPXIStarXNotInSlot2 = -200705;
+DAQmxErrorRoutingSrcTermPXIStarXNotInSlot2 = -200704;
+DAQmxErrorRoutingSrcTermPXIStarInSlot16AndAbove = -200703;
+DAQmxErrorRoutingDestTermPXIStarInSlot16AndAbove = -200702;
+DAQmxErrorRoutingDestTermPXIStarInSlot2 = -200701;
+DAQmxErrorRoutingSrcTermPXIStarInSlot2 = -200700;
+DAQmxErrorRoutingDestTermPXIChassisNotIdentified = -200699;
+DAQmxErrorRoutingSrcTermPXIChassisNotIdentified = -200698;
+DAQmxErrorFailedToAcquireCalData = -200697;
+DAQmxErrorBridgeOffsetNullingCalNotSupported = -200696;
+DAQmxErrorAIMaxNotSpecified = -200695;
+DAQmxErrorAIMinNotSpecified = -200694;
+DAQmxErrorOddTotalBufferSizeToWrite = -200693;
+DAQmxErrorOddTotalNumSampsToWrite = -200692;
+DAQmxErrorBufferWithWaitMode = -200691;
+DAQmxErrorBufferWithHWTimedSinglePointSampMode = -200690;
+DAQmxErrorCOWritePulseLowTicksNotSupported = -200689;
+DAQmxErrorCOWritePulseHighTicksNotSupported = -200688;
+DAQmxErrorCOWritePulseLowTimeOutOfRange = -200687;
+DAQmxErrorCOWritePulseHighTimeOutOfRange = -200686;
+DAQmxErrorCOWriteFreqOutOfRange = -200685;
+DAQmxErrorCOWriteDutyCycleOutOfRange = -200684;
+DAQmxErrorInvalidInstallation = -200683;
+DAQmxErrorRefTrigMasterSessionUnavailable = -200682;
+DAQmxErrorRouteFailedBecauseWatchdogExpired = -200681;
+DAQmxErrorDeviceShutDownDueToHighTemp = -200680;
+DAQmxErrorNoMemMapWhenHWTimedSinglePoint = -200679;
+DAQmxErrorWriteFailedBecauseWatchdogExpired = -200678;
+DAQmxErrorDifftInternalAIInputSrcs = -200677;
+DAQmxErrorDifftAIInputSrcInOneChanGroup = -200676;
+DAQmxErrorInternalAIInputSrcInMultChanGroups = -200675;
+DAQmxErrorSwitchOpFailedDueToPrevError = -200674;
+DAQmxErrorWroteMultiSampsUsingSingleSampWrite = -200673;
+DAQmxErrorMismatchedInputArraySizes = -200672;
+DAQmxErrorCantExceedRelayDriveLimit = -200671;
+DAQmxErrorDACRngLowNotEqualToMinusRefVal = -200670;
+DAQmxErrorCantAllowConnectDACToGnd = -200669;
+DAQmxErrorWatchdogTimeoutOutOfRangeAndNotSpecialVal = -200668;
+DAQmxErrorNoWatchdogOutputOnPortReservedForInput = -200667;
+DAQmxErrorNoInputOnPortCfgdForWatchdogOutput = -200666;
+DAQmxErrorWatchdogExpirationStateNotEqualForLinesInPort = -200665;
+DAQmxErrorCannotPerformOpWhenTaskNotReserved = -200664;
+DAQmxErrorPowerupStateNotSupported = -200663;
+DAQmxErrorWatchdogTimerNotSupported = -200662;
+DAQmxErrorOpNotSupportedWhenRefClkSrcNone = -200661;
+DAQmxErrorSampClkRateUnavailable = -200660;
+DAQmxErrorPrptyGetSpecdSingleActiveChanFailedDueToDifftVals = -200659;
+DAQmxErrorPrptyGetImpliedActiveChanFailedDueToDifftVals = -200658;
+DAQmxErrorPrptyGetSpecdActiveChanFailedDueToDifftVals = -200657;
+DAQmxErrorNoRegenWhenUsingBrdMem = -200656;
+DAQmxErrorNonbufferedReadMoreThanSampsPerChan = -200655;
+DAQmxErrorWatchdogExpirationTristateNotSpecdForEntirePort = -200654;
+DAQmxErrorPowerupTristateNotSpecdForEntirePort = -200653;
+DAQmxErrorPowerupStateNotSpecdForEntirePort = -200652;
+DAQmxErrorCantSetWatchdogExpirationOnDigInChan = -200651;
+DAQmxErrorCantSetPowerupStateOnDigInChan = -200650;
+DAQmxErrorPhysChanNotInTask = -200649;
+DAQmxErrorPhysChanDevNotInTask = -200648;
+DAQmxErrorDigInputNotSupported = -200647;
+DAQmxErrorDigFilterIntervalNotEqualForLines = -200646;
+DAQmxErrorDigFilterIntervalAlreadyCfgd = -200645;
+DAQmxErrorCantResetExpiredWatchdog = -200644;
+DAQmxErrorActiveChanTooManyLinesSpecdWhenGettingPrpty = -200643;
+DAQmxErrorActiveChanNotSpecdWhenGetting1LinePrpty = -200642;
+DAQmxErrorDigPrptyCannotBeSetPerLine = -200641;
+DAQmxErrorSendAdvCmpltAfterWaitForTrigInScanlist = -200640;
+DAQmxErrorDisconnectionRequiredInScanlist = -200639;
+DAQmxErrorTwoWaitForTrigsAfterConnectionInScanlist = -200638;
+DAQmxErrorActionSeparatorRequiredAfterBreakingConnectionInScanlist = -200637;
+DAQmxErrorConnectionInScanlistMustWaitForTrig = -200636;
+DAQmxErrorActionNotSupportedTaskNotWatchdog = -200635;
+DAQmxErrorWfmNameSameAsScriptName = -200634;
+DAQmxErrorScriptNameSameAsWfmName = -200633;
+DAQmxErrorDSFStopClock = -200632;
+DAQmxErrorDSFReadyForStartClock = -200631;
+DAQmxErrorWriteOffsetNotMultOfIncr = -200630;
+DAQmxErrorDifferentPrptyValsNotSupportedOnDev = -200629;
+DAQmxErrorRefAndPauseTrigConfigured = -200628;
+DAQmxErrorFailedToEnableHighSpeedInputClock = -200627;
+DAQmxErrorEmptyPhysChanInPowerUpStatesArray = -200626;
+DAQmxErrorActivePhysChanTooManyLinesSpecdWhenGettingPrpty = -200625;
+DAQmxErrorActivePhysChanNotSpecdWhenGetting1LinePrpty = -200624;
+DAQmxErrorPXIDevTempCausedShutDown = -200623;
+DAQmxErrorInvalidNumSampsToWrite = -200622;
+DAQmxErrorOutputFIFOUnderflow2 = -200621;
+DAQmxErrorRepeatedAIPhysicalChan = -200620;
+DAQmxErrorMultScanOpsInOneChassis = -200619;
+DAQmxErrorInvalidAIChanOrder = -200618;
+DAQmxErrorReversePowerProtectionActivated = -200617;
+DAQmxErrorInvalidAsynOpHandle = -200616;
+DAQmxErrorFailedToEnableHighSpeedOutput = -200615;
+DAQmxErrorCannotReadPastEndOfRecord = -200614;
+DAQmxErrorAcqStoppedToPreventInputBufferOverwriteOneDataXferMech = -200613;
+DAQmxErrorZeroBasedChanIndexInvalid = -200612;
+DAQmxErrorNoChansOfGivenTypeInTask = -200611;
+DAQmxErrorSampClkSrcInvalidForOutputValidForInput = -200610;
+DAQmxErrorOutputBufSizeTooSmallToStartGen = -200609;
+DAQmxErrorInputBufSizeTooSmallToStartAcq = -200608;
+DAQmxErrorExportTwoSignalsOnSameTerminal = -200607;
+DAQmxErrorChanIndexInvalid = -200606;
+DAQmxErrorRangeSyntaxNumberTooBig = -200605;
+DAQmxErrorNULLPtr = -200604;
+DAQmxErrorScaledMinEqualMax = -200603;
+DAQmxErrorPreScaledMinEqualMax = -200602;
+DAQmxErrorPropertyNotSupportedForScaleType = -200601;
+DAQmxErrorChannelNameGenerationNumberTooBig = -200600;
+DAQmxErrorRepeatedNumberInScaledValues = -200599;
+DAQmxErrorRepeatedNumberInPreScaledValues = -200598;
+DAQmxErrorLinesAlreadyReservedForOutput = -200597;
+DAQmxErrorSwitchOperationChansSpanMultipleDevsInList = -200596;
+DAQmxErrorInvalidIDInListAtBeginningOfSwitchOperation = -200595;
+DAQmxErrorMStudioInvalidPolyDirection = -200594;
+DAQmxErrorMStudioPropertyGetWhileTaskNotVerified = -200593;
+DAQmxErrorRangeWithTooManyObjects = -200592;
+DAQmxErrorCppDotNetAPINegativeBufferSize = -200591;
+DAQmxErrorCppCantRemoveInvalidEventHandler = -200590;
+DAQmxErrorCppCantRemoveEventHandlerTwice = -200589;
+DAQmxErrorCppCantRemoveOtherObjectsEventHandler = -200588;
+DAQmxErrorDigLinesReservedOrUnavailable = -200587;
+DAQmxErrorDSFFailedToResetStream = -200586;
+DAQmxErrorDSFReadyForOutputNotAsserted = -200585;
+DAQmxErrorSampToWritePerChanNotMultipleOfIncr = -200584;
+DAQmxErrorAOPropertiesCauseVoltageBelowMin = -200583;
+DAQmxErrorAOPropertiesCauseVoltageOverMax = -200582;
+DAQmxErrorPropertyNotSupportedWhenRefClkSrcNone = -200581;
+DAQmxErrorAIMaxTooSmall = -200580;
+DAQmxErrorAIMaxTooLarge = -200579;
+DAQmxErrorAIMinTooSmall = -200578;
+DAQmxErrorAIMinTooLarge = -200577;
+DAQmxErrorBuiltInCJCSrcNotSupported = -200576;
+DAQmxErrorTooManyPostTrigSampsPerChan = -200575;
+DAQmxErrorTrigLineNotFoundSingleDevRoute = -200574;
+DAQmxErrorDifferentInternalAIInputSources = -200573;
+DAQmxErrorDifferentAIInputSrcInOneChanGroup = -200572;
+DAQmxErrorInternalAIInputSrcInMultipleChanGroups = -200571;
+DAQmxErrorCAPIChanIndexInvalid = -200570;
+DAQmxErrorCollectionDoesNotMatchChanType = -200569;
+DAQmxErrorOutputCantStartChangedRegenerationMode = -200568;
+DAQmxErrorOutputCantStartChangedBufferSize = -200567;
+DAQmxErrorChanSizeTooBigForU32PortWrite = -200566;
+DAQmxErrorChanSizeTooBigForU8PortWrite = -200565;
+DAQmxErrorChanSizeTooBigForU32PortRead = -200564;
+DAQmxErrorChanSizeTooBigForU8PortRead = -200563;
+DAQmxErrorInvalidDigDataWrite = -200562;
+DAQmxErrorInvalidAODataWrite = -200561;
+DAQmxErrorWaitUntilDoneDoesNotIndicateDone = -200560;
+DAQmxErrorMultiChanTypesInTask = -200559;
+DAQmxErrorMultiDevsInTask = -200558;
+DAQmxErrorCannotSetPropertyWhenTaskRunning = -200557;
+DAQmxErrorCannotGetPropertyWhenTaskNotCommittedOrRunning = -200556;
+DAQmxErrorLeadingUnderscoreInString = -200555;
+DAQmxErrorTrailingSpaceInString = -200554;
+DAQmxErrorLeadingSpaceInString = -200553;
+DAQmxErrorInvalidCharInString = -200552;
+DAQmxErrorDLLBecameUnlocked = -200551;
+DAQmxErrorDLLLock = -200550;
+DAQmxErrorSelfCalConstsInvalid = -200549;
+DAQmxErrorInvalidTrigCouplingExceptForExtTrigChan = -200548;
+DAQmxErrorWriteFailsBufferSizeAutoConfigured = -200547;
+DAQmxErrorExtCalAdjustExtRefVoltageFailed = -200546;
+DAQmxErrorSelfCalFailedExtNoiseOrRefVoltageOutOfCal = -200545;
+DAQmxErrorExtCalTemperatureNotDAQmx = -200544;
+DAQmxErrorExtCalDateTimeNotDAQmx = -200543;
+DAQmxErrorSelfCalTemperatureNotDAQmx = -200542;
+DAQmxErrorSelfCalDateTimeNotDAQmx = -200541;
+DAQmxErrorDACRefValNotSet = -200540;
+DAQmxErrorAnalogMultiSampWriteNotSupported = -200539;
+DAQmxErrorInvalidActionInControlTask = -200538;
+DAQmxErrorPolyCoeffsInconsistent = -200537;
+DAQmxErrorSensorValTooLow = -200536;
+DAQmxErrorSensorValTooHigh = -200535;
+DAQmxErrorWaveformNameTooLong = -200534;
+DAQmxErrorIdentifierTooLongInScript = -200533;
+DAQmxErrorUnexpectedIDFollowingSwitchChanName = -200532;
+DAQmxErrorRelayNameNotSpecifiedInList = -200531;
+DAQmxErrorUnexpectedIDFollowingRelayNameInList = -200530;
+DAQmxErrorUnexpectedIDFollowingSwitchOpInList = -200529;
+DAQmxErrorInvalidLineGrouping = -200528;
+DAQmxErrorCtrMinMax = -200527;
+DAQmxErrorWriteChanTypeMismatch = -200526;
+DAQmxErrorReadChanTypeMismatch = -200525;
+DAQmxErrorWriteNumChansMismatch = -200524;
+DAQmxErrorOneChanReadForMultiChanTask = -200523;
+DAQmxErrorCannotSelfCalDuringExtCal = -200522;
+DAQmxErrorMeasCalAdjustOscillatorPhaseDAC = -200521;
+DAQmxErrorInvalidCalConstCalADCAdjustment = -200520;
+DAQmxErrorInvalidCalConstOscillatorFreqDACValue = -200519;
+DAQmxErrorInvalidCalConstOscillatorPhaseDACValue = -200518;
+DAQmxErrorInvalidCalConstOffsetDACValue = -200517;
+DAQmxErrorInvalidCalConstGainDACValue = -200516;
+DAQmxErrorInvalidNumCalADCReadsToAverage = -200515;
+DAQmxErrorInvalidCfgCalAdjustDirectPathOutputImpedance = -200514;
+DAQmxErrorInvalidCfgCalAdjustMainPathOutputImpedance = -200513;
+DAQmxErrorInvalidCfgCalAdjustMainPathPostAmpGainAndOffset = -200512;
+DAQmxErrorInvalidCfgCalAdjustMainPathPreAmpGain = -200511;
+DAQmxErrorInvalidCfgCalAdjustMainPreAmpOffset = -200510;
+DAQmxErrorMeasCalAdjustCalADC = -200509;
+DAQmxErrorMeasCalAdjustOscillatorFrequency = -200508;
+DAQmxErrorMeasCalAdjustDirectPathOutputImpedance = -200507;
+DAQmxErrorMeasCalAdjustMainPathOutputImpedance = -200506;
+DAQmxErrorMeasCalAdjustDirectPathGain = -200505;
+DAQmxErrorMeasCalAdjustMainPathPostAmpGainAndOffset = -200504;
+DAQmxErrorMeasCalAdjustMainPathPreAmpGain = -200503;
+DAQmxErrorMeasCalAdjustMainPathPreAmpOffset = -200502;
+DAQmxErrorInvalidDateTimeInEEPROM = -200501;
+DAQmxErrorUnableToLocateErrorResources = -200500;
+DAQmxErrorDotNetAPINotUnsigned32BitNumber = -200499;
+DAQmxErrorInvalidRangeOfObjectsSyntaxInString = -200498;
+DAQmxErrorAttemptToEnableLineNotPreviouslyDisabled = -200497;
+DAQmxErrorInvalidCharInPattern = -200496;
+DAQmxErrorIntermediateBufferFull = -200495;
+DAQmxErrorLoadTaskFailsBecauseNoTimingOnDev = -200494;
+DAQmxErrorCAPIReservedParamNotNULLNorEmpty = -200493;
+DAQmxErrorCAPIReservedParamNotNULL = -200492;
+DAQmxErrorCAPIReservedParamNotZero = -200491;
+DAQmxErrorSampleValueOutOfRange = -200490;
+DAQmxErrorChanAlreadyInTask = -200489;
+DAQmxErrorVirtualChanDoesNotExist = -200488;
+DAQmxErrorChanNotInTask = -200486;
+DAQmxErrorTaskNotInDataNeighborhood = -200485;
+DAQmxErrorCantSaveTaskWithoutReplace = -200484;
+DAQmxErrorCantSaveChanWithoutReplace = -200483;
+DAQmxErrorDevNotInTask = -200482;
+DAQmxErrorDevAlreadyInTask = -200481;
+DAQmxErrorCanNotPerformOpWhileTaskRunning = -200479;
+DAQmxErrorCanNotPerformOpWhenNoChansInTask = -200478;
+DAQmxErrorCanNotPerformOpWhenNoDevInTask = -200477;
+DAQmxErrorCannotPerformOpWhenTaskNotRunning = -200475;
+DAQmxErrorOperationTimedOut = -200474;
+DAQmxErrorCannotReadWhenAutoStartFalseAndTaskNotRunningOrCommitted = -200473;
+DAQmxErrorCannotWriteWhenAutoStartFalseAndTaskNotRunningOrCommitted = -200472;
+DAQmxErrorTaskVersionNew = -200470;
+DAQmxErrorChanVersionNew = -200469;
+DAQmxErrorEmptyString = -200467;
+DAQmxErrorChannelSizeTooBigForPortReadType = -200466;
+DAQmxErrorChannelSizeTooBigForPortWriteType = -200465;
+DAQmxErrorExpectedNumberOfChannelsVerificationFailed = -200464;
+DAQmxErrorNumLinesMismatchInReadOrWrite = -200463;
+DAQmxErrorOutputBufferEmpty = -200462;
+DAQmxErrorInvalidChanName = -200461;
+DAQmxErrorReadNoInputChansInTask = -200460;
+DAQmxErrorWriteNoOutputChansInTask = -200459;
+DAQmxErrorPropertyNotSupportedNotInputTask = -200457;
+DAQmxErrorPropertyNotSupportedNotOutputTask = -200456;
+DAQmxErrorGetPropertyNotInputBufferedTask = -200455;
+DAQmxErrorGetPropertyNotOutputBufferedTask = -200454;
+DAQmxErrorInvalidTimeoutVal = -200453;
+DAQmxErrorAttributeNotSupportedInTaskContext = -200452;
+DAQmxErrorAttributeNotQueryableUnlessTaskIsCommitted = -200451;
+DAQmxErrorAttributeNotSettableWhenTaskIsRunning = -200450;
+DAQmxErrorDACRngLowNotMinusRefValNorZero = -200449;
+DAQmxErrorDACRngHighNotEqualRefVal = -200448;
+DAQmxErrorUnitsNotFromCustomScale = -200447;
+DAQmxErrorInvalidVoltageReadingDuringExtCal = -200446;
+DAQmxErrorCalFunctionNotSupported = -200445;
+DAQmxErrorInvalidPhysicalChanForCal = -200444;
+DAQmxErrorExtCalNotComplete = -200443;
+DAQmxErrorCantSyncToExtStimulusFreqDuringCal = -200442;
+DAQmxErrorUnableToDetectExtStimulusFreqDuringCal = -200441;
+DAQmxErrorInvalidCloseAction = -200440;
+DAQmxErrorExtCalFunctionOutsideExtCalSession = -200439;
+DAQmxErrorInvalidCalArea = -200438;
+DAQmxErrorExtCalConstsInvalid = -200437;
+DAQmxErrorStartTrigDelayWithExtSampClk = -200436;
+DAQmxErrorDelayFromSampClkWithExtConv = -200435;
+DAQmxErrorFewerThan2PreScaledVals = -200434;
+DAQmxErrorFewerThan2ScaledValues = -200433;
+DAQmxErrorPhysChanOutputType = -200432;
+DAQmxErrorPhysChanMeasType = -200431;
+DAQmxErrorInvalidPhysChanType = -200430;
+DAQmxErrorLabVIEWEmptyTaskOrChans = -200429;
+DAQmxErrorLabVIEWInvalidTaskOrChans = -200428;
+DAQmxErrorInvalidRefClkRate = -200427;
+DAQmxErrorInvalidExtTrigImpedance = -200426;
+DAQmxErrorHystTrigLevelAIMax = -200425;
+DAQmxErrorLineNumIncompatibleWithVideoSignalFormat = -200424;
+DAQmxErrorTrigWindowAIMinAIMaxCombo = -200423;
+DAQmxErrorTrigAIMinAIMax = -200422;
+DAQmxErrorHystTrigLevelAIMin = -200421;
+DAQmxErrorInvalidSampRateConsiderRIS = -200420;
+DAQmxErrorInvalidReadPosDuringRIS = -200419;
+DAQmxErrorImmedTrigDuringRISMode = -200418;
+DAQmxErrorTDCNotEnabledDuringRISMode = -200417;
+DAQmxErrorMultiRecWithRIS = -200416;
+DAQmxErrorInvalidRefClkSrc = -200415;
+DAQmxErrorInvalidSampClkSrc = -200414;
+DAQmxErrorInsufficientOnBoardMemForNumRecsAndSamps = -200413;
+DAQmxErrorInvalidAIAttenuation = -200412;
+DAQmxErrorACCouplingNotAllowedWith50OhmImpedance = -200411;
+DAQmxErrorInvalidRecordNum = -200410;
+DAQmxErrorZeroSlopeLinearScale = -200409;
+DAQmxErrorZeroReversePolyScaleCoeffs = -200408;
+DAQmxErrorZeroForwardPolyScaleCoeffs = -200407;
+DAQmxErrorNoReversePolyScaleCoeffs = -200406;
+DAQmxErrorNoForwardPolyScaleCoeffs = -200405;
+DAQmxErrorNoPolyScaleCoeffs = -200404;
+DAQmxErrorReversePolyOrderLessThanNumPtsToCompute = -200403;
+DAQmxErrorReversePolyOrderNotPositive = -200402;
+DAQmxErrorNumPtsToComputeNotPositive = -200401;
+DAQmxErrorWaveformLengthNotMultipleOfIncr = -200400;
+DAQmxErrorCAPINoExtendedErrorInfoAvailable = -200399;
+DAQmxErrorCVIFunctionNotFoundInDAQmxDLL = -200398;
+DAQmxErrorCVIFailedToLoadDAQmxDLL = -200397;
+DAQmxErrorNoCommonTrigLineForImmedRoute = -200396;
+DAQmxErrorNoCommonTrigLineForTaskRoute = -200395;
+DAQmxErrorF64PrptyValNotUnsignedInt = -200394;
+DAQmxErrorRegisterNotWritable = -200393;
+DAQmxErrorInvalidOutputVoltageAtSampClkRate = -200392;
+DAQmxErrorStrobePhaseShiftDCMBecameUnlocked = -200391;
+DAQmxErrorDrivePhaseShiftDCMBecameUnlocked = -200390;
+DAQmxErrorClkOutPhaseShiftDCMBecameUnlocked = -200389;
+DAQmxErrorOutputBoardClkDCMBecameUnlocked = -200388;
+DAQmxErrorInputBoardClkDCMBecameUnlocked = -200387;
+DAQmxErrorInternalClkDCMBecameUnlocked = -200386;
+DAQmxErrorDCMLock = -200385;
+DAQmxErrorDataLineReservedForDynamicOutput = -200384;
+DAQmxErrorInvalidRefClkSrcGivenSampClkSrc = -200383;
+DAQmxErrorNoPatternMatcherAvailable = -200382;
+DAQmxErrorInvalidDelaySampRateBelowPhaseShiftDCMThresh = -200381;
+DAQmxErrorStrainGageCalibration = -200380;
+DAQmxErrorInvalidExtClockFreqAndDivCombo = -200379;
+DAQmxErrorCustomScaleDoesNotExist = -200378;
+DAQmxErrorOnlyFrontEndChanOpsDuringScan = -200377;
+DAQmxErrorInvalidOptionForDigitalPortChannel = -200376;
+DAQmxErrorUnsupportedSignalTypeExportSignal = -200375;
+DAQmxErrorInvalidSignalTypeExportSignal = -200374;
+DAQmxErrorUnsupportedTrigTypeSendsSWTrig = -200373;
+DAQmxErrorInvalidTrigTypeSendsSWTrig = -200372;
+DAQmxErrorRepeatedPhysicalChan = -200371;
+DAQmxErrorResourcesInUseForRouteInTask = -200370;
+DAQmxErrorResourcesInUseForRoute = -200369;
+DAQmxErrorRouteNotSupportedByHW = -200368;
+DAQmxErrorResourcesInUseForExportSignalPolarity = -200367;
+DAQmxErrorResourcesInUseForInversionInTask = -200366;
+DAQmxErrorResourcesInUseForInversion = -200365;
+DAQmxErrorExportSignalPolarityNotSupportedByHW = -200364;
+DAQmxErrorInversionNotSupportedByHW = -200363;
+DAQmxErrorOverloadedChansExistNotRead = -200362;
+DAQmxErrorInputFIFOOverflow2 = -200361;
+DAQmxErrorCJCChanNotSpecd = -200360;
+DAQmxErrorCtrExportSignalNotPossible = -200359;
+DAQmxErrorRefTrigWhenContinuous = -200358;
+DAQmxErrorIncompatibleSensorOutputAndDeviceInputRanges = -200357;
+DAQmxErrorCustomScaleNameUsed = -200356;
+DAQmxErrorPropertyValNotSupportedByHW = -200355;
+DAQmxErrorPropertyValNotValidTermName = -200354;
+DAQmxErrorResourcesInUseForProperty = -200353;
+DAQmxErrorCJCChanAlreadyUsed = -200352;
+DAQmxErrorForwardPolynomialCoefNotSpecd = -200351;
+DAQmxErrorTableScaleNumPreScaledAndScaledValsNotEqual = -200350;
+DAQmxErrorTableScalePreScaledValsNotSpecd = -200349;
+DAQmxErrorTableScaleScaledValsNotSpecd = -200348;
+DAQmxErrorIntermediateBufferSizeNotMultipleOfIncr = -200347;
+DAQmxErrorEventPulseWidthOutOfRange = -200346;
+DAQmxErrorEventDelayOutOfRange = -200345;
+DAQmxErrorSampPerChanNotMultipleOfIncr = -200344;
+DAQmxErrorCannotCalculateNumSampsTaskNotStarted = -200343;
+DAQmxErrorScriptNotInMem = -200342;
+DAQmxErrorOnboardMemTooSmall = -200341;
+DAQmxErrorReadAllAvailableDataWithoutBuffer = -200340;
+DAQmxErrorPulseActiveAtStart = -200339;
+DAQmxErrorCalTempNotSupported = -200338;
+DAQmxErrorDelayFromSampClkTooLong = -200337;
+DAQmxErrorDelayFromSampClkTooShort = -200336;
+DAQmxErrorAIConvRateTooHigh = -200335;
+DAQmxErrorDelayFromStartTrigTooLong = -200334;
+DAQmxErrorDelayFromStartTrigTooShort = -200333;
+DAQmxErrorSampRateTooHigh = -200332;
+DAQmxErrorSampRateTooLow = -200331;
+DAQmxErrorPFI0UsedForAnalogAndDigitalSrc = -200330;
+DAQmxErrorPrimingCfgFIFO = -200329;
+DAQmxErrorCannotOpenTopologyCfgFile = -200328;
+DAQmxErrorInvalidDTInsideWfmDataType = -200327;
+DAQmxErrorRouteSrcAndDestSame = -200326;
+DAQmxErrorReversePolynomialCoefNotSpecd = -200325;
+DAQmxErrorDevAbsentOrUnavailable = -200324;
+DAQmxErrorNoAdvTrigForMultiDevScan = -200323;
+DAQmxErrorInterruptsInsufficientDataXferMech = -200322;
+DAQmxErrorInvalidAttentuationBasedOnMinMax = -200321;
+DAQmxErrorCabledModuleCannotRouteSSH = -200320;
+DAQmxErrorCabledModuleCannotRouteConvClk = -200319;
+DAQmxErrorInvalidExcitValForScaling = -200318;
+DAQmxErrorNoDevMemForScript = -200317;
+DAQmxErrorScriptDataUnderflow = -200316;
+DAQmxErrorNoDevMemForWaveform = -200315;
+DAQmxErrorStreamDCMBecameUnlocked = -200314;
+DAQmxErrorStreamDCMLock = -200313;
+DAQmxErrorWaveformNotInMem = -200312;
+DAQmxErrorWaveformWriteOutOfBounds = -200311;
+DAQmxErrorWaveformPreviouslyAllocated = -200310;
+DAQmxErrorSampClkTbMasterTbDivNotAppropriateForSampTbSrc = -200309;
+DAQmxErrorSampTbRateSampTbSrcMismatch = -200308;
+DAQmxErrorMasterTbRateMasterTbSrcMismatch = -200307;
+DAQmxErrorSampsPerChanTooBig = -200306;
+DAQmxErrorFinitePulseTrainNotPossible = -200305;
+DAQmxErrorExtMasterTimebaseRateNotSpecified = -200304;
+DAQmxErrorExtSampClkSrcNotSpecified = -200303;
+DAQmxErrorInputSignalSlowerThanMeasTime = -200302;
+DAQmxErrorCannotUpdatePulseGenProperty = -200301;
+DAQmxErrorInvalidTimingType = -200300;
+DAQmxErrorPropertyUnavailWhenUsingOnboardMemory = -200297;
+DAQmxErrorCannotWriteAfterStartWithOnboardMemory = -200295;
+DAQmxErrorNotEnoughSampsWrittenForInitialXferRqstCondition = -200294;
+DAQmxErrorNoMoreSpace = -200293;
+DAQmxErrorSamplesCanNotYetBeWritten = -200292;
+DAQmxErrorGenStoppedToPreventIntermediateBufferRegenOfOldSamples = -200291;
+DAQmxErrorGenStoppedToPreventRegenOfOldSamples = -200290;
+DAQmxErrorSamplesNoLongerWriteable = -200289;
+DAQmxErrorSamplesWillNeverBeGenerated = -200288;
+DAQmxErrorNegativeWriteSampleNumber = -200287;
+DAQmxErrorNoAcqStarted = -200286;
+DAQmxErrorSamplesNotYetAvailable = -200284;
+DAQmxErrorAcqStoppedToPreventIntermediateBufferOverflow = -200283;
+DAQmxErrorNoRefTrigConfigured = -200282;
+DAQmxErrorCannotReadRelativeToRefTrigUntilDone = -200281;
+DAQmxErrorSamplesNoLongerAvailable = -200279;
+DAQmxErrorSamplesWillNeverBeAvailable = -200278;
+DAQmxErrorNegativeReadSampleNumber = -200277;
+DAQmxErrorExternalSampClkAndRefClkThruSameTerm = -200276;
+DAQmxErrorExtSampClkRateTooLowForClkIn = -200275;
+DAQmxErrorExtSampClkRateTooHighForBackplane = -200274;
+DAQmxErrorSampClkRateAndDivCombo = -200273;
+DAQmxErrorSampClkRateTooLowForDivDown = -200272;
+DAQmxErrorProductOfAOMinAndGainTooSmall = -200271;
+DAQmxErrorInterpolationRateNotPossible = -200270;
+DAQmxErrorOffsetTooLarge = -200269;
+DAQmxErrorOffsetTooSmall = -200268;
+DAQmxErrorProductOfAOMaxAndGainTooLarge = -200267;
+DAQmxErrorMinAndMaxNotSymmetric = -200266;
+DAQmxErrorInvalidAnalogTrigSrc = -200265;
+DAQmxErrorTooManyChansForAnalogRefTrig = -200264;
+DAQmxErrorTooManyChansForAnalogPauseTrig = -200263;
+DAQmxErrorTrigWhenOnDemandSampTiming = -200262;
+DAQmxErrorInconsistentAnalogTrigSettings = -200261;
+DAQmxErrorMemMapDataXferModeSampTimingCombo = -200260;
+DAQmxErrorInvalidJumperedAttr = -200259;
+DAQmxErrorInvalidGainBasedOnMinMax = -200258;
+DAQmxErrorInconsistentExcit = -200257;
+DAQmxErrorTopologyNotSupportedByCfgTermBlock = -200256;
+DAQmxErrorBuiltInTempSensorNotSupported = -200255;
+DAQmxErrorInvalidTerm = -200254;
+DAQmxErrorCannotTristateTerm = -200253;
+DAQmxErrorCannotTristateBusyTerm = -200252;
+DAQmxErrorNoDMAChansAvailable = -200251;
+DAQmxErrorInvalidWaveformLengthWithinLoopInScript = -200250;
+DAQmxErrorInvalidSubsetLengthWithinLoopInScript = -200249;
+DAQmxErrorMarkerPosInvalidForLoopInScript = -200248;
+DAQmxErrorIntegerExpectedInScript = -200247;
+DAQmxErrorPLLBecameUnlocked = -200246;
+DAQmxErrorPLLLock = -200245;
+DAQmxErrorDDCClkOutDCMBecameUnlocked = -200244;
+DAQmxErrorDDCClkOutDCMLock = -200243;
+DAQmxErrorClkDoublerDCMBecameUnlocked = -200242;
+DAQmxErrorClkDoublerDCMLock = -200241;
+DAQmxErrorSampClkDCMBecameUnlocked = -200240;
+DAQmxErrorSampClkDCMLock = -200239;
+DAQmxErrorSampClkTimebaseDCMBecameUnlocked = -200238;
+DAQmxErrorSampClkTimebaseDCMLock = -200237;
+DAQmxErrorAttrCannotBeReset = -200236;
+DAQmxErrorExplanationNotFound = -200235;
+DAQmxErrorWriteBufferTooSmall = -200234;
+DAQmxErrorSpecifiedAttrNotValid = -200233;
+DAQmxErrorAttrCannotBeRead = -200232;
+DAQmxErrorAttrCannotBeSet = -200231;
+DAQmxErrorNULLPtrForC_Api = -200230;
+DAQmxErrorReadBufferTooSmall = -200229;
+DAQmxErrorBufferTooSmallForString = -200228;
+DAQmxErrorNoAvailTrigLinesOnDevice = -200227;
+DAQmxErrorTrigBusLineNotAvail = -200226;
+DAQmxErrorCouldNotReserveRequestedTrigLine = -200225;
+DAQmxErrorTrigLineNotFound = -200224;
+DAQmxErrorSCXI1126ThreshHystCombination = -200223;
+DAQmxErrorAcqStoppedToPreventInputBufferOverwrite = -200222;
+DAQmxErrorTimeoutExceeded = -200221;
+DAQmxErrorInvalidDeviceID = -200220;
+DAQmxErrorInvalidAOChanOrder = -200219;
+DAQmxErrorSampleTimingTypeAndDataXferMode = -200218;
+DAQmxErrorBufferWithOnDemandSampTiming = -200217;
+DAQmxErrorBufferAndDataXferMode = -200216;
+DAQmxErrorMemMapAndBuffer = -200215;
+DAQmxErrorNoAnalogTrigHW = -200214;
+DAQmxErrorTooManyPretrigPlusMinPostTrigSamps = -200213;
+DAQmxErrorInconsistentUnitsSpecified = -200212;
+DAQmxErrorMultipleRelaysForSingleRelayOp = -200211;
+DAQmxErrorMultipleDevIDsPerChassisSpecifiedInList = -200210;
+DAQmxErrorDuplicateDevIDInList = -200209;
+DAQmxErrorInvalidRangeStatementCharInList = -200208;
+DAQmxErrorInvalidDeviceIDInList = -200207;
+DAQmxErrorTriggerPolarityConflict = -200206;
+DAQmxErrorCannotScanWithCurrentTopology = -200205;
+DAQmxErrorUnexpectedIdentifierInFullySpecifiedPathInList = -200204;
+DAQmxErrorSwitchCannotDriveMultipleTrigLines = -200203;
+DAQmxErrorInvalidRelayName = -200202;
+DAQmxErrorSwitchScanlistTooBig = -200201;
+DAQmxErrorSwitchChanInUse = -200200;
+DAQmxErrorSwitchNotResetBeforeScan = -200199;
+DAQmxErrorInvalidTopology = -200198;
+DAQmxErrorAttrNotSupported = -200197;
+DAQmxErrorUnexpectedEndOfActionsInList = -200196;
+DAQmxErrorPowerBudgetExceeded = -200195;
+DAQmxErrorHWUnexpectedlyPoweredOffAndOn = -200194;
+DAQmxErrorSwitchOperationNotSupported = -200193;
+DAQmxErrorOnlyContinuousScanSupported = -200192;
+DAQmxErrorSwitchDifferentTopologyWhenScanning = -200191;
+DAQmxErrorDisconnectPathNotSameAsExistingPath = -200190;
+DAQmxErrorConnectionNotPermittedOnChanReservedForRouting = -200189;
+DAQmxErrorCannotConnectSrcChans = -200188;
+DAQmxErrorCannotConnectChannelToItself = -200187;
+DAQmxErrorChannelNotReservedForRouting = -200186;
+DAQmxErrorCannotConnectChansDirectly = -200185;
+DAQmxErrorChansAlreadyConnected = -200184;
+DAQmxErrorChanDuplicatedInPath = -200183;
+DAQmxErrorNoPathToDisconnect = -200182;
+DAQmxErrorInvalidSwitchChan = -200181;
+DAQmxErrorNoPathAvailableBetween2SwitchChans = -200180;
+DAQmxErrorExplicitConnectionExists = -200179;
+DAQmxErrorSwitchDifferentSettlingTimeWhenScanning = -200178;
+DAQmxErrorOperationOnlyPermittedWhileScanning = -200177;
+DAQmxErrorOperationNotPermittedWhileScanning = -200176;
+DAQmxErrorHardwareNotResponding = -200175;
+DAQmxErrorInvalidSampAndMasterTimebaseRateCombo = -200173;
+DAQmxErrorNonZeroBufferSizeInProgIOXfer = -200172;
+DAQmxErrorVirtualChanNameUsed = -200171;
+DAQmxErrorPhysicalChanDoesNotExist = -200170;
+DAQmxErrorMemMapOnlyForProgIOXfer = -200169;
+DAQmxErrorTooManyChans = -200168;
+DAQmxErrorCannotHaveCJTempWithOtherChans = -200167;
+DAQmxErrorOutputBufferUnderwrite = -200166;
+DAQmxErrorSensorInvalidCompletionResistance = -200163;
+DAQmxErrorVoltageExcitIncompatibleWith2WireCfg = -200162;
+DAQmxErrorIntExcitSrcNotAvailable = -200161;
+DAQmxErrorCannotCreateChannelAfterTaskVerified = -200160;
+DAQmxErrorLinesReservedForSCXIControl = -200159;
+DAQmxErrorCouldNotReserveLinesForSCXIControl = -200158;
+DAQmxErrorCalibrationFailed = -200157;
+DAQmxErrorReferenceFrequencyInvalid = -200156;
+DAQmxErrorReferenceResistanceInvalid = -200155;
+DAQmxErrorReferenceCurrentInvalid = -200154;
+DAQmxErrorReferenceVoltageInvalid = -200153;
+DAQmxErrorEEPROMDataInvalid = -200152;
+DAQmxErrorCabledModuleNotCapableOfRoutingAI = -200151;
+DAQmxErrorChannelNotAvailableInParallelMode = -200150;
+DAQmxErrorExternalTimebaseRateNotKnownForDelay = -200149;
+DAQmxErrorFREQOUTCannotProduceDesiredFrequency = -200148;
+DAQmxErrorMultipleCounterInputTask = -200147;
+DAQmxErrorCounterStartPauseTriggerConflict = -200146;
+DAQmxErrorCounterInputPauseTriggerAndSampleClockInvalid = -200145;
+DAQmxErrorCounterOutputPauseTriggerInvalid = -200144;
+DAQmxErrorCounterTimebaseRateNotSpecified = -200143;
+DAQmxErrorCounterTimebaseRateNotFound = -200142;
+DAQmxErrorCounterOverflow = -200141;
+DAQmxErrorCounterNoTimebaseEdgesBetweenGates = -200140;
+DAQmxErrorCounterMaxMinRangeFreq = -200139;
+DAQmxErrorCounterMaxMinRangeTime = -200138;
+DAQmxErrorSuitableTimebaseNotFoundTimeCombo = -200137;
+DAQmxErrorSuitableTimebaseNotFoundFrequencyCombo = -200136;
+DAQmxErrorInternalTimebaseSourceDivisorCombo = -200135;
+DAQmxErrorInternalTimebaseSourceRateCombo = -200134;
+DAQmxErrorInternalTimebaseRateDivisorSourceCombo = -200133;
+DAQmxErrorExternalTimebaseRateNotknownForRate = -200132;
+DAQmxErrorAnalogTrigChanNotFirstInScanList = -200131;
+DAQmxErrorNoDivisorForExternalSignal = -200130;
+DAQmxErrorAttributeInconsistentAcrossRepeatedPhysicalChannels = -200128;
+DAQmxErrorCannotHandshakeWithPort0 = -200127;
+DAQmxErrorControlLineConflictOnPortC = -200126;
+DAQmxErrorLines4To7ConfiguredForOutput = -200125;
+DAQmxErrorLines4To7ConfiguredForInput = -200124;
+DAQmxErrorLines0To3ConfiguredForOutput = -200123;
+DAQmxErrorLines0To3ConfiguredForInput = -200122;
+DAQmxErrorPortConfiguredForOutput = -200121;
+DAQmxErrorPortConfiguredForInput = -200120;
+DAQmxErrorPortConfiguredForStaticDigitalOps = -200119;
+DAQmxErrorPortReservedForHandshaking = -200118;
+DAQmxErrorPortDoesNotSupportHandshakingDataIO = -200117;
+DAQmxErrorCannotTristate8255OutputLines = -200116;
+DAQmxErrorTemperatureOutOfRangeForCalibration = -200113;
+DAQmxErrorCalibrationHandleInvalid = -200112;
+DAQmxErrorPasswordRequired = -200111;
+DAQmxErrorIncorrectPassword = -200110;
+DAQmxErrorPasswordTooLong = -200109;
+DAQmxErrorCalibrationSessionAlreadyOpen = -200108;
+DAQmxErrorSCXIModuleIncorrect = -200107;
+DAQmxErrorAttributeInconsistentAcrossChannelsOnDevice = -200106;
+DAQmxErrorSCXI1122ResistanceChanNotSupportedForCfg = -200105;
+DAQmxErrorBracketPairingMismatchInList = -200104;
+DAQmxErrorInconsistentNumSamplesToWrite = -200103;
+DAQmxErrorIncorrectDigitalPattern = -200102;
+DAQmxErrorIncorrectNumChannelsToWrite = -200101;
+DAQmxErrorIncorrectReadFunction = -200100;
+DAQmxErrorPhysicalChannelNotSpecified = -200099;
+DAQmxErrorMoreThanOneTerminal = -200098;
+DAQmxErrorMoreThanOneActiveChannelSpecified = -200097;
+DAQmxErrorInvalidNumberSamplesToRead = -200096;
+DAQmxErrorAnalogWaveformExpected = -200095;
+DAQmxErrorDigitalWaveformExpected = -200094;
+DAQmxErrorActiveChannelNotSpecified = -200093;
+DAQmxErrorFunctionNotSupportedForDeviceTasks = -200092;
+DAQmxErrorFunctionNotInLibrary = -200091;
+DAQmxErrorLibraryNotPresent = -200090;
+DAQmxErrorDuplicateTask = -200089;
+DAQmxErrorInvalidTask = -200088;
+DAQmxErrorInvalidChannel = -200087;
+DAQmxErrorInvalidSyntaxForPhysicalChannelRange = -200086;
+DAQmxErrorMinNotLessThanMax = -200082;
+DAQmxErrorSampleRateNumChansConvertPeriodCombo = -200081;
+DAQmxErrorAODuringCounter1DMAConflict = -200079;
+DAQmxErrorAIDuringCounter0DMAConflict = -200078;
+DAQmxErrorInvalidAttributeValue = -200077;
+DAQmxErrorSuppliedCurrentDataOutsideSpecifiedRange = -200076;
+DAQmxErrorSuppliedVoltageDataOutsideSpecifiedRange = -200075;
+DAQmxErrorCannotStoreCalConst = -200074;
+DAQmxErrorSCXIModuleNotFound = -200073;
+DAQmxErrorDuplicatePhysicalChansNotSupported = -200072;
+DAQmxErrorTooManyPhysicalChansInList = -200071;
+DAQmxErrorInvalidAdvanceEventTriggerType = -200070;
+DAQmxErrorDeviceIsNotAValidSwitch = -200069;
+DAQmxErrorDeviceDoesNotSupportScanning = -200068;
+DAQmxErrorScanListCannotBeTimed = -200067;
+DAQmxErrorConnectOperatorInvalidAtPointInList = -200066;
+DAQmxErrorUnexpectedSwitchActionInList = -200065;
+DAQmxErrorUnexpectedSeparatorInList = -200064;
+DAQmxErrorExpectedTerminatorInList = -200063;
+DAQmxErrorExpectedConnectOperatorInList = -200062;
+DAQmxErrorExpectedSeparatorInList = -200061;
+DAQmxErrorFullySpecifiedPathInListContainsRange = -200060;
+DAQmxErrorConnectionSeparatorAtEndOfList = -200059;
+DAQmxErrorIdentifierInListTooLong = -200058;
+DAQmxErrorDuplicateDeviceIDInListWhenSettling = -200057;
+DAQmxErrorChannelNameNotSpecifiedInList = -200056;
+DAQmxErrorDeviceIDNotSpecifiedInList = -200055;
+DAQmxErrorSemicolonDoesNotFollowRangeInList = -200054;
+DAQmxErrorSwitchActionInListSpansMultipleDevices = -200053;
+DAQmxErrorRangeWithoutAConnectActionInList = -200052;
+DAQmxErrorInvalidIdentifierFollowingSeparatorInList = -200051;
+DAQmxErrorInvalidChannelNameInList = -200050;
+DAQmxErrorInvalidNumberInRepeatStatementInList = -200049;
+DAQmxErrorInvalidTriggerLineInList = -200048;
+DAQmxErrorInvalidIdentifierInListFollowingDeviceID = -200047;
+DAQmxErrorInvalidIdentifierInListAtEndOfSwitchAction = -200046;
+DAQmxErrorDeviceRemoved = -200045;
+DAQmxErrorRoutingPathNotAvailable = -200044;
+DAQmxErrorRoutingHardwareBusy = -200043;
+DAQmxErrorRequestedSignalInversionForRoutingNotPossible = -200042;
+DAQmxErrorInvalidRoutingDestinationTerminalName = -200041;
+DAQmxErrorInvalidRoutingSourceTerminalName = -200040;
+DAQmxErrorRoutingNotSupportedForDevice = -200039;
+DAQmxErrorWaitIsLastInstructionOfLoopInScript = -200038;
+DAQmxErrorClearIsLastInstructionOfLoopInScript = -200037;
+DAQmxErrorInvalidLoopIterationsInScript = -200036;
+DAQmxErrorRepeatLoopNestingTooDeepInScript = -200035;
+DAQmxErrorMarkerPositionOutsideSubsetInScript = -200034;
+DAQmxErrorSubsetStartOffsetNotAlignedInScript = -200033;
+DAQmxErrorInvalidSubsetLengthInScript = -200032;
+DAQmxErrorMarkerPositionNotAlignedInScript = -200031;
+DAQmxErrorSubsetOutsideWaveformInScript = -200030;
+DAQmxErrorMarkerOutsideWaveformInScript = -200029;
+DAQmxErrorWaveformInScriptNotInMem = -200028;
+DAQmxErrorKeywordExpectedInScript = -200027;
+DAQmxErrorBufferNameExpectedInScript = -200026;
+DAQmxErrorProcedureNameExpectedInScript = -200025;
+DAQmxErrorScriptHasInvalidIdentifier = -200024;
+DAQmxErrorScriptHasInvalidCharacter = -200023;
+DAQmxErrorResourceAlreadyReserved = -200022;
+DAQmxErrorSelfTestFailed = -200020;
+DAQmxErrorADCOverrun = -200019;
+DAQmxErrorDACUnderflow = -200018;
+DAQmxErrorInputFIFOUnderflow = -200017;
+DAQmxErrorOutputFIFOUnderflow = -200016;
+DAQmxErrorSCXISerialCommunication = -200015;
+DAQmxErrorDigitalTerminalSpecifiedMoreThanOnce = -200014;
+DAQmxErrorDigitalOutputNotSupported = -200012;
+DAQmxErrorInconsistentChannelDirections = -200011;
+DAQmxErrorInputFIFOOverflow = -200010;
+DAQmxErrorTimeStampOverwritten = -200009;
+DAQmxErrorStopTriggerHasNotOccurred = -200008;
+DAQmxErrorRecordNotAvailable = -200007;
+DAQmxErrorRecordOverwritten = -200006;
+DAQmxErrorDataNotAvailable = -200005;
+DAQmxErrorDataOverwrittenInDeviceMemory = -200004;
+DAQmxErrorDuplicatedChannel = -200003;
+DAQmxWarningTimestampCounterRolledOver = 200003;
+DAQmxWarningInputTerminationOverloaded = 200004;
+DAQmxWarningADCOverloaded = 200005;
+DAQmxWarningPLLUnlocked = 200007;
+DAQmxWarningCounter0DMADuringAIConflict = 200008;
+DAQmxWarningCounter1DMADuringAOConflict = 200009;
+DAQmxWarningStoppedBeforeDone = 200010;
+DAQmxWarningRateViolatesSettlingTime = 200011;
+DAQmxWarningRateViolatesMaxADCRate = 200012;
+DAQmxWarningUserDefInfoStringTooLong = 200013;
+DAQmxWarningTooManyInterruptsPerSecond = 200014;
+DAQmxWarningPotentialGlitchDuringWrite = 200015;
+DAQmxWarningDevNotSelfCalibratedWithDAQmx = 200016;
+DAQmxWarningAISampRateTooLow = 200017;
+DAQmxWarningAIConvRateTooLow = 200018;
+DAQmxWarningReadOffsetCoercion = 200019;
+DAQmxWarningPretrigCoercion = 200020;
+DAQmxWarningSampValCoercedToMax = 200021;
+DAQmxWarningSampValCoercedToMin = 200022;
+DAQmxWarningPropertyVersionNew = 200024;
+DAQmxWarningUserDefinedInfoTooLong = 200025;
+DAQmxWarningCAPIStringTruncatedToFitBuffer = 200026;
+DAQmxWarningSampClkRateTooLow = 200027;
+DAQmxWarningPossiblyInvalidCTRSampsInFiniteDMAAcq = 200028;
+DAQmxWarningRISAcqCompletedSomeBinsNotFilled = 200029;
+DAQmxWarningPXIDevTempExceedsMaxOpTemp = 200030;
+DAQmxWarningOutputGainTooLowForRFFreq = 200031;
+DAQmxWarningOutputGainTooHighForRFFreq = 200032;
+DAQmxWarningMultipleWritesBetweenSampClks = 200033;
+DAQmxWarningDeviceMayShutDownDueToHighTemp = 200034;
+DAQmxWarningRateViolatesMinADCRate = 200035;
+DAQmxWarningSampClkRateAboveDevSpecs = 200036;
+DAQmxWarningCOPrevDAQmxWriteSettingsOverwrittenForHWTimedSinglePoint = 200037;
+DAQmxWarningLowpassFilterSettlingTimeExceedsUserTimeBetween2ADCConversions = 200038;
+DAQmxWarningLowpassFilterSettlingTimeExceedsDriverTimeBetween2ADCConversions = 200039;
+DAQmxWarningSampClkRateViolatesSettlingTimeForGen = 200040;
+DAQmxWarningReadNotCompleteBeforeSampClk = 209800;
+DAQmxWarningWriteNotCompleteBeforeSampClk = 209801;
+DAQmxErrorInvalidSignalModifier_Routing = -89150;
+DAQmxErrorRoutingDestTermPXIClk10InNotInSlot2_Routing = -89149;
+DAQmxErrorRoutingDestTermPXIStarXNotInSlot2_Routing = -89148;
+DAQmxErrorRoutingSrcTermPXIStarXNotInSlot2_Routing = -89147;
+DAQmxErrorRoutingSrcTermPXIStarInSlot16AndAbove_Routing = -89146;
+DAQmxErrorRoutingDestTermPXIStarInSlot16AndAbove_Routing = -89145;
+DAQmxErrorRoutingDestTermPXIStarInSlot2_Routing = -89144;
+DAQmxErrorRoutingSrcTermPXIStarInSlot2_Routing = -89143;
+DAQmxErrorRoutingDestTermPXIChassisNotIdentified_Routing = -89142;
+DAQmxErrorRoutingSrcTermPXIChassisNotIdentified_Routing = -89141;
+DAQmxErrorTrigLineNotFoundSingleDevRoute_Routing = -89140;
+DAQmxErrorNoCommonTrigLineForRoute_Routing = -89139;
+DAQmxErrorResourcesInUseForRouteInTask_Routing = -89138;
+DAQmxErrorResourcesInUseForRoute_Routing = -89137;
+DAQmxErrorRouteNotSupportedByHW_Routing = -89136;
+DAQmxErrorResourcesInUseForInversionInTask_Routing = -89135;
+DAQmxErrorResourcesInUseForInversion_Routing = -89134;
+DAQmxErrorInversionNotSupportedByHW_Routing = -89133;
+DAQmxErrorResourcesInUseForProperty_Routing = -89132;
+DAQmxErrorRouteSrcAndDestSame_Routing = -89131;
+DAQmxErrorDevAbsentOrUnavailable_Routing = -89130;
+DAQmxErrorInvalidTerm_Routing = -89129;
+DAQmxErrorCannotTristateTerm_Routing = -89128;
+DAQmxErrorCannotTristateBusyTerm_Routing = -89127;
+DAQmxErrorCouldNotReserveRequestedTrigLine_Routing = -89126;
+DAQmxErrorTrigLineNotFound_Routing = -89125;
+DAQmxErrorRoutingPathNotAvailable_Routing = -89124;
+DAQmxErrorRoutingHardwareBusy_Routing = -89123;
+DAQmxErrorRequestedSignalInversionForRoutingNotPossible_Routing = -89122;
+DAQmxErrorInvalidRoutingDestinationTerminalName_Routing = -89121;
+DAQmxErrorInvalidRoutingSourceTerminalName_Routing = -89120;
+DAQmxStatusCouldNotConnectToServer_Routing = -88900;
+DAQmxStatusDeviceNameNotFound_Routing = -88717;
+DAQmxStatusLocalRemoteDriverVersionMismatch_Routing = -88716;
+DAQmxStatusDuplicateDeviceName_Routing = -88715;
+DAQmxStatusRuntimeAborting_Routing = -88710;
+DAQmxStatusRuntimeAborted_Routing = -88709;
+DAQmxStatusResourceNotInPool_Routing = -88708;
+DAQmxStatusDriverDeviceGUIDNotFound_Routing = -88705;
