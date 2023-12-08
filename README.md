@@ -1,31 +1,74 @@
 <!--
-SPDX-FileCopyrightText: 2023 Johannes Keyser
+SPDX-FileCopyrightText: 2005 Jens Roesner, 2023 Johannes Keyser
 
 SPDX-License-Identifier: CC0-1.0
 -->
 
 # Plain Matlab NI-DAQmx examples
 
-The idea: This project will provide and extend the examples of using Matlab with a National Instruments (NI) DAQ card _without_ the Data Acquisition Toolbox, with the code by Jens Roesner and Nathan Tomlin.
+This project provides examples of using Matlab with a National Instruments (NI) DAQ card _without_ the Data Acquisition Toolbox.
 
-In addition, the code's (public) history will be logged with this Git repo, and the license terms will be clarified.
+## Current status and roadmap
 
-## Current status
+So far, this project contains the files and descriptions by Jens Roesner (integrated here) and Nathan Tomlin (see [Description_Nathan_Tomlin.md](Description_Nathan_Tomlin.md)).
 
-So far, this project contains a dump of the files and descriptions by Jens Roesner and Nathan Tomlin.
-See [Description_Jens_Roesner.md](Description_Jens_Roesner.md) and [Description_Nathan_Tomlin.md](Description_Nathan_Tomlin.md) for their descriptions.
-
-The next step is to remove redundant/outdated code and improve the documentation.
+The next steps are to improve the documentation, remove/improve any redundant/outdated code, and generalize the code to run on Linux.
 
 ### Who is this for?
 
-For all people wanting to use their M-Series cards (and/or NI-DAQmx drivers) with Matlab.
+For anyone who wants to use their NI input/output cards with Matlab (via the NI-DAQmx driver).
 
 Further, the examples illustrate some very basic steps on how to use Matlab's powerful function of importing dll files.
 
 ## Installation
 
-TODO...
+FIXME: The current description below only applies to Windows, and may be outdated.
+
+Start by loading the NI dll: `funclist = loadlibrary('nicaiu.dll', 'nidaqmx.h', 'alias', 'myni')`
+
+(You can choose any alias as long as it is a legal variable name.)
+
+If your version of Matlab is too old to provide the `loadlibrary` function directly, download it here: <http://www.codeproject.com/dll/MatlabGenericDll.asp?df=100&forumid=26247&exp=0&select=972623>.
+After importing, you see the list of available functions.
+You can also display them by `libfunctionsview('myni')`.
+That's basically it.
+By using the National Instruments NI-DAQmx C Reference manual and libfunctionsview(\'myni\') you have access to those functions.
+One special thing you need to keep in mind is the fact that pointers work differently in Matlab than in C.
+This problem can be solved by using the Matlab function `libpointer`.
+Sometimes Matlab does not require a pointer when C would.
+But I found that it does not hurt to specify a pointer in this case.
+Whether Matlab expects a pointer can be seen in the output created by `libfunctionsview('myni')`.
+
+## Usage
+
+The general syntax for calling DAQmx functions is:
+
+```matlab
+[outputarguments] = calllib(alias, NIDAQmx_functionname, inputarguments)
+```
+
+Below is a list of example scripts featuring simple analog input (AI); advanced, synchronous AI; and simple analog output (AO).
+
+### Overview of scripts
+
+The following examples were written by Jens Roesner:
+
+- [NImess.m](NImess.m): Triggered and untriggered, synchronized or unsynchronized AI.
+- [NIsetAO.m](NIsetAO.m): Simple AO
+- [NIsetAOwave2.m](NIsetAOwave2.m): Wave Output AO
+- [NIconstants.m](NIconstants.m): List of constants defined by NI.
+
+These following examples were written by Nathan Tomlin:
+
+- FIXME.
+
+### Known issues
+
+Some known issues are tracked in file [known_issues.md](known_issues.md).
+
+## Hardware compatibility
+
+Jens Roesner wrote his initial examples in 2005 for NI cards of the M-Series.
 
 ## Alternatives
 
@@ -41,7 +84,7 @@ For some "historical context": Jens Roesner's code pre-dates the widespread supp
 
 - Jens Roesner's code is available at <https://www.jensroesner.com/work/matlab/index.html>.
 - Nathan Tomlin's code is available at <https://mathworks.com/matlabcentral/fileexchange/27609-daqmx-examples>.
-- You can also check the [NI forum](http://forums.ni.com/ni/board/message?board.id=250&thread.id=10165).
+- You can also check [this thread started by Jens Roesner in the NI forum](https://forums.ni.com/t5/Multifunction-DAQ/Use-M-Series-cards-with-DAQmx-in-Matlab/m-p/185232).
 
 ## Authors
 

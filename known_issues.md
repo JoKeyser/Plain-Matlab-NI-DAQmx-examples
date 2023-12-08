@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2005 Jens Roesner, 2023 Johannes Keyser
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Known issues
 
 ## Error when creating channels
