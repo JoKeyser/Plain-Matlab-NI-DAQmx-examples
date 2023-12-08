@@ -2,7 +2,6 @@
 %*** NI-DAQmx Attributes ******************************************************
 %******************************************************************************
 % Copyright National Instruments.
-% Adapted for use in Matlab by Jens Roesner, Jan/25/2005.
 %
 % SPDX-FileCopyrightText: 2005 Jens Roesner
 %

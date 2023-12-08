@@ -20,9 +20,6 @@ function taskh = DAQmxCreateDIChan(lib,lines,lineGrouping)
 %	int32 DAQmxCreateTask (const char taskName[],TaskHandle *taskHandle);
 %	int32 DAQmxCreateDIChan (TaskHandle taskHandle,const char lines[],const char nameToAssignToLines[],int32 lineGrouping);
 %	int32 DAQmxTaskControl (TaskHandle taskHandle,int32 action);
-% 
-% written by Nathan Tomlin (nathan.a.tomlin@gmail.com)
-% v0 - 1004
 
 
 % create task

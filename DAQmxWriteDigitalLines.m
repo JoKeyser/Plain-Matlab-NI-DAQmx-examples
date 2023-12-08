@@ -26,10 +26,6 @@ function sampsPerChanWritten = DAQmxWriteDigitalLines(lib,taskh,numSampsPerChan,
 %		TaskHandle taskHandle,int32 numSampsPerChan,bool32 autoStart,float64 timeout,bool32 dataLayout,
 %		uInt8 writeArray[],int32 *sampsPerChanWritten,bool32 *reserved);
 % int32 DAQmxStopTask (TaskHandle taskHandle);
-% 
-% 
-% written by Nathan Tomlin (nathan.a.tomlin@gmail.com)
-% v0 - 1004
 
 autoStart = 1;
 

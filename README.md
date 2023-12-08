@@ -60,11 +60,9 @@ The general syntax for calling DAQmx functions is:
 [outputarguments] = calllib(alias, NIDAQmx_functionname, inputarguments)
 ```
 
-Below is a list of example scripts featuring simple analog input (AI); advanced, synchronous AI; and simple analog output (AO).
-
 ### Overview of scripts
 
-The following examples were written by Jens Roesner:
+The following examples were written by Jens Roesner, featuring simple analog input (AI); advanced, synchronous AI; and simple analog output (AO):
 
 - [NImess.m](NImess.m): Triggered and untriggered, synchronized or unsynchronized AI.
 - [NIsetAO.m](NIsetAO.m): Simple AO
@@ -112,9 +110,9 @@ For some "historical context": Jens Roesner's code pre-dates the widespread supp
 
 ## Authors
 
-- Jens Roesner
-- Nathan Tomlin
-- Johannes Keyser (so far, only editorial work)
+- Jens Roesner (`jens.roesner -at- gmx.de`, [link to personal website](https://www.jensroesner.com/work/matlab/))
+- Nathan Tomlin (`nathan.a.tomlin -at- gmail.com`, [link to Mathworks community profile](https://mathworks.com/matlabcentral/profile/authors/1252890`))
+- Johannes Keyser (so far, only editorial work; [link to Mathworks community profile](https://mathworks.com/matlabcentral/profile/authors/2267277))
 
 ## Licensing
 

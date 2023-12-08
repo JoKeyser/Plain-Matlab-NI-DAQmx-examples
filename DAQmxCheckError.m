@@ -12,9 +12,6 @@ function DAQmxCheckError(lib,err)
 % inputs:
 %	lib = .dll or alias (ex. 'myni')
 %	err = DAQmx error
-% 
-% written by Nathan Tomlin (nathan.a.tomlin@gmail.com)
-% v0 - 1004
 
 if err ~= 0 
 	% find out how long the error string is

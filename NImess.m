@@ -4,8 +4,6 @@
 
 function messmatrix=NImess(synchron,trigger,numofchans,samprate,samptime)
 % function messmatrix=NImess(synchron,trigger,numofchans,samprate,samptime)
-% 2005, written by jens.roesner -at- gmx.de
-% version 1.0 as of 20.02.2005
 % provides access of NI's NI-DAQmx driver from Matlab
 % Analog Input (synchronized or not) with (especially) M-Series cards 
 % Measures the first numofchans channels.

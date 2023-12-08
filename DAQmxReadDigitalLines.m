@@ -21,10 +21,6 @@ function data = DAQmxReadDigitalLines(lib,taskh,numSampsPerChan,timeout,fillMode
 %		TaskHandle taskHandle,int32 numSampsPerChan,float64 timeout,bool32 fillMode,
 %		uInt8 readArray[],uInt32 arraySizeInBytes,int32 *sampsPerChanRead,int32 *numBytesPerSamp,bool32 *reserved);
 % int32 DAQmxStopTask (TaskHandle taskHandle);
-% 
-% written by Nathan Tomlin (nathan.a.tomlin@gmail.com)
-% v0 - 1004
-
 
 % make some pointers
 % readarray1=ones(numchan,numsample); readarray1_ptr=libpointer('doublePtr',readarray1);

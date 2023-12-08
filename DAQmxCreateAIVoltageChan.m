@@ -25,9 +25,6 @@ function taskh = DAQmxCreateAIVoltageChan(lib,physicalChannel,Vmin,Vmax)
 %		const char nameToAssignToChannel[],int32 terminalConfig,float64 minVal,
 %		float64 maxVal,int32 units,const char customScaleName[]);
 %	int32 DAQmxTaskControl (TaskHandle taskHandle,int32 action);
-% 
-% written by Nathan Tomlin (nathan.a.tomlin@gmail.com)
-% v0 - 1004
 
 
 % create task

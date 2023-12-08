@@ -9,7 +9,7 @@ SPDX-License-Identifier: CC0-1.0
 ## 2023
 
 - The documentation texts by Jens Roesner's and Nathan Tomlin were edited into the more conventional project description you are reading here.
-- SPDX license headers were added to all files.
+- SPDX license headers were added to all files, and redundant lines of authorship and versions were deleted.
 - Johannes Keyser copied all code files by Jens Roesner and Nathan Tomlin into this project repository.
 
 ## 2010 
@@ -31,4 +31,4 @@ SPDX-License-Identifier: CC0-1.0
 
 ## 2005
 
-- Jens Roesner wrote his code and descriptions and published them on the NI forum and his website.
+- Jens Roesner wrote his scripts (versions 1.0 as of 20 Feb 2005) and published them on the NI forum and his website.

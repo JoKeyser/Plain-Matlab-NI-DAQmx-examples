@@ -1,9 +1,6 @@
 % SPDX-FileCopyrightText: 2010 Nathan Tomlin
 %
 % SPDX-License-Identifier: BSD-2-Clause
-%
-% written by Nathan Tomlin (nathan.a.tomlin@gmail.com)
-% v0 - 1004
 
 lib = 'myni';	% library alias
 if ~libisloaded(lib)
