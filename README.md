@@ -10,7 +10,7 @@ This project provides examples of using Matlab with a National Instruments (NI) 
 
 ## Current status and roadmap
 
-So far, this project contains the files and descriptions by Jens Roesner (integrated here) and Nathan Tomlin (see [Description_Nathan_Tomlin.md](Description_Nathan_Tomlin.md)).
+So far, this project contains the files and descriptions by Jens Roesner and Nathan Tomlin.
 
 The next steps are to improve the documentation, remove/improve any redundant/outdated code, and generalize the code to run on Linux.
 
@@ -23,6 +23,8 @@ Further, the examples illustrate some very basic steps on how to use Matlab's po
 ## Installation
 
 FIXME: The current description below only applies to Windows, and may be outdated.
+
+### Advice from Jens Roesner:
 
 Start by loading the NI dll: `funclist = loadlibrary('nicaiu.dll', 'nidaqmx.h', 'alias', 'myni')`
 
@@ -38,6 +40,17 @@ This problem can be solved by using the Matlab function `libpointer`.
 Sometimes Matlab does not require a pointer when C would.
 But I found that it does not hurt to specify a pointer in this case.
 Whether Matlab expects a pointer can be seen in the output created by `libfunctionsview('myni')`.
+
+### Advice from Nathan Tomlin:
+
+I had no header file (`.h`) on my computer, so I had to download NIDAQ from the NI website, I got this version: `nidaq910f0_downloader.exe`.
+
+After installing, the C help files were then in:  
+`C:\Program Files\National Instruments\NI-DAQ\docs\cdaqmx.chm`  
+and the header file in:  
+`C:\Program Files\National Instruments\NI-DAQ\DAQmx ANSI C Dev\include`.
+
+I copied the files `nicaiu.dll` and `nidaqmx.h` files to my working directory, but you can also just add their paths to the code.
 
 ## Usage
 
@@ -60,15 +73,26 @@ The following examples were written by Jens Roesner:
 
 These following examples were written by Nathan Tomlin:
 
-- FIXME.
+- [daqmx_examples.m](daqmx_examples.m): Showcases how to use the functions below.
+- [DAQmxCheckError.m](DAQmxCheckError.m): Checks for errors from the NI driver.
+- [DAQmxCreateAIVoltageChan.m](DAQmxCreateAIVoltageChan.m): Creates a task and adds analog input channel(s) to the task.
+- [DAQmxCreateDIChan.m](DAQmxCreateDIChan.m): FIXME: Claims to create a task and add digital output line(s) to the task (but probably means INPUT lines?)
+- [DAQmxCreateDOChan.m](DAQmxCreateDOChan.m): Creates a task and adds digital output line(s) to the task.
+- [DAQmxReadAnalogF64.m](DAQmxReadAnalogF64.m): Reads analog inputs from previously set up task.
+- [DAQmxReadDigitalLines.m](DAQmxReadDigitalLines.m): Reads digital inputs from previously set up task.
+- [DAQmxWriteDigitalLines.m](DAQmxWriteDigitalLines.m): Writes digital outputs from previously set up task.
 
 ### Known issues
 
 Some known issues are tracked in file [known_issues.md](known_issues.md).
 
-## Hardware compatibility
+## Compatibility
 
-Jens Roesner wrote his initial examples in 2005 for NI cards of the M-Series.
+There are no guarantees that this code will work with your hardware or software.
+
+Jens Roesner wrote his initial examples in 2005 for NI's M-Series cards.
+
+Nathan Tomlin tested his code on Matlab 7.8.0 (R2009a) on Windows XP with a NI PCI 6220 board.
 
 ## Alternatives
 
