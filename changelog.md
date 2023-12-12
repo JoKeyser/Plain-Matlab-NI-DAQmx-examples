@@ -8,12 +8,17 @@ SPDX-License-Identifier: CC0-1.0
 
 ## 2023
 
-- Cosmetics: In Jens Roesner's code, use whitespaces around binary operators and after commas. Also remove some unnecessary syntax like parentheses.
-- The documentation texts by Jens Roesner's and Nathan Tomlin were edited into the more conventional project description you are reading here.
+- Cosmetics changes
+   - Allow only one command per line.
+   - Restrict maximum line width to 80 characters.
+   - Add space around binary operators and after commas.
+   - Remove unnecessary syntax, like parentheses.
+   - Replace tabs with spaces.
+- The documentation texts were edited into the more conventional project description you are reading here.
 - SPDX license headers were added to all files, and redundant lines of authorship and versions were deleted.
-- Johannes Keyser copied all code files by Jens Roesner and Nathan Tomlin into this project repository.
+- Johannes Keyser copied all files by Jens Roesner and Nathan Tomlin into this project repository.
 
-## 2010 
+## 2010
 
 - Nathan Tomlin based his code on Jens Roesner's code.
   _NOTE: The following description is lightly edited from [Version 1.0.0.0 by Nathan Tomlin on Mathworks File Exchange](https://mathworks.com/matlabcentral/fileexchange/27609-daqmx-examples):_
