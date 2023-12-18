@@ -8,6 +8,7 @@ SPDX-License-Identifier: CC0-1.0
 
 ## 2023
 
+- Update the NI constants in `NIconstants.m`.
 - Cosmetics changes
    - Allow only one command per line.
    - Restrict maximum line width to 80 characters.
