@@ -6,19 +6,19 @@ SPDX-License-Identifier: CC0-1.0
 
 # Plain Matlab NI-DAQmx examples
 
-This project provides examples of using Matlab with a National Instruments (NI) DAQ card _without_ the Data Acquisition Toolbox.
+Examples how to use a National Instruments (NI) DAQ card with plain Matlab, _without_ the Data Acquisition Toolbox.
+
+## Who is this for?
+
+For anyone who wants to use their NI input/output cards with Matlab (via the NI-DAQmx driver).
+
+Further, the examples illustrate some very basic steps on how to use Matlab's powerful function of importing dll files.
 
 ## Current status and roadmap
 
 So far, this project contains the files and descriptions by Jens Roesner and Nathan Tomlin.
 
 The next steps are to improve the documentation, remove/improve any redundant/outdated code, and generalize the code to run on Linux.
-
-### Who is this for?
-
-For anyone who wants to use their NI input/output cards with Matlab (via the NI-DAQmx driver).
-
-Further, the examples illustrate some very basic steps on how to use Matlab's powerful function of importing dll files.
 
 ## Installation
 
@@ -88,15 +88,17 @@ Some known issues are tracked in file [known_issues.md](known_issues.md).
 
 There are no guarantees that this code will work with your hardware or software.
 
-Jens Roesner wrote his initial examples in 2005 for NI's M-Series cards.
-
-Nathan Tomlin tested his code on Matlab 7.8.0 (R2009a) on Windows XP with a NI PCI 6220 board.
+- Jens Roesner wrote his initial examples in 2005 for NI's M-Series cards.
+- Nathan Tomlin tested his code on Matlab 7.8.0 (R2009a) on Windows XP with a NI PCI 6220 board.
+- Johannes Keyser is testing this code on Matlab 9.7.0 (R2019b) with a [PCIe-6321 card (X-Series)](https://www.ni.com/en-us/support/model.pcie-6321.html), connected to a [BNC-2110 terminal block](https://www.ni.com/en-us/support/model.bnc-2110.html).
 
 ## Alternatives
 
 The code in this project may not be up to your requirements.
 
-- If you're running Windows, you probably should get the (commercially licensed) [Matlab Data Acquisition Toolbox](http://www.mathworks.com/products/daq/) to access many NI cards (and from other manufacturers) seamlessly from within Matlab.
+- If you're running Matlab on Windows:
+   - You probably should get the (commercially licensed) [Matlab Data Acquisition Toolbox](http://www.mathworks.com/products/daq/) to access many NI cards (and from other manufacturers) seamlessly from within Matlab.
+   - Also have a look at the project [SWC-Advanced-Microscopy/MATLAB_DAQmx_examples](https://github.com/SWC-Advanced-Microscopy/MATLAB_DAQmx_examples).
 - If you're running Linux or MacOS, you may use another language that is officially supported by NI, like [C or Python](https://github.com/ni).
 
 ## Previous work and further resources
@@ -113,6 +115,12 @@ For some "historical context": Jens Roesner's code pre-dates the widespread supp
 - Jens Roesner (`jens.roesner -at- gmx.de`, [link to personal website](https://www.jensroesner.com/work/matlab/))
 - Nathan Tomlin (`nathan.a.tomlin -at- gmail.com`, [link to Mathworks community profile](https://mathworks.com/matlabcentral/profile/authors/1252890))
 - Johannes Keyser (so far, only editorial work; [link to Mathworks community profile](https://mathworks.com/matlabcentral/profile/authors/2267277))
+
+## Contributing
+
+This project is shared as-is, with the hope to be useful.
+
+If you find a problem, or you would like to add features, the easiest way is to open an issue or a pull request on GitHub, at <https://github.com/JoKeyser/Plain-Matlab-NI-DAQmx-examples>.
 
 ## Licensing
 
