@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2005 Jens Roesner, 2023 Johannes Keyser
+SPDX-FileCopyrightText: 2005 Jens Roesner, 2023-2024 Johannes Keyser
 
 SPDX-License-Identifier: CC0-1.0
 -->
@@ -22,7 +22,19 @@ The next steps are to improve the documentation, remove/improve any redundant/ou
 
 ## Installation
 
-FIXME: The current description below only applies to Windows, and may be outdated.
+- FIXME: Add links for Windows and MacOS?
+- FIXME: Merge advice from Jens and Nathan.
+
+### Driver installation
+
+Follow the NI's instructions to install the DAQmx driver for your platform.
+
+- For Linux, follow [Installing NI Drivers and Software on Linux](https://www.ni.com/docs/en-US/bundle/ni-platform-on-linux-desktop/page/installing-ni-drivers-and-software-on-linux-desktop.html).
+  For example on Ubuntu, once you installed/configured the NI repo, you should be able to `sudo apt install ni-daqmx` (and the recommended `ni-hwcfg-utility`).
+  After installation, run `sudo dkms autoinstall` and reboot.
+
+You can check the installation with the _Hardware Configuration Utility_ (on Linux, run `ni-hwcfg-utility`):
+The utility should have discovered your NI device(s) and list them without indication of errors.
 
 ### Advice from Jens Roesner:
 
@@ -109,6 +121,10 @@ For some "historical context": Jens Roesner's code pre-dates the widespread supp
 - Jens Roesner's code is available at <https://www.jensroesner.com/work/matlab/index.html>.
 - Nathan Tomlin's code is available at <https://mathworks.com/matlabcentral/fileexchange/27609-daqmx-examples>.
 - You can also check [this thread started by Jens Roesner in the NI forum](https://forums.ni.com/t5/Multifunction-DAQ/Use-M-Series-cards-with-DAQmx-in-Matlab/m-p/185232).
+
+### Further information
+
+- The [NI-DAQmx C Reference Help](https://www.ni.com/docs/en-US/bundle/ni-daqmx-c-api-ref/page/cdaqmx/help_file_title.html) describes the NI-DAQmx library functions, which you can use with NI data acquisition and switch devices to develop instrumentation, acquisition, and control applications.
 
 ## Authors
 
