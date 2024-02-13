@@ -92,7 +92,11 @@ These following examples were written by Nathan Tomlin:
 - [DAQmxReadDigitalLines.m](DAQmxReadDigitalLines.m): Reads digital inputs from previously set up task.
 - [DAQmxWriteDigitalLines.m](DAQmxWriteDigitalLines.m): Writes digital outputs from previously set up task.
 
-### Known issues
+## Known limitations and issues
+
+The scripts in this project are based on Matlab's [`loadlibrary()`](https://mathworks.com/help/matlab/ref/loadlibrary.html) and [`callib()`](https://mathworks.com/help/matlab/ref/calllib.html), which have [known limitations](https://mathworks.com/help/matlab/matlab_external/limitations-to-shared-library-support.html).
+
+- FIXME: Matlab's missing support of library functions to work with _function pointers_ means that callbacks are impossible, right?
 
 Some known issues are tracked in file [known_issues.md](known_issues.md).
 
@@ -121,6 +125,12 @@ For some "historical context": Jens Roesner's code pre-dates the widespread supp
 - Jens Roesner's code is available at <https://www.jensroesner.com/work/matlab/index.html>.
 - Nathan Tomlin's code is available at <https://mathworks.com/matlabcentral/fileexchange/27609-daqmx-examples>.
 - You can also check [this thread started by Jens Roesner in the NI forum](https://forums.ni.com/t5/Multifunction-DAQ/Use-M-Series-cards-with-DAQmx-in-Matlab/m-p/185232).
+- Chen & Li (2012) describe their _NiMex_ toolbox, a MEX wrapper around NI-DAQmx, capable of using callbacks.
+  Unfortunately, it's unclear where this code can be found?
+  Chen, Y., & Li, X. (2012).
+  A Method to Improve the Interacting between MATLAB and NI-DAQmx.
+  _Energy Procedia, 17, 1945–1952._
+  <https://doi.org/10.1016/j.egypro.2012.02.337>
 
 ### Further information
 
