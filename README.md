@@ -94,7 +94,7 @@ These following examples were written by Nathan Tomlin:
 
 ## Known limitations and issues
 
-The scripts in this project are based on Matlab's [`loadlibrary()`](https://mathworks.com/help/matlab/ref/loadlibrary.html) and [`callib()`](https://mathworks.com/help/matlab/ref/calllib.html), which have [known limitations](https://mathworks.com/help/matlab/matlab_external/limitations-to-shared-library-support.html).
+The scripts in this project are based on Matlab's [`loadlibrary()`](https://mathworks.com/help/matlab/ref/loadlibrary.html) and [`calllib()`](https://mathworks.com/help/matlab/ref/calllib.html), which have [known limitations](https://mathworks.com/help/matlab/matlab_external/limitations-to-shared-library-support.html).
 
 - FIXME: Matlab's missing support of library functions to work with _function pointers_ means that callbacks are impossible, right?
 
